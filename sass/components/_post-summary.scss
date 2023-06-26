@@ -1,0 +1,79 @@
+//Vignette article pour pages archives (y compris recherche)
+.post-summary {
+	//@include box-shadow();
+	display: flex;
+	flex-direction: column;
+	margin:0 auto var(--margin-y-1);
+	max-width:46rem;
+	position:relative;
+	
+	p.entry-date {
+		color:var(--rouge)
+	}
+
+	a.suite {
+		align-items: center;
+		border-radius: 50%;
+		display: flex;
+		height:2.6rem;
+		justify-content: center;
+		margin-bottom: 0;
+		padding:0;
+		padding-left: 2px;
+		width:2.6rem;
+		svg {
+			max-height:60%;
+			max-width:90%;
+		}
+	}
+}
+
+
+.post-summary__title {
+	line-height: 1.2;
+	margin-bottom: 0;
+	a {
+		text-decoration: none;
+	}
+} 
+.post-summary__image {
+	display: block;
+	margin-bottom: 0.5rem;
+	img {
+		aspect-ratio:1.36;
+		display: block;
+		width:100%;
+	}
+	&.contain {
+		border-bottom:solid 1px lightgrey;
+		padding:1rem;
+		img {
+			object-fit: contain;
+		}
+	}
+
+	@supports not (aspect-ratio: auto) { 
+		height: 257px;
+		img {
+			height:100%;
+		}
+	}
+}
+
+
+
+
+
+
+@include bp(md) {
+	.post-summary {
+		flex-direction: column;
+	}
+	.post-summary__image {
+		flex:unset;
+		margin-right:unset;
+	}
+	.post-summary__content {
+		flex-grow:1;
+	}
+}

@@ -1,0 +1,39 @@
+.filtre-archive {
+	align-items: center;
+	display:flex;
+	flex-wrap:wrap;
+	padding-top: 2rem;
+	label {
+		color:var(--rouge);
+		cursor: pointer;
+		@include fs(20);
+		font-weight: 400;
+		margin:0 1.5rem 1rem 0;
+		padding:0;
+		position: relative;
+		transition: all 0.4s linear;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+	input {
+		display: block;
+		appearance: auto;
+		@include screen-reader-text();
+		&:focus-visible + label {
+			text-decoration: underline;
+		}
+	}
+	input:checked + label {
+		font-weight: 700;
+	}
+
+	@include bp(lg) {
+		justify-content: center;
+		margin-bottom:2rem;
+		label {
+			padding:0.5rem 2.5rem;
+		}
+	}
+	
+}

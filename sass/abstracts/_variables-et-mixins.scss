@@ -1,0 +1,106 @@
+
+// Breakpoints
+@mixin bp($point) {
+	$sm: "(min-width: 500px)";
+	$md: "(min-width: 768px)";
+	$lg: "(min-width: 1024px)";
+	$xl: "(min-width: 1440px)";
+	$xxl: "(min-width: 1920px)";
+  
+	@if $point == sm {
+	@media #{$sm} { @content; }
+	}
+	@else if $point == md {
+	@media #{$md} { @content; }
+	}
+
+	@else if $point == lg {
+	@media #{$lg} { @content; }
+	}
+  
+	@else if $point == xl {
+	@media #{$xl} { @content; }
+	}
+
+	@else if $point == xxl {
+		@media #{$xxl} { @content; }
+		}
+}
+
+@mixin fs($px) {
+	font-size:calc(#{$px} * var(--taille-texte) / 15);
+}
+
+@mixin box-shadow {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@mixin bleed {
+	width: 100vw;
+	margin-left: calc(-1 * var(--padding-x));
+	@include bp(xxl) {
+		margin-left:unset;
+		width:var(--largeur-max);
+	}
+}
+
+@mixin largeur-max {
+	max-width:var(--largeur-max);
+	margin-left:auto;
+	margin-right: auto;
+}
+
+
+@mixin bouton {
+	align-items: center;
+	font-weight: 700;
+	border-radius: 1px;
+	cursor: pointer;
+	display:inline-flex;
+	font-size: 1.8rem;
+	justify-content: center;
+	line-height: 2.2rem;
+	margin: 0;
+	min-height: 3.6rem;
+	min-width: 16rem;
+	padding: 0.7rem 1.3rem;
+	@include bp(lg){
+		font-size: 2rem;
+		line-height: 2.4rem;
+		min-height: 5rem;
+		min-width: 22rem;
+	}
+}
+
+@mixin screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+@mixin placeholder {
+	color:#727272;
+	opacity:1;
+}
+
+@mixin object-fit {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}
+
+@mixin decor {
+	height:100%;
+	left:0;
+	position:absolute;
+	top:0;
+	width:100%;
+}

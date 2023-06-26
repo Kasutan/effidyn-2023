@@ -1,0 +1,156 @@
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+
+
+.site-footer {
+	background-color: var(--rouge);
+	color: var(--blanc);
+	padding: 2.5rem var(--padding-x) 1rem;
+	position: relative;
+	--largeur-col: 27rem;
+	.col {
+		margin-bottom: 2rem;
+	}
+	@include bp(sm) {
+		.colonnes-footer {
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+			column-gap: 2rem;
+		}
+		.col:nth-of-type(3) {
+			grid-column: 1 / span 2;
+		}
+	}
+
+	@include bp(md) {
+		padding-top: 5rem;
+		
+		.colonnes-footer {
+			display: flex;
+			justify-content: space-around;
+		}
+		.nav-social {
+			margin-top: 5rem;
+		}
+	}
+
+	a {
+		color: var(--blanc);
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+
+	}
+
+
+	.menu {
+		li {
+			margin-bottom: 0.4rem;
+
+			a {
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.nav-social {
+		width: 100%;
+
+		ul {
+			display: flex;
+			justify-content: flex-end;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			@include bp(lg) {}
+
+			li a {
+				--size: 45px;
+				background-image: url('icons/facebook-blanc.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				color: transparent;
+				display: block;
+				flex: 0 0 var(--size);
+				height: var(--size);
+				margin-right: 30px;
+				overflow: hidden;
+				width: var(--size);
+
+				&[href*="twitter"] {
+					background-image: url('icons/twitter.jpg');
+				}
+			}
+
+			li:last-of-type a {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.copyright {
+
+		text-align: center;
+
+		span,
+		a {
+			color: var(--blanc);
+			display: inline-block;
+			font-weight: 500;
+			margin-bottom: 1rem;
+			@include fs(10);
+		}
+		.sep {
+			display: inline-block;
+			margin: 0 4px;
+		}
+
+		
+	}
+
+	.backtotop {
+		--taille:40px;
+		align-items: center;
+		background-color: var(--vert);
+		border:none;
+		border-radius: 50%;
+		display: flex;
+		height:var(--taille);
+		padding:8px;
+		width:var(--taille);
+		top : var(--taille);
+		position: absolute;
+		right:10px;
+		top : calc(-10px - var(--taille));
+		transition: all var(--transition);
+		z-index:1;
+
+		svg {
+			position: relative;
+			top:-2px;
+			transform-origin: center;
+			transform: rotateZ(180deg);
+			path {
+				fill : var(--blanc);
+			}
+		}
+
+		&:hover, &:focus {
+			background-color:var(--orange);
+			border:none;
+			//transform : translateY(-0.5rem);
+			svg {
+				path {
+					fill : var(--blanc);
+				}
+			}
+		}
+	}
+
+}

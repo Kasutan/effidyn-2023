@@ -1,0 +1,157 @@
+/*--------------------------------------------------------------
+## Site header
+--------------------------------------------------------------*/
+.site-header {
+	--taille-logo:13rem;
+	
+	align-items: center;
+	background-color: var(--blanc);
+	display: grid;
+	grid-template-columns: 1fr var(--taille-logo) 1fr;
+	justify-content: space-between;
+	padding: 10px var(--padding-x-header);
+	position: relative;
+	z-index:10;
+
+	.site-branding, .menu-toggle {
+		position: relative;
+	}
+
+	@include bp(md) {
+	}
+	@include bp(lg) {
+	}
+
+}
+
+.title-area {
+	grid-column: 2;
+}
+
+
+.site-title {
+	margin:0;
+}
+
+.custom-logo-link {
+	display: inline-block;
+}
+
+.custom-logo {
+	display: block;
+	margin:0;
+}
+
+.header-navigation {
+	justify-self: end;
+	grid-column: 3;
+}
+
+.acces-client {
+	display: none;
+}
+
+//Header sticky toutes tailles d'écran
+.site-header.js-sticky {
+	//box-shadow: 0 3px 3px rgba(18,75,90,0.2);
+	position:fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+
+	@include bp(xxl) {
+		left:calc((100vw - var(--largeur-max))/2);
+		width:var(--largeur-max);
+	}
+}
+
+#wpadminbar {
+	position: fixed;
+}
+.admin-bar .site-header.js-sticky {
+	top:46px;
+}	
+
+
+@include bp(md) {
+	.site-header {
+		--taille-logo:15rem;
+	}
+
+	.admin-bar .site-header.js-sticky {
+		top:32px;
+	}
+
+	
+}
+
+@include bp(lg) {
+	.site-header {
+		--taille-logo:17.7rem;
+		display: flex;
+		flex-direction: column;
+		padding:20px var(--padding-x-header) 10px;
+
+	}
+	.title-area {
+		max-width: var(--taille-logo);
+	}
+	.header-navigation {
+		width:100%;
+	}
+
+	a.acces-client {
+		background-color: var(--orange);
+		@include box-shadow;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		color:var(--blanc);
+		display: block;
+		@include fs(12);
+		font-weight: 700;
+		padding:1rem;
+		position: absolute;
+		right:var(--padding-x-header);
+		text-decoration: none;
+		text-transform:uppercase;
+		top:0;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+
+}
+
+/*--------------------------------------------------------------
+## Ancre pour backtotop
+--------------------------------------------------------------*/
+#main-content {
+	position: relative;
+}
+#haut-page {
+	position: relative;
+	top:-200px;
+}
+/*--------------------------------------------------------------
+## Entry-header
+--------------------------------------------------------------*/
+.page-banniere {	
+	height:var(--hauteur-banniere);
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;	
+	max-width:var(--largeur-max);
+	width:100%;
+	img {
+		height:100%;
+		left:0;
+		position: absolute;
+		top:0;
+		width:100%;
+	}
+}
+
+.entry-title {
+	text-align: center;
+}
+

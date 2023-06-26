@@ -1,0 +1,105 @@
+/*@import "base/typography";*/
+/*@import "base/normalize";
+@import "base/utilities";
+@import "base/layout";
+@import "base/elements";
+@import "base/boutons"; */
+.wp-block-button__link {
+  border-radius: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.block-list-appender button, button.acf-button, .wp-editor-tabs button {
+  min-width: unset;
+  padding: unset;
+}
+.block-list-appender button, .block-list-appender button:hover, .block-list-appender button:focus, button.acf-button, button.acf-button:hover, button.acf-button:focus, .wp-editor-tabs button, .wp-editor-tabs button:hover, .wp-editor-tabs button:focus {
+  background-color: transparent;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-family: "Kantumruy Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wp-block-group.alignfull {
+  --wp--style--block-gap:0;
+}
+.wp-block-group.alignfull .wp-block-image, .wp-block-group.alignfull .wp-block-columns > .wp-block-column {
+  margin: 0;
+}
+.wp-block-group.alignfull .wp-block-column > .wp-block-image {
+  height: 100%;
+}
+.wp-block-group.alignfull .wp-block-column > .wp-block-image img {
+  height: 100%;
+  width: 100%;
+}
+.wp-block-group.alignfull .wp-block-columns {
+  margin-bottom: 0;
+}
+.wp-block-group.bloc-bleu {
+  background-color: var(--bleu);
+  padding: 3rem;
+}
+.wp-block-group.bloc-bleu p, .wp-block-group.bloc-bleu h3, .wp-block-group.bloc-bleu h4 {
+  color: var(--blanc);
+}
+@media screen and (max-width: 781px) {
+  .wp-block-group.bloc-bleu {
+    width: 100vw;
+    margin-left: calc(-1 * var(--padding-x));
+    margin-bottom: -1.8em;
+  }
+}
+@media screen and (max-width: 781px) and (min-width: 1920px) {
+  .wp-block-group.bloc-bleu {
+    margin-left: unset;
+    width: var(--largeur-max);
+  }
+}
+
+.wp-block-columns.alignfull {
+  margin-bottom: 0;
+  padding: var(--margin-y-2) var(--padding-x);
+}
+.wp-block-columns a.wp-block-button__link {
+  min-width: 10rem;
+}
+
+.wp-block-column.gap-fallback {
+  padding-left: 2em;
+}
+@supports (font-size: clamp(1em, 10vw, 10em)) {
+  .wp-block-column.gap-fallback {
+    padding-left: 0;
+  }
+}
+
+.wp-block-image.alignwide {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  padding: 0 var(--padding-x);
+}
+@media (min-width: 1920px) {
+  .wp-block-image.alignwide {
+    margin-left: unset;
+    width: var(--largeur-max);
+  }
+}
+.wp-block-image.alignwide figcaption {
+  text-align: right;
+}
+
+.wp-block-code {
+  background-color: lightgrey;
+  margin-bottom: var(--margin-y-2);
+  padding: 2rem;
+  font-style: italic;
+}
+/*# sourceMappingURL=editor-styles.css.map */

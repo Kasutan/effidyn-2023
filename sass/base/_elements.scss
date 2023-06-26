@@ -1,0 +1,317 @@
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+hr, .wp-block-separator {
+	background-color: var(--bleu-8fc);
+	border: 0;
+	display: block;
+	height: 1px;
+	margin-bottom: 2rem;
+	@include bp(lg){
+		margin-bottom: 3.45rem;
+	}
+}
+
+.entry-content ul:not([class]) {
+	list-style: square;
+	padding-left: 2.7rem;
+	li {
+		line-height: 3rem;
+		margin-bottom:0;
+	}
+
+	margin-bottom: 2rem;
+	@include bp(lg){
+		margin-bottom: 2.6rem;
+	}
+}
+
+.entry-content p + ul:not([class]) {
+	margin-top: -1rem;
+}
+
+/*
+ul:not([class]),
+ol:not([class]) {
+	margin: 0 0 1.5em 0;
+	padding-left:1em;
+}
+
+ul:not([class])  {
+	list-style: none;
+	padding-left:1em;
+	> li::before {
+		content: '•'; 
+		color: var(--bleu);
+		display: inline-block; 
+		width: 1em;
+		margin-left: -1em		
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+li>ul,
+li>ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}*/
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+
+	&.emoji {
+		width: 2ch;
+		display: inline-block;
+		position: relative;
+		top: 3px;
+	}
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	figcaption {
+		text-align: center;
+	}
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background-color: rgba(58,124,50,0.1);
+	color: var(--noir);
+	border: none;
+	outline-color:var(--vert);
+	min-height:1.7rem;
+	padding: 3px;
+	padding-left: 10px;
+	
+	&:focus {
+		outline:solid 1px;
+		outline-color:var(--vert);
+	}
+}
+
+
+textarea {
+	width: 100%;
+}
+
+
+.forminator-custom-form {
+	/*Layout*/
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 22px;
+
+	.forminator-row {
+		box-sizing: border-box;
+		margin: 0 !important;
+	}
+	.forminator-col {
+		padding:0 !important;
+	}
+	.forminator-response-message, .forminator-row.pleine-largeur {
+		grid-column-start: 1;
+		grid-column-end: -1;
+	}
+	.forminator-error-message {
+		@include fs(12);
+		color:var(--rouge);
+	}
+
+	/*Styles communs à tous les champs*/
+	@include fs(14);
+
+
+	label {
+		display: block;
+		margin-bottom: 5px;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"] {
+		width:100%;
+	}
+
+	input[type="radio"] {
+		@include screen-reader-text;
+	}
+
+	/*Styles des champs téléphone*/
+
+	.forminator-phone {
+		width:100%;
+	}
+
+	/*Styles des champs radio*/
+
+	.forminator-field[role="radiogroup"] {
+		--couleur:var(--vert);
+		--size:15px;
+		display: flex;
+		flex-wrap: wrap;
+		
+		label {
+			margin-bottom: 0;
+		}
+		
+		.forminator-label {
+			margin-right: 20px;
+		}
+		.forminator-radio-inline {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			margin-right: 20px;
+		}
+		
+		.forminator-radio-bullet {
+			align-items:center;
+			display: contents;
+			&::after {
+				align-items: center;
+				background-color: rgba(196, 196, 196, 0.1);
+				border: 1px solid var(--vert);
+				color:var(--vert);
+				content:' ';
+				display: flex;
+				margin-right: 5px;
+				width:var(--size);
+				height:var(--size);
+			}
+		
+		}
+		input:checked + .forminator-radio-bullet::after {
+			content:'✔';
+		}
+		input:focus-visible + .forminator-radio-bullet::after {
+			outline: dotted 2px var(--vert);
+			outline-offset: 1px;
+		}
+	}
+
+	.forminator-row-last
+	{
+		grid-column: 1 / span 2;
+		.forminator-field {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	/*Styles du champ file upload*/
+	.file {
+		.forminator-label {
+			color:var(--rouge);
+			@include fs(20);
+			font-weight: 700;
+		}
+		.forminator-input-file  {
+			@include fs(16);
+		}
+	}
+	.forminator-uploaded-file--content {
+		margin: 20px 0;
+		background: var(--fond);
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		.forminator-uploaded-file--image {
+			display: none;
+		}
+		button {
+			min-width: unset;
+		}
+	}
+
+	
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+

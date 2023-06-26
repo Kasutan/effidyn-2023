@@ -1,0 +1,113 @@
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+a.bouton,
+a.wp-block-button__link {
+	--fond-lien-bouton:transparent;
+	--couleur-bouton:var(--bleu-9a);
+
+
+	&.blanc {
+		--couleur-bouton:var(--blanc);
+	}
+
+	@include bouton;
+ 
+	background: var(--fond-lien-bouton);
+	position: relative;
+	
+
+	&, &:visited {
+		border:solid 1px var(--couleur-bouton);
+		color: var(--couleur-bouton);
+	}
+	text-decoration: none;
+	transition: all 0.5s;
+
+
+	&:hover, &:focus, &:active {
+
+		outline: none;
+		text-decoration: none;
+	}
+	&:focus-visible {
+		outline : dashed 2px var(--fond-bouton);
+		outline-offset: 2px;
+	}
+
+	&:disabled {
+		background-color: lightgrey;
+	}
+	
+}
+
+.wp-block-button.is-style-outline > a.wp-block-button__link {
+	border-width:1px;
+}
+.wp-block-buttons {
+	margin-bottom: 1em;
+
+}
+
+//Animation d'après https://codepen.io/natalia-reshetnikova/pen/oRRjPP
+
+.wp-block-button {
+	--couleur-bouton:var(--bleu-9a);
+	--fond-bouton:var(--blanc);
+	display: inline-block;
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 1;
+		background-color: var(--couleur-bouton);
+		transition: all 0.5s;
+		transform: scale(0.5,0.5);
+		z-index:0;
+	}
+
+	&:hover, &:focus-within {
+		> a.wp-block-button__link {
+			color: var(--fond-bouton);			
+			color: white;
+
+			position: relative;
+			z-index: 1;
+		}
+		&::before {
+			opacity: 1;
+			transform: scale(1,1);
+
+		}
+	}
+
+	&.is-style-outline {
+		--couleur-bouton:var(--blanc);
+		--fond-bouton:var(--bleu-9a);
+
+		&:hover, &:focus-within {
+			> a.wp-block-button__link {
+				color: var(--fond-bouton);
+			}
+		}
+	}
+}
+
+a.bouton {
+	&:hover, &:focus, &:active {
+		background-color: var(--bleu-9a);
+		color:var(--blanc);
+	}
+}
+input[type="submit"] {
+	-webkit-appearance: none;	
+	appearance: none;
+
+}

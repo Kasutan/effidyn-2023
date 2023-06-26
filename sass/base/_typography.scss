@@ -1,0 +1,214 @@
+body {
+	
+	//Simplifier les variables de couleus générées par WP
+	--bleu-1fc : #EBF1FC;
+	--bleu-f4: #CAD6F4;
+	--bleu-8fc: #C7D8FC;
+	--bleu-9f: #0B289F;	
+	--bleu-texte: #0B289F;
+	--bleu-9a: #04329A;
+	--violet-d2: #8E00D2;	
+	--violet-lien: #8E00D2;
+	---violet-cb: #801ACB;
+	--violet-ba: #491BBA;
+	--rose-ff: #FF00FF;
+	--rose-fc: #FA01FC;
+	--rose-ec: #D000EC;
+	--rose-e4: #BC0DE4;
+	--gris-fa: #FAFAFA;
+	--noir: #2B2A2D;
+	--blanc: #fff;
+}
+
+
+html {
+	font-size: 62.5%;
+	/* 1rem = 10px */
+	--taille-texte: 1.5rem;
+	--font-texte: "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-titre: var(--font-texte);
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: var(--noir); 
+	font-family:  "Gilroy", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: var(--font-texte);
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+
+	@include bp(lg) {
+		font-size: 2rem;
+		line-height: 1.3;
+	}
+}
+
+::selection {
+	background: var(--bleu-8fc);
+	color: var(--noir);
+}
+
+strong,
+b {
+	font-weight: 700;
+}
+
+em,
+i {
+	font-style: italic;
+}
+
+
+h1,
+.h1,
+h2,
+h3,
+h4,
+.h2,
+.h3,
+.h4 {
+	color:var(--bleu-9f);
+	font-family: var(--font-titre);
+	font-weight: 700;
+	padding: 0;
+}
+
+h1,
+.h1 {
+	font-size: 2.6rem;
+	line-height: 3.2rem;
+	margin: 0;
+	text-align: center;
+	@include bp(lg) {
+		font-size: 7rem;
+		line-height: 9rem;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 2.6rem;
+	line-height: 3.2rem;
+	margin: 0 0 2rem;
+	@include bp(lg) {
+		font-size: 4.6rem;
+		line-height: 5rem;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 2.2rem;
+	line-height: 2.6rem;
+	margin: 0 0 2rem;
+	@include bp(lg) {
+		font-size: 3.2rem;
+		line-height: 3.6rem;
+		margin: 0 0 1rem;
+	}
+}
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-size: 1.8rem;
+	line-height: 2.2rem;
+	margin: 0 0 2rem;
+	@include bp(lg) {
+		font-size: 2.6rem;
+		line-height: 3rem;
+		margin: 0 0 1rem;
+	}
+}
+
+
+p {
+	margin-bottom: 2rem;
+	margin-top: 0;
+}
+
+@include bp(lg) {
+	p + h2 {
+		margin-bottom: 2.5rem;
+	}
+}
+
+dfn,
+q,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left: solid 6px var(--bleu-1fc);
+	color:var(--bleu-9a);
+	font-size: 1.2em;
+	margin: 0 0 2rem;
+	padding: 2.5rem;
+
+	cite {
+		display: block;
+		font-style: italic;
+		text-align: right;
+	}
+
+	@include bp(lg) {
+		color:var(--violet-ba);
+	}
+}
+
+mark,
+ins {
+	background: var(--bleu-8fc);
+	text-decoration: none;
+}
+
+
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	@include screen-reader-text;
+}
+
+.screen-reader-text:focus {
+	background-color: var(--fond);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	display: block;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0s !important;
+		transition-duration: 0s !important;
+	}
+}

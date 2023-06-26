@@ -1,0 +1,46 @@
+{
+    "key": "group_609ec1f904013",
+    "title": "Bloc blog",
+    "fields": [
+        {
+            "key": "field_609ec1f909440",
+            "label": "Titre de la section",
+            "name": "titre",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "aria-label": "",
+            "default_value": "Blog",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/blog"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1687784056,
+    "local_file": "C:UsersMagalieLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609ec1f904013.json"
+}
