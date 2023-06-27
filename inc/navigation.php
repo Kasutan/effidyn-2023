@@ -55,10 +55,12 @@ function ea_site_header() {
 
 function kasutan_mobile_nav() {
 	?>
-	<button class="menu-toggle picto" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
-		<?php echo kasutan_picto(array('icon'=>'menu', 'class'=>'menu', 'size'=>'28'));?>
-		<?php echo kasutan_picto(array('icon'=>'close', 'class' => 'fermer-menu','size'=>'28'));?>
+	<button class="menu-toggle hamburger hamburger--squeeze" type="button" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
+	<span class="hamburger-box">
+		<span class="hamburger-inner"></span>
+	</span>
 	</button>
+
 	<div class="volet-navigation"  id="volet-navigation">
 		<?php
 		if( class_exists('etcode_sublevel_walker') ) {

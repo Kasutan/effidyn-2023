@@ -86,32 +86,12 @@ p.fil-ariane {
 
 button.menu-toggle {
 	display: block;
-	height:4rem;
+	height:1.4rem;
 	padding:0;
-	width:4rem;
-	svg {
-		height:100%;
-		width:100%;
-	}
-	svg path {
-		fill:var(--vert);
-	}
+	width:3rem;
+	
 	&:focus {
 		outline: none;
-	}
-	svg.fermer-menu { //croix pour refermer le menu
-		display:none;
-		transform-origin: center;
-		transform: scale(0.8);
-	}
-	//menu mobile ouvert
-	&[aria-expanded=true] {
-		svg.menu { //cacher hamburger 
-			display:none;
-		}
-		svg.fermer-menu { // afficher croix
-			display:block;
-		}
 	}
 }
 
@@ -153,9 +133,6 @@ button.menu-toggle {
 	padding:0 1rem;
 	&:hover, &:focus, &:active {
 		background:transparent;
-	}
-	svg path {
-		fill : var(--blanc);
 	}
 }
 

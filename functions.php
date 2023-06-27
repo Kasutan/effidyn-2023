@@ -94,8 +94,8 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 91,
-			'width'       => 177,
+			'height'      => 88,
+			'width'       => 200,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
