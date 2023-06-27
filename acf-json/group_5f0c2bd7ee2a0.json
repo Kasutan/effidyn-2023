@@ -27,8 +27,8 @@
         },
         {
             "key": "field_60a0e771c0bde",
-            "label": "Logo pour le pied de page",
-            "name": "effidyn_logo_footer",
+            "label": "Pied de page : logo",
+            "name": "effidyn_footer_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -47,15 +47,15 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "jpg, jpeg",
+            "mime_types": "png, svg",
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_63bd3e8fc525b",
-            "label": "Lien vers LinkedIn dans le pied de page",
-            "name": "effidyn_linkedin",
+            "key": "field_649af5eda6a53",
+            "label": "Pied de page : coordonnées",
+            "name": "effidyn_footer_coordonnees",
             "aria-label": "",
-            "type": "link",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -64,7 +64,71 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_649af625a6a54",
+            "label": "Pied de page : titre de la colonne 2",
+            "name": "effidyn_footer_titre_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_649af651a6a55",
+            "label": "Pied de page : titre de la colonne 3",
+            "name": "effidyn_footer_titre_3",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_649af654a6a56",
+            "label": "Pied de page : titre de la colonne 4",
+            "name": "effidyn_footer_titre_4",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -85,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687796423
+    "modified": 1687878507
 }

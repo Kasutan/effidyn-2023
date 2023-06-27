@@ -4,116 +4,95 @@
 
 
 .site-footer {
-	background-color: var(--rouge);
-	color: var(--blanc);
-	padding: 2.5rem var(--padding-x) 1rem;
-	position: relative;
-	--largeur-col: 27rem;
-	.col {
-		margin-bottom: 2rem;
+	.main-footer {
+		background-color: var(--bleu-9a);
+		color: var(--blanc);
+		padding: 4rem 3rem 9rem;
+		position: relative;
+
+		.logo-footer {
+			display: inline-block;
+			margin-bottom: 4rem;
+			max-width:14.6rem;
+			img {
+				max-width: 100%;
+			}
+		}
+
+
+		.coord {
+			font-size: 1.8rem;
+			line-height: 2.5rem;
+			a {
+				color: var(--rose-ff);
+				text-decoration: none;
+
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+
+			}
+		} 
+
+		
+
+		.col-2, .col-3, .col-4 {
+			display: none;
+		}
+
 	}
-	@include bp(sm) {
+	
+	
+
+	@include bp(lg) {
 		.colonnes-footer {
 			display: grid;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: repeat(4,1fr);
 			column-gap: 2rem;
 		}
-		.col:nth-of-type(3) {
-			grid-column: 1 / span 2;
-		}
-	}
-
-	@include bp(md) {
-		padding-top: 5rem;
-		
-		.colonnes-footer {
-			display: flex;
-			justify-content: space-around;
-		}
-		.nav-social {
-			margin-top: 5rem;
-		}
-	}
-
-	a {
-		color: var(--blanc);
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			text-decoration: underline;
+		.col {
+			margin-bottom: 2rem;
 		}
 
-	}
+		.nav-footer a {
+			color: var(--rose-ff);
+			text-decoration: none;
 
-
-	.menu {
-		li {
-			margin-bottom: 0.4rem;
-
-			a {
-				font-weight: 700;
-				text-transform: uppercase;
-			}
-		}
-	}
-
-	.nav-social {
-		width: 100%;
-
-		ul {
-			display: flex;
-			justify-content: flex-end;
-			margin: 0;
-			padding: 0;
-			width: 100%;
-
-			@include bp(lg) {}
-
-			li a {
-				--size: 45px;
-				background-image: url('icons/facebook-blanc.svg');
-				background-repeat: no-repeat;
-				background-size: contain;
-				color: transparent;
-				display: block;
-				flex: 0 0 var(--size);
-				height: var(--size);
-				margin-right: 30px;
-				overflow: hidden;
-				width: var(--size);
-
-				&[href*="twitter"] {
-					background-image: url('icons/twitter.jpg');
-				}
+			&:hover,
+			&:focus {
+				text-decoration: underline;
 			}
 
-			li:last-of-type a {
-				margin-right: 0;
-			}
 		}
 	}
 
-	.copyright {
 
+
+
+	.bottom-footer {
+		padding:1.6rem var(--padding-x);
 		text-align: center;
 
 		span,
 		a {
-			color: var(--blanc);
+			color: var(--noir);
 			display: inline-block;
-			font-weight: 500;
-			margin-bottom: 1rem;
-			@include fs(10);
+			margin-bottom: 0.5rem;
 		}
-		.sep {
-			display: inline-block;
-			margin: 0 4px;
+
+		a {
+			text-decoration: none;
+			&:hover, &:focus {
+				color:var(--violet-lien);
+				text-decoration: underline;
+			}
 		}
+		
 
 		
 	}
-
+/*
 	.backtotop {
 		--taille:40px;
 		align-items: center;
@@ -151,6 +130,6 @@
 				}
 			}
 		}
-	}
+	}*/
 
 }
