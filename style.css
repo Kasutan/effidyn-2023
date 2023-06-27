@@ -1777,7 +1777,7 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 .site-footer .main-footer {
   background-color: var(--bleu-9a);
   color: var(--blanc);
-  padding: 4rem 3rem 9rem;
+  padding: 4rem 3rem 6rem;
   position: relative;
 }
 .site-footer .main-footer .logo-footer {
@@ -2021,6 +2021,52 @@ form.search-form input.search-submit {
   margin-bottom: var(--margin-y-2);
   padding: 2rem;
   font-style: italic;
+}
+
+.decor-top {
+  position: relative;
+}
+.decor-top::after {
+  --decor-w:11.2rem;
+  --decor-h:1rem;
+  background-image: url("icons/top-bloc-color_XS.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: var(--decor-h);
+  left: calc(50% - 0.5 * var(--decor-w));
+  position: absolute;
+  top: -4px;
+  width: var(--decor-w);
+}
+@media (min-width: 1024px) {
+  .decor-top::after {
+    --decor-w:31.2rem;
+    background-image: url("icons/top-bloc-color_XL.svg");
+  }
+}
+.decor-top.decor-grey::after {
+  background-image: url("icons/top-bloc-grey_XS.svg");
+  top: -5px;
+}
+@media (min-width: 1024px) {
+  .decor-top.decor-grey::after {
+    background-image: url("icons/top-bloc-grey_XL.svg");
+  }
+}
+
+.decor-footer .rect {
+  height: 1rem;
+}
+.decor-footer .rect-1 {
+  background-color: var(--violet-ba);
+}
+.decor-footer .rect-2 {
+  background-color: var(--violet-d2);
+}
+.decor-footer .rect-3 {
+  background-color: var(--rose-ec);
 }
 
 .filtre-archive {

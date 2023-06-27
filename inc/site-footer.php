@@ -25,7 +25,7 @@ function kasutan_main_footer() {
 	</a>';
 */
 
-	echo '<div class="main-footer"><div class="colonnes-footer">';
+	echo '<div class="main-footer decor-top"><div class="colonnes-footer">';
 	
 
 	for($i=1;$i<=4;$i++) {
@@ -63,8 +63,20 @@ function kasutan_main_footer() {
 	}
 
 	echo '</div>'; //fin colonnes-footer
-	echo '<p>Decor ici</p>';
+
+	
+	
 	echo '</div>'; //fin main-footer
+
+	//3 bandes colorées en décor
+	?>
+		<div class="decor-footer" aria-hidden="true">
+			<div class="rect rect-1"></div>
+			<div class="rect rect-2"></div>
+			<div class="rect rect-3"></div>
+		</div>
+
+	<?php
 }
 
 
@@ -78,7 +90,7 @@ function kasutan_copyright() {
 
 
 	echo '<div class="bottom-footer">';
-		printf('<span class="copyright">Tous droits réservés %s</span>',get_option('blogname'));
+		printf('<span class="copyright">%s %s</span>',esc_html__('&copy; Tous droits réservés','effidyn'),get_option('blogname'));
 		
 		if( has_nav_menu( 'footer-copyright') ) {
 			wp_nav_menu( array( 'theme_location' => 'footer-copyright', 'menu_id' => 'footer-copyright', 'container_class' => 'inline-footer' ) );
