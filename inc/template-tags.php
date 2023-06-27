@@ -337,3 +337,16 @@ function kasutan_affiche_filtre_articles() {
 	</form>
 <?php
 }
+
+/**
+* Afficher un bouton avec le même markup que Gutenberg
+*
+*/
+
+function kasutan_affiche_bouton($label,$url,$classe='') {
+	printf('<div class="wp-block-buttons is-content-justification-center is-layout-flex">
+		<div class="wp-block-button %s">
+			<a class="wp-block-button__link wp-element-button" href="%s">%s</a>
+		</div>
+	</div>', $classe,$url,$label);
+}
