@@ -99,13 +99,13 @@ button.menu-toggle {
 	display: flex;
 	flex-direction: column;
 	right:0;
-	max-height:calc(100vh - 93px); //magic number : hauteur du header sticky
+	max-height:calc(100vh - 80px); //magic number : hauteur du header sticky
 	overflow-x:hidden;
 	overflow-y:auto;
-	padding: 0;
+	padding: 2.4rem 2rem 6.5rem;
 	position:absolute;
-	top:calc(100% - 25px); //chevaucher un peu le logo
-	width:30rem;
+	top:100%; //chevaucher un peu le logo
+	width:100%;
 	z-index: 10;
 }
 @include bp(md) {
@@ -131,6 +131,8 @@ button.menu-toggle {
 	margin:0;
 	min-width:unset;
 	padding:0 1rem;
+	position:relative;
+	top:1rem;
 	&:hover, &:focus, &:active {
 		background:transparent;
 	}
@@ -138,8 +140,7 @@ button.menu-toggle {
 
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
-	background-color:var(--blanc);
-	box-shadow: 0 3px 3px rgba(0,0,0,.2);
+	background:transparent linear-gradient(180deg, #8E00D2 0%, #04329A 100%) 0% 0% no-repeat padding-box;
 
 	/*Logique affichage sous-menu*/
 	.sub-menu {
@@ -174,18 +175,21 @@ button.menu-toggle {
 	/*Styles éléments de niveau 1*/
 	.menu-mobile > li {
 		align-items: center;
-		border-bottom:solid 1px var(--bordure);
+		border-bottom:solid 1px var(--blanc);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		padding:1.55rem 0;
 
 		&:last-of-type {
 			border:none;
 		}
 		> a {
-			color:var(--vert);
+			color:var(--blanc);
 			flex:auto 0 0;
-			padding:1rem 1.6rem;
+			font-weight: 600;
+			padding:0;
+			padding-right: 1.6rem;
 			text-transform: uppercase;
 		}
 
@@ -203,29 +207,32 @@ button.menu-toggle {
 	}
 	button.ouvrir-sous-menu {
 		background-color: transparent;
+		border:none;
 		min-width:unset;
 		margin-bottom: 0;
+		min-height:unset;
 		padding:0 1.2rem 0 0;
 		position: relative;
 		top:2px;
 		svg path {
-			fill:var(--vert);
+			fill:var(--blanc);
 		}
 		&:focus {
 			outline: none;
 		}
 	}
 	.sub-menu {
-		background-color: #fff;
+		background-color: transparent;
 		flex-basis:100%;
 		flex-shrink:0;
-		padding-top: 0.5rem;
-		padding-left:2.8rem;
+		padding-top: 0.8rem;
+		padding-left:0;
 		li {
 			margin-bottom: 0.8rem;
 
 			a {
-				color : #505050;
+				color : var(--blanc);
+				font-weight: 400;
 			}
 
 			&.current-menu-item a {
