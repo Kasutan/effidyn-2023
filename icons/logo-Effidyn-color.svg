@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 785 350" style="enable-background:new 0 0 785 350;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#04329A;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#BC0DE4;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#801ACB;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#4226B3;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#FA01FC;}
+	.st5{fill:#1D1D1B;}
+</style>
+<g>
+	<polygon class="st0" points="74.4,193.6 9,150.1 74.4,112.3 	"/>
+	<polygon class="st1" points="9,229.4 9,150.1 74.4,193.6 	"/>
+	<polygon class="st2" points="9,229.4 74.4,193.6 140.2,305.2 	"/>
+	<polygon class="st3" points="140.2,305.2 74.4,193.6 140.2,231.5 	"/>
+	<polygon class="st4" points="140.2,119.2 205.7,162.7 140.2,200.5 	"/>
+	<polygon class="st3" points="205.7,83.3 205.7,162.7 140.2,119.2 	"/>
+	<polygon class="st2" points="205.7,83.3 140.2,119.2 74.4,7.6 	"/>
+	<polygon class="st1" points="74.4,7.6 140.2,119.2 74.4,81.2 	"/>
+</g>
+<g>
+	<g>
+		<path class="st5" d="M282.6,253.3c0,1.6-0.2,3.2-0.2,4.8h-90.4c2.4,22.5,19.5,37.3,42.3,37.3c16.4,0,28.7-7.6,34.5-18.2l8.8,5.2
+			c-8.2,13.6-23.7,22.5-43.5,22.5c-30.7,0-52.5-21.9-52.5-52.1c0-29.3,21.1-52.1,51.7-52.1C263.7,200.9,282.6,226,282.6,253.3z
+			 M192.1,248.3h80.2c-2.2-24.3-19.3-37.9-38.9-37.9C210.6,210.4,194.1,226.2,192.1,248.3z"/>
+		<path class="st5" d="M427.8,302.8h-10v-90h-43.7v90H364v-90h-43.7v90h-10.2v-90H293V203h17.2v-5.4c0-24.5,13.8-38.7,39.9-36.7v9.6
+			c-20.3-1.6-29.7,7.8-29.7,27.1v5.4H364v-7.4c0-24.5,13.6-36.7,39.9-36.7c6.4,0,12.6,0.8,19.3,2.2v9.2c-6.6-1.2-12.8-1.8-19.3-1.8
+			c-20.5,0-29.7,7.8-29.7,27.1v7.4h53.7V302.8z"/>
+		<path class="st5" d="M556.5,163.2v139.6h-10v-23.1C538.3,295,523,305,503.6,305c-28.5,0-51.7-22.5-51.7-52.1
+			c0-29.5,23.1-52.1,51.7-52.1c19.3,0,34.7,10,42.9,25.3v-63H556.5z M546.5,252.9c0-23.7-18.5-42.5-42.3-42.5s-42.3,18.7-42.3,42.5
+			s18.6,42.5,42.3,42.5S546.5,276.6,546.5,252.9z"/>
+		<path class="st5" d="M671,203L627.9,312c-7.6,19.1-22.3,32.1-39.5,30.7v-9.4c13.4,1.2,23.5-8.8,29.7-23.3l2.2-5.4L574.4,203h10.8
+			l40.3,88.8l34.7-88.8H671z"/>
+		<path class="st5" d="M773.3,240.7v62h-10.2v-62c0-18.4-10.6-30.3-29.3-30.3c-19.5,0-34.9,12.8-34.9,39.7v52.7h-10V203h10V222
+			c7.6-14.8,20.3-21.1,35.7-21.1C758.3,200.9,773.3,216.6,773.3,240.7z"/>
+	</g>
+</g>
+</svg>
