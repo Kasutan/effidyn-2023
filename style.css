@@ -1780,43 +1780,108 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
   padding: 4rem 3rem 6rem;
   position: relative;
 }
-.site-footer .main-footer .logo-footer {
+.site-footer .logo-footer {
   display: inline-block;
   margin-bottom: 4rem;
   max-width: 14.6rem;
 }
-.site-footer .main-footer .logo-footer img {
+.site-footer .logo-footer img {
   max-width: 100%;
 }
-.site-footer .main-footer .coord {
+.site-footer .coord {
   font-size: 1.8rem;
   line-height: 2.5rem;
 }
-.site-footer .main-footer .coord a {
+.site-footer .coord a {
   color: var(--rose-ff);
   text-decoration: none;
 }
-.site-footer .main-footer .coord a:hover, .site-footer .main-footer .coord a:focus {
+.site-footer .coord a:hover, .site-footer .coord a:focus {
   text-decoration: underline;
 }
-.site-footer .main-footer .col-2, .site-footer .main-footer .col-3, .site-footer .main-footer .col-4 {
+.site-footer .colonnes-footer {
+  display: flex;
+  justify-content: center;
+}
+.site-footer .col-2, .site-footer .col-3, .site-footer .col-4 {
   display: none;
 }
 @media (min-width: 1024px) {
+  .site-footer .main-footer {
+    padding-top: 9rem;
+    padding-bottom: 10rem;
+    --gap:2rem;
+  }
   .site-footer .colonnes-footer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 2rem;
+    grid-template-columns: repeat(4, auto);
   }
-  .site-footer .col {
-    margin-bottom: 2rem;
+  .site-footer .col-1 {
+    padding-right: 1rem;
   }
-  .site-footer .nav-footer a {
-    color: var(--rose-ff);
+  .site-footer .col-2, .site-footer .col-3, .site-footer .col-4 {
+    border-left: 1px solid var(--gris-fa);
+    display: block;
+    padding: 3.5rem var(--gap) 1rem;
+  }
+  .site-footer .col-4 {
+    padding-right: 0;
+  }
+  .site-footer .titre-widget {
+    font-weight: 700;
+    margin-bottom: 5rem;
+  }
+  .site-footer .nav-footer li, .site-footer .liste-posts li {
+    margin-bottom: 1rem;
+  }
+  .site-footer .nav-footer a, .site-footer .liste-posts a {
+    color: var(--blanc);
+    display: inline-block;
     text-decoration: none;
   }
-  .site-footer .nav-footer a:hover, .site-footer .nav-footer a:focus {
-    text-decoration: underline;
+  .site-footer .nav-footer a:hover, .site-footer .nav-footer a:focus, .site-footer .liste-posts a:hover, .site-footer .liste-posts a:focus {
+    color: var(--rose-ff);
+  }
+  .site-footer .liste-posts a {
+    line-height: 1;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .site-footer .colonnes-footer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1440px) {
+  .site-footer {
+    --gap:3.5rem;
+  }
+  .site-footer .main-footer {
+    padding-left: var(--padding-x);
+    padding-right: var(--padding-x);
+  }
+  .site-footer .logo-footer {
+    margin-bottom: 5rem;
+    max-width: 16.6rem;
+  }
+  .site-footer .coord {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .site-footer .coord p {
+    margin-bottom: 2.5rem;
+  }
+  .site-footer .titre-widget, .site-footer .nav-footer, .site-footer .liste-posts {
+    font-size: 2.2rem;
+    line-height: 4rem;
+  }
+  .site-footer .titre-widget {
+    margin-bottom: 4.6rem;
+  }
+  .site-footer .nav-footer li {
+    margin-bottom: 0;
+  }
+  .site-footer .liste-posts li {
+    margin-bottom: 2rem;
   }
 }
 .site-footer .bottom-footer {
@@ -1834,7 +1899,34 @@ button.menu-toggle[aria-expanded=true] svg.fermer-menu {
 }
 .site-footer .bottom-footer a:hover, .site-footer .bottom-footer a:focus {
   color: var(--violet-lien);
-  text-decoration: underline;
+}
+@media (min-width: 1024px) {
+  .site-footer .bottom-footer {
+    padding: 1.3rem var(--padding-x) 1.5rem;
+  }
+  .site-footer .bottom-footer .inline-footer .menu {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .site-footer .bottom-footer .inline-footer .menu li::before {
+    content: "-";
+    display: inline-block;
+    padding: 0 0.5ch;
+  }
+  .site-footer .bottom-footer .inline-footer .menu li:first-of-type::before {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .site-footer .bottom-footer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .site-footer .bottom-footer .inline-footer .menu li:first-of-type::before {
+    display: inline-block;
+  }
 }
 
 .loop {

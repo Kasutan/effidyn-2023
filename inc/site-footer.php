@@ -18,6 +18,8 @@ function kasutan_main_footer() {
 		$titres[4]=wp_kses_post(get_field('effidyn_footer_titre_4','option'));
 	}
 
+	$posts=get_posts(array('numberposts'=>3));
+
 	/*
 
 	echo '<a class="backtotop" href="#haut-page"><span class="screen-reader-text">Retour en haut</span>
@@ -52,8 +54,12 @@ function kasutan_main_footer() {
 			}
 		}
 
-		if($i==4) {
-			echo '<p>Derniers articles ici</p>';
+		if($i==4 && !empty($posts)) {
+			echo '<ul class="liste-posts">';
+			foreach($posts as $post) {
+				printf('<li><a href="%s">%s</a></li>',$post->post_permalink,$post->post_title);
+			}
+			echo '</ul>';
 		}
 
 		
