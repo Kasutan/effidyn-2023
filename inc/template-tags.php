@@ -225,26 +225,69 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 		return;
 	}
 
-	if(!function_exists('get_field')) {
-		return;
-	}
-	$image_id="";
-	if(!$use_defaut) {
-		if(!$page_id) {
-			$page_id=get_the_ID();
-		}
-		$image_id=esc_attr(get_field('effidyn_banniere_image',$page_id));
-	}
-	
-	if(!$image_id || $use_defaut) {
-		$image_id=esc_attr(get_field('effidyn_bg_image','option'));//image par défaut
+
+	if(function_exists('get_field')) {
+		$surtitres=get_field('effidyn_surtitres','options');
+	//TODO adapter les options dans le groupe de champs - type groupe, textes
+
 	}
 
-	if(!empty($image_id)) {
-		printf('<div class="page-banniere">');
-			echo wp_get_attachment_image( $image_id, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
-		echo '</div>';
+	if(!isset($surtitres['blog']) || !empty($surtitres['blog'])) {
+		$surtitres['blog']=__('Publications','effidyn');
 	}
+
+	if(!isset($surtitres['cas']) || !empty($surtitres['cas'])) {
+		$surtitres['cas']=__('Références > Etude de cas','effidyn');
+	}
+
+
+	$titre=$surtitre="";
+	$publication=false;
+	if(is_single() ) {
+		$post_type=get_the_post_type();
+		$titre=get_the_title();
+		if($post_type==='post') {
+				$surtitre=$surtitres['blog'];
+				$publication=true;
+		} else if($post_type==='reference') {
+				$surtitre=$surtitres['cas'];
+		} 
+	} else if (is_page()) {
+		$titre=get_the_title();
+		$current=get_post(get_the_ID());
+		$parent=$current->post_parent; 
+		if($parent) {
+			$surtitre=strip_tags(get_the_title($parent));
+		}
+	} else if(is_category()) {
+		$surtitre=$surtitres['blog'];
+		$titre=strip_tags(single_cat_title( '', false ));
+		$publication=true;
+
+	} else if( is_tag() ) {
+		$surtitre=$surtitres['blog'];
+		$titre=strip_tags(single_tag_title( '', false ));
+		$publication=true;
+
+	} elseif (is_home()) {
+		$titre=$surtitres['blog'];
+		$publication=true;
+
+	}
+
+	//TODO archives des références, search et 404
+
+	//si surtitre non vide ajouter une classe
+	//si $publication ajouter une classe
+
+	printf('<div class="page-banniere">');
+		//decor top si !$publication
+		//surtitre
+		//titre
+		//decor diagonale si !$publication
+		//TODO inclure un div qui overflow (avec décor ou dégradé)
+	echo '</div>';
+	
 }
 
 /**
