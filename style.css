@@ -1279,7 +1279,7 @@ button.menu-toggle:focus {
 }
 .volet-navigation button.js-ouvert .picto-angle {
   transform-origin: center;
-  transform: rotate(90deg);
+  transform: rotateX(180deg);
 }
 .volet-navigation .menu-mobile, .volet-navigation .sub-menu {
   list-style: none;
@@ -1309,24 +1309,24 @@ button.menu-toggle:focus {
   padding-right: 1.6rem;
   text-transform: uppercase;
 }
-.volet-navigation .menu-mobile > li.current-menu-item, .volet-navigation .menu-mobile > li.current-menu-ancestor {
-  background-color: var(--vert);
-}
 .volet-navigation .menu-mobile > li.current-menu-item > a, .volet-navigation .menu-mobile > li.current-menu-ancestor > a {
-  color: var(--blanc);
+  color: var(--bleu-8fc);
 }
 .volet-navigation .menu-mobile > li.current-menu-item button.ouvrir-sous-menu svg path, .volet-navigation .menu-mobile > li.current-menu-ancestor button.ouvrir-sous-menu svg path {
-  fill: var(--blanc);
+  fill: var(--bleu-8fc);
 }
 .volet-navigation button.ouvrir-sous-menu {
   background-color: transparent;
   border: none;
-  min-width: unset;
   margin-bottom: 0;
   min-height: unset;
-  padding: 0 1.2rem 0 0;
+  min-width: unset;
+  padding: 0 8.5px 0 0;
   position: relative;
   top: 2px;
+}
+.volet-navigation button.ouvrir-sous-menu .picto-angle {
+  max-width: 10px;
 }
 .volet-navigation button.ouvrir-sous-menu svg path {
   fill: var(--blanc);
@@ -1349,7 +1349,8 @@ button.menu-toggle:focus {
   font-weight: 400;
 }
 .volet-navigation .sub-menu li.current-menu-item a {
-  color: var(--vert);
+  color: var(--bleu-8fc);
+  font-weight: 600;
 }
 
 /*Style liens de menus MENU PRINCIPAL */

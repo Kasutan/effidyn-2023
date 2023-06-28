@@ -155,7 +155,7 @@ button.menu-toggle {
 
 	button.js-ouvert .picto-angle {
 		transform-origin: center;
-		transform:rotate(90deg);
+		transform:rotateX(180deg);
 	}
 
 	
@@ -194,13 +194,12 @@ button.menu-toggle {
 		}
 
 		&.current-menu-item , &.current-menu-ancestor {
-			background-color: var(--vert);
 			& > a {
-				color:var(--blanc);
+				color:var(--bleu-8fc);
 			}
 
 			button.ouvrir-sous-menu svg path {
-				fill:var(--blanc);
+				fill:var(--bleu-8fc);
 			}
 		}
 
@@ -208,12 +207,15 @@ button.menu-toggle {
 	button.ouvrir-sous-menu {
 		background-color: transparent;
 		border:none;
-		min-width:unset;
 		margin-bottom: 0;
 		min-height:unset;
-		padding:0 1.2rem 0 0;
+		min-width:unset;
+		padding:0 8.5px 0 0;
 		position: relative;
 		top:2px;
+		.picto-angle {
+			max-width: 10px;
+		}
 		svg path {
 			fill:var(--blanc);
 		}
@@ -236,7 +238,8 @@ button.menu-toggle {
 			}
 
 			&.current-menu-item a {
-				color:var(--vert);
+				color:var(--bleu-8fc);
+				font-weight: 600;
 			}
 		}
 	}
