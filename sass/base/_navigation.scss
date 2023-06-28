@@ -100,6 +100,7 @@ button.menu-toggle {
 	flex-direction: column;
 	right:0;
 	max-height:calc(100vh - 80px); //magic number : hauteur du header sticky
+	max-width:400px;
 	overflow-x:hidden;
 	overflow-y:auto;
 	padding: 2.4rem 2rem 6.5rem;

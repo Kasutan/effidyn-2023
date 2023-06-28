@@ -5,6 +5,7 @@
 
 		
 		/********* Ouvrir-fermer les sous-menus mobile **********/
+		//au clic sur le picto
 		var ouvrirSousMenu=$('.volet-navigation .ouvrir-sous-menu');
 		if(ouvrirSousMenu.length>0) {
 			ouvrirSousMenu.click(function(e) {
@@ -21,6 +22,29 @@
 
 					//on ouvre celui demandé
 					$(this).addClass('js-ouvert');
+					$(sousMenu).slideDown();
+				}
+			});
+		}
+
+		//et aussi au clic sur le lien parent
+		var parentSousMenu=$('.volet-navigation .menu-item-has-children > a');
+		if(parentSousMenu.length>0) {
+			parentSousMenu.click(function(e) {
+				e.preventDefault();
+				var sousMenu=$(this).siblings('.sub-menu');
+				var picto=$(this).siblings('.picto')
+				if($(picto).hasClass('js-ouvert')) {
+					//le sous-menu était ouvert, on le referme
+					$(picto).removeClass('js-ouvert');
+					$(sousMenu).slideUp();
+				} else {
+					//on referme tous les sous-menus
+					$('.volet-navigation .ouvrir-sous-menu').removeClass('js-ouvert');
+					$('.volet-navigation .sub-menu').slideUp();
+
+					//on ouvre celui demandé
+					$(picto).addClass('js-ouvert');
 					$(sousMenu).slideDown();
 				}
 			});
