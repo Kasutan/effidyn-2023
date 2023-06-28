@@ -1,7 +1,7 @@
 {
   "name": "effidyn-2023",
   "version": "1.0.0",
-  "description": "Nouveau thème pour My Big Bang (refonte juin 2020)",
+  "description": "Nouveau thème pour Effidyn (refonte juin 2023)",
   "main": "gulpfile.js",
   "directories": {
     "lib": "lib"

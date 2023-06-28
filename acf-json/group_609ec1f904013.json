@@ -6,6 +6,7 @@
             "key": "field_609ec1f909440",
             "label": "Titre de la section",
             "name": "titre",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -15,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "aria-label": "",
             "default_value": "Blog",
             "placeholder": "",
             "prepend": "",
@@ -41,6 +41,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687784056,
-    "local_file": "C:UsersMagalieLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609ec1f904013.json"
+    "modified": 1687958980,
+    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609ec1f904013.json"
 }

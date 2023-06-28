@@ -6,6 +6,7 @@
             "key": "field_609e9721dfe86",
             "label": "Texte de la bannière",
             "name": "texte",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 1,
@@ -15,7 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "aria-label": "",
             "default_value": "",
             "maxlength": "",
             "rows": "",
@@ -26,6 +26,7 @@
             "key": "field_609e9721dfebe",
             "label": "Image bannière",
             "name": "image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 1,
@@ -35,7 +36,6 @@
                 "class": "",
                 "id": ""
             },
-            "aria-label": "",
             "return_format": "id",
             "preview_size": "thumbnail",
             "library": "all",
@@ -66,6 +66,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687784056,
-    "local_file": "C:UsersMagalieLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609e9721dca66.json"
+    "modified": 1687958980,
+    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609e9721dca66.json"
 }
