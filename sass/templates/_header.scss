@@ -17,15 +17,11 @@
 		position: relative;
 	}
 
-	@include bp(md) {
-	}
-	@include bp(lg) {
-	}
-
 }
 
 .title-area {
 	max-width: var(--taille-logo);
+
 }
 
 
@@ -74,10 +70,7 @@
 
 
 @include bp(md) {
-	.site-header {
-		--taille-logo:15rem;
-	}
-
+	
 	.admin-bar .site-header.js-sticky {
 		top:32px;
 	}
@@ -87,37 +80,17 @@
 
 @include bp(lg) {
 	.site-header {
-		--taille-logo:17.7rem;
-		display: flex;
-		flex-direction: column;
-		padding:20px var(--padding-x-header) 10px;
-
+		--taille-logo:15rem;	
+		padding:30px var(--padding-x-header) 21px;
 	}
-	
 	.header-navigation {
 		width:100%;
 	}
-
-	a.acces-client {
-		background-color: var(--orange);
-		@include box-shadow;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
-		color:var(--blanc);
-		display: block;
-		@include fs(12);
-		font-weight: 700;
-		padding:1rem;
-		position: absolute;
-		right:var(--padding-x-header);
-		text-decoration: none;
-		text-transform:uppercase;
-		top:0;
-		&:hover, &:focus {
-			text-decoration: underline;
-		}
+}
+@include bp(xl) {
+	.site-header {
+		--taille-logo:20rem;	
 	}
-
 }
 
 /*--------------------------------------------------------------

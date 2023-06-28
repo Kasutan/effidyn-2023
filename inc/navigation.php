@@ -45,7 +45,22 @@ function ea_site_header() {
 		//Navigation desktop
 		echo '<nav id="site-navigation" class="nav-main" aria-label="menu principal">';
 			if( has_nav_menu( 'primary' ) ) {
-				wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'nav-primary' ) );
+				if( class_exists('etcode_sublevel_walker') ) {
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'walker' => new etcode_sublevel_walker,
+						'container_class' => 'nav-primary'
+					) );
+				} else {
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'walker' => new etcode_sublevel_walker,
+						'container_class' => 'nav-primary'
+					) );
+				}
+
 			}
 			
 		echo '</nav>';

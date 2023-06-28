@@ -1316,25 +1316,6 @@ button.menu-toggle:focus {
 .volet-navigation .menu-mobile > li.current-menu-item button.ouvrir-sous-menu svg path, .volet-navigation .menu-mobile > li.current-menu-ancestor button.ouvrir-sous-menu svg path {
   fill: var(--bleu-8fc);
 }
-.volet-navigation button.ouvrir-sous-menu {
-  background-color: transparent;
-  border: none;
-  margin-bottom: 0;
-  min-height: unset;
-  min-width: unset;
-  padding: 0 8.5px 0 0;
-  position: relative;
-  top: 2px;
-}
-.volet-navigation button.ouvrir-sous-menu .picto-angle {
-  max-width: 10px;
-}
-.volet-navigation button.ouvrir-sous-menu svg path {
-  fill: var(--blanc);
-}
-.volet-navigation button.ouvrir-sous-menu:focus {
-  outline: none;
-}
 .volet-navigation .sub-menu {
   background-color: transparent;
   flex-basis: 100%;
@@ -1354,14 +1335,35 @@ button.menu-toggle:focus {
   font-weight: 600;
 }
 
+/*Styles communs mobile et desktop*/
+button.ouvrir-sous-menu {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 0;
+  min-height: unset;
+  min-width: unset;
+  padding: 0 8.5px 0 0;
+  position: relative;
+  top: 2px;
+}
+button.ouvrir-sous-menu .picto-angle {
+  max-width: 10px;
+}
+button.ouvrir-sous-menu svg path {
+  fill: var(--blanc);
+}
+button.ouvrir-sous-menu:focus {
+  outline: none;
+}
+
 /*Style liens de menus MENU PRINCIPAL */
 .nav-main, .nav-main .nav-primary, .nav-main .menu {
   width: 100%;
 }
 .nav-main .menu {
   align-items: stretch;
-  justify-content: space-between;
-  column-gap: 5px;
+  justify-content: flex-end;
+  padding-top: 2.6rem;
 }
 .nav-main .menu li {
   padding: 0;
@@ -1370,36 +1372,47 @@ button.menu-toggle:focus {
   cursor: default;
 }
 .nav-main .menu a {
-  color: var(--vert);
+  color: var(--noir);
   display: block;
   text-decoration: none;
 }
-.nav-main .menu > li {
-  /*
-  &:first-of-type {
-  	&:hover > a, & > a:focus, &:focus-within > a, &.current-menu-item > a {
-  		background-color: var(--rouge);
-  	}
-  }*/
+@media (min-width: 1440px) {
+  .nav-main .menu > li {
+    padding-left: 3rem;
+  }
 }
 .nav-main .menu > li > a {
   align-items: center;
   display: flex;
+  font-size: 2rem;
   font-weight: 700;
   height: 100%;
-  padding: 0.8rem 1rem;
+  line-height: 2.4rem;
+  padding: 0 1rem 2rem;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 .nav-main .menu > li:hover > a, .nav-main .menu > li > a:focus, .nav-main .menu > li:focus-within > a {
-  background-color: var(--vert);
-  color: var(--blanc);
+  color: var(--violet-d2);
 }
 .nav-main .menu > li > a:active, .nav-main .menu > li.current-menu-item > a, .nav-main .menu > li.current-menu-ancestor > a {
-  background-color: var(--rouge);
-  color: var(--blanc);
+  color: var(--violet-d2);
+}
+.nav-main .menu > li:hover button.ouvrir-sous-menu svg path, .nav-main .menu > li:focus-within button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-item button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-ancestor button.ouvrir-sous-menu svg path {
+  fill: var(--violet-d2);
+}
+.nav-main .menu .menu-item-has-children {
+  align-items: center;
+  display: flex;
+}
+.nav-main .menu button.ouvrir-sous-menu {
+  position: relative;
+  top: -0.8rem;
+}
+.nav-main .menu button.ouvrir-sous-menu svg path {
+  fill: var(--noir);
 }
 .nav-main .menu .sub-menu {
   float: left;
@@ -1425,30 +1438,46 @@ button.menu-toggle:focus {
   overflow-y: auto;
 }
 .nav-main .menu .sub-menu {
-  background-color: #fff;
-  box-shadow: 0 3px 3px rgba(18, 75, 90, 0.2);
+  background-color: var(--violet-d2);
+  border: solid 2px var(--blanc);
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 1.5rem 2rem;
 }
 .nav-main .menu .sub-menu li {
   padding: 0;
 }
 .nav-main .menu .sub-menu a {
-  color: var(--vert);
-  display: block;
-  font-weight: 700;
-  line-height: 1.1;
-  padding: 1.5rem;
+  --couleur-bordure: rgba(255,255,255,0.2);
+  align-items: center;
+  border-bottom: solid 1px var(--couleur-bordure);
+  color: var(--blanc);
+  display: flex;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 4rem;
+  padding: 0;
+  position: relative;
   transition: all var(--transition);
 }
-.nav-main .menu .sub-menu a:hover, .nav-main .menu .sub-menu a:focus {
-  color: var(--blanc);
-  background-color: var(--vert);
+.nav-main .menu .sub-menu a::before {
+  content: ">";
+  left: -1rem;
+  opacity: 0;
+  position: absolute;
+  top: 2px;
+  transition: all var(--transition);
 }
-.nav-main .menu .sub-menu li.current-menu-item a {
-  background-color: var(--rouge);
-  color: var(--blanc);
+.nav-main .menu .sub-menu li:last-of-type a {
+  --couleur-bordure:transparent;
+}
+.nav-main .menu .sub-menu li.current-menu-item a, .nav-main .menu .sub-menu a:hover, .nav-main .menu .sub-menu a:focus {
+  --couleur-bordure: rgba(255,255,255,1);
+  padding-left: 2rem;
+}
+.nav-main .menu .sub-menu li.current-menu-item a::before, .nav-main .menu .sub-menu a:hover::before, .nav-main .menu .sub-menu a:focus::before {
+  left: 0;
+  opacity: 1;
 }
 
 /*Animations*/
@@ -1595,6 +1624,7 @@ button.menu-toggle:focus {
 .site-header .site-branding, .site-header .menu-toggle {
   position: relative;
 }
+
 .title-area {
   max-width: var(--taille-logo);
 }
@@ -1643,41 +1673,22 @@ button.menu-toggle:focus {
 }
 
 @media (min-width: 768px) {
-  .site-header {
-    --taille-logo:15rem;
-  }
   .admin-bar .site-header.js-sticky {
     top: 32px;
   }
 }
 @media (min-width: 1024px) {
   .site-header {
-    --taille-logo:17.7rem;
-    display: flex;
-    flex-direction: column;
-    padding: 20px var(--padding-x-header) 10px;
+    --taille-logo:15rem;
+    padding: 30px var(--padding-x-header) 21px;
   }
   .header-navigation {
     width: 100%;
   }
-  a.acces-client {
-    background-color: var(--orange);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    color: var(--blanc);
-    display: block;
-    font-size: calc(12 * var(--taille-texte) / 15);
-    font-weight: 700;
-    padding: 1rem;
-    position: absolute;
-    right: var(--padding-x-header);
-    text-decoration: none;
-    text-transform: uppercase;
-    top: 0;
-  }
-  a.acces-client:hover, a.acces-client:focus {
-    text-decoration: underline;
+}
+@media (min-width: 1440px) {
+  .site-header {
+    --taille-logo:20rem;
   }
 }
 /*--------------------------------------------------------------

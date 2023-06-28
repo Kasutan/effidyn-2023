@@ -205,25 +205,7 @@ button.menu-toggle {
 		}
 
 	}
-	button.ouvrir-sous-menu {
-		background-color: transparent;
-		border:none;
-		margin-bottom: 0;
-		min-height:unset;
-		min-width:unset;
-		padding:0 8.5px 0 0;
-		position: relative;
-		top:2px;
-		.picto-angle {
-			max-width: 10px;
-		}
-		svg path {
-			fill:var(--blanc);
-		}
-		&:focus {
-			outline: none;
-		}
-	}
+	
 	.sub-menu {
 		background-color: transparent;
 		flex-basis:100%;
@@ -245,7 +227,26 @@ button.menu-toggle {
 		}
 	}
 }
-
+/*Styles communs mobile et desktop*/ 
+button.ouvrir-sous-menu {
+	background-color: transparent;
+	border:none;
+	margin-bottom: 0;
+	min-height:unset;
+	min-width:unset;
+	padding:0 8.5px 0 0;
+	position: relative;
+	top:2px;
+	.picto-angle {
+		max-width: 10px;
+	}
+	svg path {
+		fill:var(--blanc);
+	}
+	&:focus {
+		outline: none;
+	}
+}
 
 /*Style liens de menus MENU PRINCIPAL */ 
 .nav-main { 
@@ -256,8 +257,8 @@ button.menu-toggle {
 
 	.menu {
 		align-items: stretch;
-		justify-content: space-between;
-		column-gap:5px;
+		justify-content: flex-end;
+		padding-top:2.6rem;
 		li {
 			padding:0;
 
@@ -267,7 +268,7 @@ button.menu-toggle {
 		}
 
 		a {
-			color:var(--vert);
+			color:var(--noir);
 			display: block;
 			text-decoration: none;
 		}
@@ -275,13 +276,17 @@ button.menu-toggle {
 		//styles spécifiques aux liens de premier niveau
 
 		& > li {
+			@include bp(xl) {
+				padding-left: 3rem;
+			}
 			& > a {
 				align-items: center;
 				display: flex;
+				font-size: 2rem;
 				font-weight: 700;
 				height: 100%;
-				//margin-bottom: 0.7rem;
-				padding:0.8rem 1rem;
+				line-height: 2.4rem;
+				padding:0 1rem 2rem;
 				position:relative;
 				text-align: center;
 				text-decoration: none;
@@ -289,28 +294,36 @@ button.menu-toggle {
 			}
 			
 			&:hover > a, & > a:focus, &:focus-within > a {
-				background-color: var(--vert);
-				color:var(--blanc);
+				color:var(--violet-d2);
 			}
 			
 
 			& > a:active, &.current-menu-item > a, &.current-menu-ancestor > a {
-				background-color: var(--rouge);
-				color:var(--blanc);
+				color:var(--violet-d2);
 			}
 
-			//Couleur différente pour le lien vers l'accueil
-			//TODO : vérifier rouge ou vert
-			/*
-			&:first-of-type {
-				&:hover > a, & > a:focus, &:focus-within > a, &.current-menu-item > a {
-					background-color: var(--rouge);
+			&:hover, &:focus-within, &.current-menu-item, &.current-menu-ancestor {
+				button.ouvrir-sous-menu {
+					svg path {
+						fill:var(--violet-d2);
+					}
 				}
-			}*/
+			}
 
 		}
 
-		
+		.menu-item-has-children {
+			align-items: center;
+			display: flex;
+		}
+
+		button.ouvrir-sous-menu {
+			position: relative;
+			top:-0.8rem;
+			svg path {
+				fill:var(--noir);
+			}
+		}
 
 
 		//Logique affichage sous-menu
@@ -343,30 +356,45 @@ button.menu-toggle {
 
 		//Style sous-menu
 		.sub-menu {
-			background-color: #fff;
-			box-shadow: 0 3px 3px rgba(18,75,90,0.2);
+			background-color: var(--violet-d2);
+			border:solid 2px var(--blanc);
 			list-style:none;
 			margin:0;
-			padding:0;
+			padding:1.5rem 2rem;
 			li {
 				padding:0;
 			}
 			a {
-				color:var(--vert);
-				display: block;
-				font-weight: 700;
-				line-height:1.1;
-				padding : 1.5rem;
+				--couleur-bordure : rgba(255,255,255,0.2);
+				align-items: center;
+				border-bottom:solid 1px var(--couleur-bordure);
+				color:var(--blanc);
+				display: flex;
+				font-size: 2rem;
+				font-weight: 400;
+				line-height:4rem;
+				padding : 0;
+				position:relative;
 				transition: all var(--transition);
-				&:hover, &:focus {
-					color:var(--blanc);
-					background-color: var(--vert);
+				&::before {
+					content:'>';
+					left:-1rem;
+					opacity:0;
+					position: absolute;
+					top:2px;
+					transition: all var(--transition);
 				}
 			}
-			li.current-menu-item a {
-				background-color: var(--rouge);
-				color:var(--blanc);
-
+			li:last-of-type a {
+				--couleur-bordure:transparent;
+			}
+			li.current-menu-item a, a:hover, a:focus {
+				--couleur-bordure : rgba(255,255,255,1);
+				padding-left: 2rem;
+				&::before {
+					left:0;
+					opacity: 1;
+				}
 			}
 		}
 	}
