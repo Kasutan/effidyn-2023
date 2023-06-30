@@ -228,15 +228,13 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 
 	if(function_exists('get_field')) {
 		$surtitres=get_field('effidyn_surtitres','options');
-	//TODO adapter les options dans le groupe de champs - type groupe, textes
-
 	}
 
-	if(!isset($surtitres['blog']) || !empty($surtitres['blog'])) {
+	if(!isset($surtitres['blog']) || empty($surtitres['blog'])) {
 		$surtitres['blog']=__('Publications','effidyn');
 	}
 
-	if(!isset($surtitres['cas']) || !empty($surtitres['cas'])) {
+	if(!isset($surtitres['cas']) || empty($surtitres['cas'])) {
 		$surtitres['cas']=__('Références > Etude de cas','effidyn');
 	}
 

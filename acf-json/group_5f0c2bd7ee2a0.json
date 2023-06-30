@@ -5,7 +5,7 @@
         {
             "key": "field_608ac16ae3a8c",
             "label": "Page des actualités",
-            "name": "effidyn_page_actualites",
+            "name": "page_actualites",
             "aria-label": "",
             "type": "post_object",
             "instructions": "Réglage utilisé pour le fil d'ariane et pour le bouton \"voir toutes les actualités\"",
@@ -129,6 +129,64 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_649f0c0f42d8a",
+            "label": "Surtitres",
+            "name": "effidyn_surtitres",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_649f0c2d42d8b",
+                    "label": "Sur-titre pour les pages de type publication",
+                    "name": "blog",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Articles de blog ou pages archives de catégories de blog",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Publications",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_649f0c8242d8c",
+                    "label": "Sur-titre pour les pages de type Etudes de cas",
+                    "name": "cas",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Étude de cas individuelle ou pages archives de catégories d'études de cas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Références > Etude de cas",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -149,6 +207,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687958980,
-    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_5f0c2bd7ee2a0.json"
+    "modified": 1688145103
 }
