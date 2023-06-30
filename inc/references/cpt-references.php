@@ -30,9 +30,9 @@ function kasutan_references_post_type() {
 		'label'                 => __( 'Références', 'effidyn' ),
 		'description'           => __( 'Références', 'effidyn' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'custom-fields','thumbnail' ),
+		'supports'              => array( 'title', 'revisions', 'custom-fields','thumbnail','editor' ),
 		'hierarchical'          => false,
-		'public'                => false,
+		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 20,
@@ -43,9 +43,9 @@ function kasutan_references_post_type() {
 		'can_export'            => true,
 		'has_archive'           => false,
 		'exclude_from_search'   => true,
-		'publicly_queryable'    => false,
+		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
-		'show_in_rest'          => false,
+		'show_in_rest'          => true,
 	);
 	register_post_type( 'reference', $args );
 

@@ -20,7 +20,7 @@ function kasutan_savoir_faire_tag() {
 		'show_ui' => true, 
 		'show_admin_column' => true,
 		'query_var' => true,
-		'public' => false, 
-		'show_in_rest' => false
+		'public' => true, 
+		'show_in_rest' => true
 	));
 }
