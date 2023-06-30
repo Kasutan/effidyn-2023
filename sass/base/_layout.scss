@@ -65,9 +65,10 @@ body {
 
 body .entry-content {
 	background-color: var(--blanc);
+	min-height:150vh;
 	margin:0 auto;
 	max-width: calc(100% - 2* var(--padding-x));
-	padding: 0;
+	padding: 2rem;
 	position:relative;
 }
 
@@ -80,14 +81,10 @@ body .entry-content {
 	padding:0 var(--padding-x);
 }
 
-/* Hauteur mini main*/
 
 .site {
 	overflow-x: hidden;
 	position: relative;
-}
-.site-main {
-	min-height:50vh;
 }
 
 

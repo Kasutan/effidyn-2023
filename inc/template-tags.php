@@ -282,7 +282,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 
 	$class='';
 	if(!empty($surtitre)) {
-		$class='avec_surtitre';
+		$class='avec_surtitre'; //TODO : supprimer si non utilisé
 	}
 	if($publication) {
 		$class.=' publication';
@@ -295,6 +295,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	//div qui overflow (avec décors ou dégradé)
 		if(!$publication) {
 			echo '<div class="decor-hero-top"></div>';
+			echo '<div class="decor-hero-bottom"></div>';	
 		}
 	echo '</div>';
 

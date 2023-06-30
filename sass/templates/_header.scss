@@ -130,21 +130,83 @@
 		align-self:end;
 		color:var(--blanc);
 		font-size: 1.8rem;
+		font-weight: 600;
 		grid-row: 1;
 		line-height: 2.2rem;
+		margin-bottom: 5px;
 		opacity: 0.3;
 		position:relative;
 		text-align: center;
+		text-transform: uppercase;
 	}
 	.fond-banniere {
 		@include decor;
 
 		background-color: var(--bleu-9a);
+		height:var(--hauteur-decor);
+		overflow-x: hidden;
+	}
+
+	.decor-hero-bottom {
+		@include decor;
 		background-image: var(--decor-bottom);
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: bottom;
-		height:var(--hauteur-decor);
+		left:-5px;
+		top:2px;
+		width:calc(100% + 10px);
+	}
+	@include bp(sm) {
+		--hauteur-banniere:16rem;
+		--hauteur-titre:4rem;
+		--hauteur-decor:35rem;
+		--decor-bottom:url('icons/deco-hero-bottom_480.svg');
+	
+	}
+	@include bp(md) {
+		--hauteur-banniere:20rem;
+		--hauteur-titre:4rem;
+		--hauteur-decor:40rem;
+		--decor-bottom:url('icons/deco-hero-bottom_768.svg');
+		
+	}
+
+	@include bp(lg) {
+		--hauteur-banniere:27rem;
+		--hauteur-titre:8.4rem;
+		--hauteur-decor:48rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1024.svg');
+		.surtitre {
+			font-size: 3rem;
+			line-height: 3.2rem;
+		}
+	}
+
+	@include bp(xl) {
+		--hauteur-banniere:27rem;
+		--hauteur-titre:8.4rem;
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1600.svg');
+	}
+
+	@include bp(xxl) {
+		--hauteur-banniere:27rem;
+		--hauteur-titre:8.4rem;
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1900.svg');
+
+	}
+
+	//TODO : decor hero top
+
+	&.publication {
+		.titre, .surtitre {
+			color:var(--bleu-9a);
+		}
+		.fond-banniere {
+			background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+		}
 	}
 }
 

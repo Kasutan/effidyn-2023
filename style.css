@@ -325,9 +325,10 @@ body {
 
 body .entry-content {
   background-color: var(--blanc);
+  min-height: 150vh;
   margin: 0 auto;
   max-width: calc(100% - 2 * var(--padding-x));
-  padding: 0;
+  padding: 2rem;
   position: relative;
 }
 
@@ -346,14 +347,9 @@ body .entry-content {
   padding: 0 var(--padding-x);
 }
 
-/* Hauteur mini main*/
 .site {
   overflow-x: hidden;
   position: relative;
-}
-
-.site-main {
-  min-height: 50vh;
 }
 
 .show-for-md,
@@ -1735,11 +1731,14 @@ button.ouvrir-sous-menu:focus {
   align-self: end;
   color: var(--blanc);
   font-size: 1.8rem;
+  font-weight: 600;
   grid-row: 1;
   line-height: 2.2rem;
+  margin-bottom: 5px;
   opacity: 0.3;
   position: relative;
   text-align: center;
+  text-transform: uppercase;
 }
 .page-banniere .fond-banniere {
   height: 100%;
@@ -1748,11 +1747,72 @@ button.ouvrir-sous-menu:focus {
   top: 0;
   width: 100%;
   background-color: var(--bleu-9a);
+  height: var(--hauteur-decor);
+  overflow-x: hidden;
+}
+.page-banniere .decor-hero-bottom {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   background-image: var(--decor-bottom);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom;
-  height: var(--hauteur-decor);
+  left: -5px;
+  top: 2px;
+  width: calc(100% + 10px);
+}
+@media (min-width: 500px) {
+  .page-banniere {
+    --hauteur-banniere:16rem;
+    --hauteur-titre:4rem;
+    --hauteur-decor:35rem;
+    --decor-bottom:url("icons/deco-hero-bottom_480.svg");
+  }
+}
+@media (min-width: 768px) {
+  .page-banniere {
+    --hauteur-banniere:20rem;
+    --hauteur-titre:4rem;
+    --hauteur-decor:40rem;
+    --decor-bottom:url("icons/deco-hero-bottom_768.svg");
+  }
+}
+@media (min-width: 1024px) {
+  .page-banniere {
+    --hauteur-banniere:27rem;
+    --hauteur-titre:8.4rem;
+    --hauteur-decor:48rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1024.svg");
+  }
+  .page-banniere .surtitre {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .page-banniere {
+    --hauteur-banniere:27rem;
+    --hauteur-titre:8.4rem;
+    --hauteur-decor:53rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1600.svg");
+  }
+}
+@media (min-width: 1920px) {
+  .page-banniere {
+    --hauteur-banniere:27rem;
+    --hauteur-titre:8.4rem;
+    --hauteur-decor:53rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1900.svg");
+  }
+}
+.page-banniere.publication .titre, .page-banniere.publication .surtitre {
+  color: var(--bleu-9a);
+}
+.page-banniere.publication .fond-banniere {
+  background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
 }
 
 /*--------------------------------------------------------------
