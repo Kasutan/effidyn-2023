@@ -406,3 +406,16 @@ function kasutan_affiche_bouton($label,$url,$classe='') {
 		</div>
 	</div>', $classe,$url,$label);
 }
+
+
+/***
+ * Insérer le HTML pour 3 petits traits sous un titre
+ */
+
+function kasutan_decor_traits() {
+	return '<div class="decor-traits" aria-hidden="true">
+	<div class="rect rect-1"></div>
+	<div class="rect rect-2"></div>
+	<div class="rect rect-3"></div>
+</div>';
+}

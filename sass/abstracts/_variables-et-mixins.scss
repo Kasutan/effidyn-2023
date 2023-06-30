@@ -104,3 +104,19 @@
 	top:0;
 	width:100%;
 }
+
+@mixin intro {
+	color:var(--bleu-9f);
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 2.4rem;
+	text-align: center;
+	br {display: none;}
+	@include bp(lg) {
+		font-size: 3.2rem;
+		line-height: 3.6rem;
+		br {
+			display: block;
+		}
+	}
+}

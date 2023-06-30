@@ -140,7 +140,7 @@ class BE_ACF_Customizations {
 		);
 	}
 
-	function helper_register_block_type($slug,$titre,$description,$icon='carrot',$js=false,$keywords=[], $multiple=true ){
+	function helper_register_block_type($slug,$titre,$description,$icon='calculator',$js=false,$keywords=[], $multiple=true ){
 		$keywords_from_slug=explode('-',$slug);
 		$keywords=array_merge($keywords,$keywords_from_slug, array('effidyn'));
 		$args=[
@@ -186,91 +186,45 @@ class BE_ACF_Customizations {
 			'banniere',
 			'Bloc image bannière',
 			'Section avec une image de fond et un texte sur fond coloré semi-opaque la page d\'accueil.',
-			'carrot', 
+			'calculator', 
 			false,
 			array( 'banniere', 'accueil')
 		);
 
-		/*********Bloc colonnes-decor ***************/
-		$this->helper_register_block_type( 
-			'colonnes-decor',
-			'Bloc 2 colonnes avec décor',
-			'Section avec titre, texte, bouton dans une colonne, photo et bloc de texte dans une deuxième colonne, et décor en arrière-plan.',
-			'carrot', 
-			false,
-			array( 'colonne', 'decor', 'accueil')
-		);
-
-		/*********Bloc colonnes-uni ***************/
-		$this->helper_register_block_type( 
-			'colonnes-uni',
-			'Bloc 2 colonnes sur fond coloré uni',
-			'Section avec titre, texte, bouton dans une colonne sur fond coloré uni, et photo dans une deuxième colonne.',
-			'carrot', 
-			false,
-			array( 'colonne', 'uni', 'accueil')
-		);
-
-		/*********Bloc intro-produits ***************/
-		$this->helper_register_block_type( 
-			'intro-produits',
-			'Bloc introduction produits avec 3 images',
-			'Section avec titre, texte, bouton dans une colonne, et 3 photos rondes dans une deuxième colonne, sur fond uni coloré avec décor.',
-			'carrot', 
-			false,
-			array( 'produits', 'intro', 'accueil')
-		);
 
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
 			'blog',
 			'Bloc blog',
 			'Section avec titre principal et les trois derniers articles publiés sur le blog. Carrousel sur petits écrans.',
-			'carrot', 
+			'calculator', 
 			true, //JS pour carrousel mobile
 			array('blog', 'article', 'accueil')
 		);
 
-		/*********Bloc newsletter ***************/
-		$this->helper_register_block_type( 
-			'newsletter',
-			'Bloc inscription newsletter',
-			'Section avec titre, formulaire et image de fond pour la page d\'accueil.',
-			'carrot', 
-			false,
-			array('newsletter', 'formulaire', 'accueil')
-		);
 
 		/*********Bloc carrousel de logos ***************/
 		$this->helper_register_block_type( 
 			'carrousel',
 			'Bloc carrousel de logos des marques',
 			'Section avec titre et carrousel de logos des marques',
-			'carrot', 
+			'calculator', 
 			true, //besoin de JS pour le carrousel
 			array('logo', 'marque','carrousel')
 		);
+
+
+		/*********Bloc savoir-faire-etapes ***************/
+		$this->helper_register_block_type( 
+			'savoir-faire-etapes',
+			'Bloc étapes pour page Savoir-Faire',
+			'Section avec intro et 3 étapes numérotées',
+			'calculator', 
+			false, 
+			array('savoir-faire', 'etape')
+		);
 		
 
-		/*********Bloc collaborateurs ***************/
-		$this->helper_register_block_type( 
-			'collaborateurs',
-			'Bloc collaborateurs',
-			'Section avec titre et grille de collaborateurs. Les coordonnées de chaque personne sont à renseigner dans le menu Collaborateurs',
-			'carrot', 
-			false,
-			array('equipe','collaborateur')
-		);
-
-		/*********Bloc produits ***************/
-		$this->helper_register_block_type( 
-			'produits',
-			'Bloc groupe de prouits',
-			'Section avec nom et image principale pour un groupe de prouits, et volet escamotable pour afficher plus de photos.',
-			'carrot', 
-			true, //volets escamotables
-			array('produit')
-		);
 	}
 }
 new BE_ACF_Customizations();

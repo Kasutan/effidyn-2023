@@ -2246,6 +2246,26 @@ form.search-form input.search-submit {
   background-color: var(--rose-ec);
 }
 
+.decor-traits {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.decor-traits .rect {
+  height: 2px;
+  width: 8rem;
+}
+.decor-traits .rect-3 {
+  background-color: var(--violet-ba);
+}
+.decor-traits .rect-2 {
+  background-color: var(--violet-d2);
+}
+.decor-traits .rect-1 {
+  background-color: var(--rose-ec);
+}
+
 .decor-hero-bottom {
   --h:5rem;
   height: 100%;
