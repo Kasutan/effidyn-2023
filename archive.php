@@ -44,7 +44,6 @@ function ea_archive_header() {
 
 	echo '<header class="entry-header">';
 	do_action ('ea_archive_header_before' );
-		echo '<h1 class="entry-title">' . $title . '</h1>';
 	do_action ('ea_archive_header_after' );
 	echo '</header>';
 
@@ -60,12 +59,9 @@ function ea_archive_header() {
 
 }
 
-// Banniere
-add_action( 'ea_archive_header_before', 'kasutan_actus_banniere', 5 );
 
-
-// Breadcrumbs
-add_action( 'ea_archive_header_before', 'kasutan_fil_ariane', 10 );
+// Bannière avec titre, sur-titre et décors
+add_action( 'ea_archive_header_before', 'kasutan_page_banniere', 7 );
 
 // Fermer balise loop
 add_action( 'tha_content_while_after', 'ea_archive_while_after',10 );

@@ -17,21 +17,14 @@ function kasutan_single_body_class( $classes ) {
 }
 add_filter( 'body_class', 'kasutan_single_body_class' );
 
-// Image bannière 
-add_action( 'tha_entry_top', 'kasutan_actus_banniere', 5 );
+// Bannière avec titre, sur-titre et décors
+add_action( 'tha_entry_top', 'kasutan_page_banniere', 7 );
 
-
-// Breadcrumbs 
-add_action( 'tha_entry_top', 'kasutan_fil_ariane', 8 );
-
-
-
-//Titre déplacé dans le contenu
-remove_action( 'tha_entry_top', 'ea_entry_title' );
 
 
 //Titre inséré avant le contenu pour mise en page grille
 add_action('tha_entry_content_before', 'kasutan_single_entry_content_before');
+//TODO utiliser ces hooks pour insérer extrait, métas et thumbnail
 function kasutan_single_entry_content_before() {
 	if(get_post_type() !== 'post') {
 		return;

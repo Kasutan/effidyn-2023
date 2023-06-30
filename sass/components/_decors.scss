@@ -44,3 +44,15 @@
 		background-color:var(--rose-ec);
 	}
 }
+
+.decor-hero-bottom {
+	--h:5rem;
+	@include decor;
+
+	background-image: url('icons/deco-hero-bottom_380.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom:0;
+	height:var(--h);
+	top:unset;
+}

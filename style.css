@@ -324,7 +324,11 @@ body {
 }
 
 body .entry-content {
-  padding: 0 var(--padding-x) 1px;
+  background-color: var(--blanc);
+  margin: 0 auto;
+  max-width: calc(100% - 2 * var(--padding-x));
+  padding: 0;
+  position: relative;
 }
 
 .alignfull, .bleed-container {
@@ -1707,23 +1711,48 @@ button.ouvrir-sous-menu:focus {
 ## Entry-header
 --------------------------------------------------------------*/
 .page-banniere {
+  --hauteur-banniere:15rem;
+  --hauteur-titre:4rem;
+  --hauteur-decor:29rem;
+  --decor-bottom:url("icons/deco-hero-bottom_380.svg");
+  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr var(--hauteur-titre) 1fr;
   height: var(--hauteur-banniere);
-  overflow: hidden;
+  justify-content: center;
   margin: 0 auto;
+  overflow: visible;
   position: relative;
   max-width: var(--largeur-max);
   width: 100%;
 }
-.page-banniere img {
+.page-banniere .titre {
+  color: var(--blanc);
+  grid-row: 2;
+  position: relative;
+}
+.page-banniere .surtitre {
+  align-self: end;
+  color: var(--blanc);
+  font-size: 1.8rem;
+  grid-row: 1;
+  line-height: 2.2rem;
+  opacity: 0.3;
+  position: relative;
+  text-align: center;
+}
+.page-banniere .fond-banniere {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.entry-title {
-  text-align: center;
+  background-color: var(--bleu-9a);
+  background-image: var(--decor-bottom);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  height: var(--hauteur-decor);
 }
 
 /*--------------------------------------------------------------
@@ -2155,6 +2184,21 @@ form.search-form input.search-submit {
 }
 .decor-footer .rect-3 {
   background-color: var(--rose-ec);
+}
+
+.decor-hero-bottom {
+  --h:5rem;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-image: url("icons/deco-hero-bottom_380.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  height: var(--h);
+  top: unset;
 }
 
 .filtre-archive {

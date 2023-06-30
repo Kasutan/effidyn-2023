@@ -244,7 +244,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	$titre=$surtitre="";
 	$publication=false;
 	if(is_single() ) {
-		$post_type=get_the_post_type();
+		$post_type=get_post_type();
 		$titre=get_the_title();
 		if($post_type==='post') {
 				$surtitre=$surtitres['blog'];
@@ -252,6 +252,10 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 		} else if($post_type==='reference') {
 				$surtitre=$surtitres['cas'];
 		} 
+	} if (is_search()) {
+		$titre=__('Recherche :','effidyn').' '.get_search_query();
+	} elseif (is_404()) {
+		$titre= __('Page introuvable :','effidyn');
 	} else if (is_page()) {
 		$titre=get_the_title();
 		$current=get_post(get_the_ID());
@@ -259,6 +263,8 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 		if($parent) {
 			$surtitre=strip_tags(get_the_title($parent));
 		}
+
+		//Note : l'archive des références est une page enfant ordinaire
 	} else if(is_category()) {
 		$surtitre=$surtitres['blog'];
 		$titre=strip_tags(single_cat_title( '', false ));
@@ -272,20 +278,28 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	} elseif (is_home()) {
 		$titre=$surtitres['blog'];
 		$publication=true;
-
 	}
 
-	//TODO archives des références, search et 404
+	$class='';
+	if(!empty($surtitre)) {
+		$class='avec_surtitre';
+	}
+	if($publication) {
+		$class.=' publication';
+	}
 
-	//si surtitre non vide ajouter une classe
-	//si $publication ajouter une classe
 
-	printf('<div class="page-banniere">');
-		//decor top si !$publication
-		//surtitre
-		//titre
-		//decor diagonale si !$publication
-		//TODO inclure un div qui overflow (avec décor ou dégradé)
+	printf('<div class="page-banniere %s">',$class);
+	
+	echo '<div class="fond-banniere">';
+	//div qui overflow (avec décors ou dégradé)
+		if(!$publication) {
+			echo '<div class="decor-hero-top"></div>';
+		}
+	echo '</div>';
+
+	if($surtitre) printf('<span class="surtitre">%s</span>',$surtitre);
+	printf('<h1 class="titre">%s</h1>',$titre);
 	echo '</div>';
 	
 }

@@ -64,7 +64,11 @@ body {
 
 
 body .entry-content {
-	padding: 0 var(--padding-x) 1px;
+	background-color: var(--blanc);
+	margin:0 auto;
+	max-width: calc(100% - 2* var(--padding-x));
+	padding: 0;
+	position:relative;
 }
 
 

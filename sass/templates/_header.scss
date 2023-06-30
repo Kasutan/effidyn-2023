@@ -107,22 +107,45 @@
 ## Entry-header
 --------------------------------------------------------------*/
 .page-banniere {	
+	--hauteur-banniere:15rem;
+	--hauteur-titre:4rem;
+	--hauteur-decor:29rem;
+	--decor-bottom:url('icons/deco-hero-bottom_380.svg');
+	align-items: center;
+	display: grid;
+	grid-template-rows: 1fr var(--hauteur-titre) 1fr;
 	height:var(--hauteur-banniere);
-	overflow: hidden;
+	justify-content: center;
 	margin: 0 auto;
+	overflow: visible;
 	position: relative;	
 	max-width:var(--largeur-max);
 	width:100%;
-	img {
-		height:100%;
-		left:0;
-		position: absolute;
-		top:0;
-		width:100%;
+	.titre {
+		color:var(--blanc);
+		grid-row:2;
+		position: relative;
+	}
+	.surtitre {
+		align-self:end;
+		color:var(--blanc);
+		font-size: 1.8rem;
+		grid-row: 1;
+		line-height: 2.2rem;
+		opacity: 0.3;
+		position:relative;
+		text-align: center;
+	}
+	.fond-banniere {
+		@include decor;
+
+		background-color: var(--bleu-9a);
+		background-image: var(--decor-bottom);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: bottom;
+		height:var(--hauteur-decor);
 	}
 }
 
-.entry-title {
-	text-align: center;
-}
 
