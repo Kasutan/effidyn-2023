@@ -21,12 +21,14 @@
 		}
 	}
 
-	&.decor-grey::after {
-		background-image:url('icons/top-bloc-grey_XS.svg');
-		top:-5px;
-		@include bp(lg) {
-			background-image:url('icons/top-bloc-grey_XL.svg');
-		}
+	&.decor-grey, &.decor-bleu {
+		&::after {
+			background-image:url('icons/top-bloc-grey_XS.svg');
+			top:-5px;
+			@include bp(lg) {
+				background-image:url('icons/top-bloc-grey_XL.svg');
+			}
+		} 
 	}
 }
 

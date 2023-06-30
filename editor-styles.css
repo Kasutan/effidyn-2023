@@ -53,13 +53,12 @@ textarea {
 @media screen and (max-width: 781px) {
   .wp-block-group.bloc-bleu {
     width: 100vw;
-    margin-left: calc(-1 * var(--padding-x));
+    margin-left: calc(-1 * var(--padding-x) - 2rem);
     margin-bottom: -1.8em;
   }
 }
 @media screen and (max-width: 781px) and (min-width: 1920px) {
   .wp-block-group.bloc-bleu {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }
@@ -83,12 +82,11 @@ textarea {
 
 .wp-block-image.alignwide {
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x));
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
   padding: 0 var(--padding-x);
 }
 @media (min-width: 1920px) {
   .wp-block-image.alignwide {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }

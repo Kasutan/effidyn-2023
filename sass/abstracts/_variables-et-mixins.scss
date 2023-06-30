@@ -37,9 +37,8 @@
 
 @mixin bleed {
 	width: 100vw;
-	margin-left: calc(-1 * var(--padding-x));
+	margin-left: calc(-1 * var(--padding-x) - 2rem); //pour compenser le padding-interne de .entry-content
 	@include bp(xxl) {
-		margin-left:unset;
 		width:var(--largeur-max);
 	}
 }

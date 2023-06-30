@@ -6,7 +6,7 @@
   min-height: var(--h-banniere-accueil);
   position: relative;
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x));
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
 }
 @supports (height: clamp(560px, 78vw, 1083px)) {
   .banniere {
@@ -15,7 +15,6 @@
 }
 @media (min-width: 1920px) {
   .banniere {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }

@@ -223,6 +223,16 @@ class BE_ACF_Customizations {
 			false, 
 			array('savoir-faire', 'etape')
 		);
+
+		/*********Bloc savoir-faire-services ***************/
+		$this->helper_register_block_type( 
+			'savoir-faire-services',
+			'Bloc services pour page Savoir-Faire',
+			'Section avec titre et grille de services avec pictos.',
+			'calculator', 
+			false, 
+			array('savoir-faire', 'service')
+		);
 		
 
 	}

@@ -329,16 +329,16 @@ body .entry-content {
   margin: 0 auto;
   max-width: calc(100% - 2 * var(--padding-x));
   padding: 2rem;
+  padding-bottom: 0;
   position: relative;
 }
 
 .alignfull, .bleed-container {
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x));
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
 }
 @media (min-width: 1920px) {
   .alignfull, .bleed-container {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }
@@ -2150,13 +2150,12 @@ form.search-form input.search-submit {
 @media screen and (max-width: 781px) {
   .wp-block-group.bloc-bleu {
     width: 100vw;
-    margin-left: calc(-1 * var(--padding-x));
+    margin-left: calc(-1 * var(--padding-x) - 2rem);
     margin-bottom: -1.8em;
   }
 }
 @media screen and (max-width: 781px) and (min-width: 1920px) {
   .wp-block-group.bloc-bleu {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }
@@ -2180,12 +2179,11 @@ form.search-form input.search-submit {
 
 .wp-block-image.alignwide {
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x));
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
   padding: 0 var(--padding-x);
 }
 @media (min-width: 1920px) {
   .wp-block-image.alignwide {
-    margin-left: unset;
     width: var(--largeur-max);
   }
 }
@@ -2223,12 +2221,12 @@ form.search-form input.search-submit {
     background-image: url("icons/top-bloc-color_XL.svg");
   }
 }
-.decor-top.decor-grey::after {
+.decor-top.decor-grey::after, .decor-top.decor-bleu::after {
   background-image: url("icons/top-bloc-grey_XS.svg");
   top: -5px;
 }
 @media (min-width: 1024px) {
-  .decor-top.decor-grey::after {
+  .decor-top.decor-grey::after, .decor-top.decor-bleu::after {
     background-image: url("icons/top-bloc-grey_XL.svg");
   }
 }
