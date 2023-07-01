@@ -399,7 +399,10 @@ function kasutan_affiche_filtre_articles() {
 *
 */
 
-function kasutan_affiche_bouton($label,$url,$classe='') {
+function kasutan_affiche_bouton($url,$label='',$classe='') {
+	if(empty($label)) {
+		$label=__('En savoir +','effidyn');
+	}
 	printf('<div class="wp-block-buttons is-content-justification-center is-layout-flex">
 		<div class="wp-block-button %s">
 			<a class="wp-block-button__link wp-element-button" href="%s">%s</a>

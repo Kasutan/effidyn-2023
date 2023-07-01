@@ -45,6 +45,12 @@
   margin-bottom: 0;
   text-align: center;
 }
+.savoir-faire-services .texte br {
+  display: none;
+}
+.savoir-faire-services .wp-block-buttons {
+  display: none;
+}
 @media (min-width: 1024px) {
   .savoir-faire-services {
     background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
@@ -80,8 +86,19 @@
   .savoir-faire-services .texte {
     font-size: 2rem;
     line-height: 2.3rem;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     max-width: 22rem;
+  }
+  .savoir-faire-services .texte br {
+    display: block;
+  }
+  .savoir-faire-services .wp-block-buttons {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  .savoir-faire-services a.wp-block-button__link {
+    width: 22rem;
   }
 }
 @media (min-width: 1440px) {

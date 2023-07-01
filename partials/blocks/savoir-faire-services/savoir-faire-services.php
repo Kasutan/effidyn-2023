@@ -25,8 +25,14 @@ printf('<section class="acf savoir-faire-services decor-top decor-bleu %s">', $c
 			$image=esc_attr(get_sub_field('picto'));
 			$titre=wp_kses_post( get_sub_field('titre') );
 			$texte=wp_kses_post( get_sub_field('texte') );
-			printf('<li class="service"><div class="picto">%s</div><p class="titre">%s</p><p class="texte">%s</p>',wp_get_attachment_image($image),$titre,$texte);
-			//TODO ajouter bouton en savoir plus pour desktop
+			$lien=esc_url( get_sub_field('lien') );
+			echo '<li class="service">';
+				printf('<div class="picto">%s</div><p class="titre">%s</p><p class="texte">%s</p>',wp_get_attachment_image($image),$titre,$texte);
+
+				if($lien && function_exists('kasutan_affiche_bouton')) {
+					kasutan_affiche_bouton($lien); //label par défaut
+				}
+			echo '</li>';
 		endwhile;
 		echo '</ul>';
 	endif;

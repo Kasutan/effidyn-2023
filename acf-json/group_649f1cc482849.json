@@ -89,7 +89,7 @@
                     "name": "texte",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "Les retours à la ligne seront visibles uniquement sur grand écran (pas en mobile)",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -129,6 +129,28 @@
                     "mime_types": "",
                     "preview_size": "medium",
                     "parent_repeater": "field_649f1cc49453d"
+                },
+                {
+                    "key": "field_649fe3a69062a",
+                    "label": "Lien pour le bouton \"En savoir plus\"",
+                    "name": "lien",
+                    "aria-label": "",
+                    "type": "page_link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "post_status": "",
+                    "taxonomy": "",
+                    "allow_archives": 1,
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "parent_repeater": "field_649f1cc49453d"
                 }
             ]
         }
@@ -151,5 +173,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688151779
+    "modified": 1688200155
 }
