@@ -2158,6 +2158,14 @@ form.search-form input.search-submit {
     margin-top: 4rem;
   }
 }
+@media (min-width: 1024px) {
+  .entry-content p.intro-suite {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 93rem;
+    text-align: center;
+  }
+}
 
 .decor-top {
   position: relative;
