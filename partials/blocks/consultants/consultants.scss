@@ -2,7 +2,7 @@
 
 .liste-consultants {
 	--taille-img:7.5rem;
-	--taill-picto:2.1rem;
+	--taille-picto:2.1rem;
 	padding:3rem 0;
 	.consultant {
 		align-items: center;
@@ -15,23 +15,31 @@
 		padding:0 1.2rem 2.5rem;
 	}
 	.portrait {
-		background-color: var(--bleu-bordure);
-		border:solid 1px var(--bleu-bordure);
-		border-radius: 100px;
-		height:var(--taille-img);
-		margin-bottom: 1rem;
+		
 		margin-top: calc(-0.5 * var(--taille-img));
 		position: relative;
-		width: var(--taille-img);
+		.image {
+			background-color: var(--bleu-bordure);
+			border:solid 1px var(--bleu-bordure);
+			border-radius: 100px;
+			height:var(--taille-img);
+			margin-bottom: 1rem;
+			overflow: hidden;
+			width: var(--taille-img);
+		}
 		img {
 			height:100%;
 			object-fit: contain;
 			width:100%
 		}
-		svg {
+		.picto {
 			position: absolute;
 			right:-0.5rem;
 			top:1rem;
+			width:var(--taille-picto);
+		}
+		svg {
+			max-width:100%;
 		}
 	}
 	.nom {
@@ -52,66 +60,60 @@
 
 
 	@include bp(lg ) {
-		background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-		padding-top: 9.5rem;
+		--gap:5rem;
+		margin-top: 5rem;
 		padding-bottom: 6rem;
+		padding-top: 0;
+		--taille-img:16.6rem;
+		--taille-picto:3.5rem;
 
-		.titre-section {
-			margin-bottom: 10rem;
-		}
-
-		.services {
-			display: flex;
-			flex-wrap:wrap;
+		.consultants {
+			border-top:solid 1px var(--bleu-bordure);
 			justify-content: center;
 			margin:0 auto;
-			max-width:135rem;
+			max-width:93rem;
+			padding-top: 3.3rem;
 		}
-		.service {
-			flex:0 0 33rem;
-			margin-bottom: 9rem;
+		.consultant {
+			border:none;
+			column-gap:var(--gap);
+			display: grid;
+			grid-template-columns: 16.6rem 1fr;
+			grid-template-rows: 3.2rem 3rem 3rem 1fr;
+			margin-bottom: 4rem;
+			margin-top: 0;
+			padding:0;
 			position: relative;
 		}
-		.picto {
-			height:12.3rem;
-			margin-bottom: 2rem;
-			padding:3rem;
-			width:12.3rem;
+		.portrait {
+			align-self: self-start;
+			margin:0;
+			grid-column: 1;
+			grid-row:4;
+		}
+
+		.nom {
+			font-size: 3.2rem;
+			grid-column: 1 /  span 2;
+			grid-row:1;
+			line-height: 3.2rem;
 		}
 
 		.titre {
-			font-size: 3.2rem;
-			line-height: 3.6rem;
-			margin-bottom: 2rem;
-
+			align-self: self-end;
+			font-size: 2.6rem;
+			grid-column: 1 / span 2;
+			grid-row:2;
+			line-height: 3rem;
+			margin-bottom: 0;
 		}
 		
 		.texte {
-			font-size: 2rem;
-			line-height: 2.3rem;
-			margin:0 auto;
-			max-width: 22rem;
-			br {
-				display: block;
-			}
+			grid-column: 2;
+			grid-row:4;
 		}
 
-		.wp-block-buttons {
-			display: flex;
-			margin-bottom: 0;
-			margin-top: 2rem;
-		}
-		a.wp-block-button__link {
-			width:22rem;
-		}
 	}
 
-	@include bp(xl) {
-		.services {
-			column-gap: 5.7rem;
-		}
-		.service::after {
-			right:-4rem;
-		}
-	}
+
 } 

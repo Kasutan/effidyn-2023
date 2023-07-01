@@ -26,12 +26,12 @@ printf('<section class="acf liste-consultants %s">', $className);
 			$texte=wp_kses_post( get_sub_field('texte') );
 			echo '<li class="consultant">';
 				printf('
-					<div class="portrait">%s %s</div>
+					<div class="portrait"><div class="image">%s</div><div class="picto">%s</div></div>
 					<p class="nom">%s</p>
 					<p class="titre">%s</p>
 					<div class="texte">%s</div>',
 					wp_get_attachment_image($image),
-					kasutan_picto(array('icon'=>'picto-temoignage','size'=>21)),
+					kasutan_picto(array('icon'=>'picto-temoignage','size'=>35)),
 					$nom,
 					$titre,
 					$texte
