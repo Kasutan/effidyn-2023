@@ -21,3 +21,29 @@
 		}
 	}
 }
+
+.rejoindre-effidyn {
+	background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+	@include bleed;
+	padding:3.5rem var(--padding-x) 5.1rem;
+
+	h2 strong {
+		color:var(--rose-ec);
+	}
+	.wp-block-buttons {
+		margin-top: 2rem;
+	}
+	a.wp-block-button__link {
+		border-color:var(--bleu-9a);
+	}
+
+	@include bp(lg) {
+		padding:8.5rem var(--padding-x);
+		h2 {
+			margin-bottom: 3rem;
+		}
+		.wp-block-buttons {
+			margin-top: 4.3rem;
+		}
+	}
+}

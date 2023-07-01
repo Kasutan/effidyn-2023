@@ -66,4 +66,36 @@ textarea {
     text-align: center;
   }
 }
+
+.rejoindre-effidyn {
+  background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  padding: 3.5rem var(--padding-x) 5.1rem;
+}
+@media (min-width: 1920px) {
+  .rejoindre-effidyn {
+    width: var(--largeur-max);
+  }
+}
+.rejoindre-effidyn h2 strong {
+  color: var(--rose-ec);
+}
+.rejoindre-effidyn .wp-block-buttons {
+  margin-top: 2rem;
+}
+.rejoindre-effidyn a.wp-block-button__link {
+  border-color: var(--bleu-9a);
+}
+@media (min-width: 1024px) {
+  .rejoindre-effidyn {
+    padding: 8.5rem var(--padding-x);
+  }
+  .rejoindre-effidyn h2 {
+    margin-bottom: 3rem;
+  }
+  .rejoindre-effidyn .wp-block-buttons {
+    margin-top: 4.3rem;
+  }
+}
 /*# sourceMappingURL=editor-styles.css.map */
