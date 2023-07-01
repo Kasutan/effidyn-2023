@@ -254,6 +254,15 @@ class BE_ACF_Customizations {
 			array('consultant', 'recrutement','rejoindre')
 		);
 		
+		/*********Bloc valeurs-cols ***************/
+		$this->helper_register_block_type( 
+			'valeurs-cols',
+			'Bloc colonnes pour section Nos valeurs dans page Qui sommes nous',
+			'Section avec titre et trois blocs (mobile) / colonnes séparées par un trait bleu (desktop).',
+			'calculator', 
+			false, 
+			array('valeurs', 'col','colonne','qui sommes-nous')
+		);
 
 	}
 }

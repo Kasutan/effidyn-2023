@@ -2251,6 +2251,7 @@ form.search-form input.search-submit {
 .decor-trait-simple {
   margin-bottom: 1.4rem;
   position: relative;
+  text-align: center;
 }
 .decor-trait-simple::after {
   background-color: var(--bleu-texte);

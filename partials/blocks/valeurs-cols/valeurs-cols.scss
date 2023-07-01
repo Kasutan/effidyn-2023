@@ -1,0 +1,103 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.valeurs-cols {
+	margin-bottom: 8rem;
+	padding-top: 0.5rem;
+	.titre-section.decor-trait-simple {
+		margin-bottom: 2.7rem;
+	}
+
+	.col {
+		margin-bottom: 2.5rem;
+	}
+
+	.sous-titre, .titre {
+		br {
+			display: none;
+		}
+	}
+	.titre {
+		color:var(--rose-ec);
+		font-size: 2.2rem;
+		font-weight: 700;
+		line-height: 2.6rem;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+	.sous-titre {
+		color:var(--bleu-texte);
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 2.2rem;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+	.texte {
+		text-align: center;
+	}
+
+
+	@include bp(lg) {
+		--gap:10rem;
+		margin-bottom: 11.6rem;
+		margin-top: 6rem;
+
+		.titre-section.decor-trait-simple {
+			margin-bottom: 8rem;
+		}
+		.sous-titre, .titre {
+			br {
+				display: block;
+			}
+		}
+		.cols {
+			column-gap: var(--gap);
+			display:grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		.col {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+		
+			&::after {
+				background-color: var(--bleu-bordure);
+				top: -2rem;
+				content:'';
+					display:block;
+				height:calc(100% + 4rem);
+				left:unset;
+				position:absolute;
+				right:calc(-0.5 * var(--gap));
+				width:1px;
+			}
+
+			&:last-of-type {
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		.titre {
+			font-size: 3.2rem;
+			line-height: 3.6rem;
+			margin-bottom: 11px;
+		}
+
+		.sous-titre {
+			font-size: 2.6rem;
+			line-height: 3rem;
+			margin-bottom: 11px;
+		}
+		.texte {
+			margin-top: auto;
+		}
+	}
+
+	@include bp(xl) {
+		--gap:14rem;
+		
+	}
+} 
