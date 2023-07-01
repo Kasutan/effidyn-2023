@@ -1,0 +1,107 @@
+.liste-consultants {
+  --taille-img:7.5rem;
+  --taill-picto:2.1rem;
+  padding: 3rem 0;
+}
+.liste-consultants .consultant {
+  align-items: center;
+  border: solid 1px var(--bleu-bordure);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7rem;
+  margin-top: 4rem;
+  padding: 0 1.2rem 2.5rem;
+}
+.liste-consultants .portrait {
+  background-color: var(--bleu-bordure);
+  border: solid 1px var(--bleu-bordure);
+  border-radius: 100px;
+  height: var(--taille-img);
+  margin-bottom: 1rem;
+  margin-top: calc(-0.5 * var(--taille-img));
+  position: relative;
+  width: var(--taille-img);
+}
+.liste-consultants .portrait img {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+.liste-consultants .portrait svg {
+  position: absolute;
+  right: -0.5rem;
+  top: 1rem;
+}
+.liste-consultants .nom {
+  color: var(--rose-e4);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-bottom: 0;
+}
+.liste-consultants .titre {
+  color: var(--bleu-texte);
+  margin-bottom: 1rem;
+}
+.liste-consultants .texte {
+  font-style: italic;
+}
+@media (min-width: 1024px) {
+  .liste-consultants {
+    background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+    padding-top: 9.5rem;
+    padding-bottom: 6rem;
+  }
+  .liste-consultants .titre-section {
+    margin-bottom: 10rem;
+  }
+  .liste-consultants .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 135rem;
+  }
+  .liste-consultants .service {
+    flex: 0 0 33rem;
+    margin-bottom: 9rem;
+    position: relative;
+  }
+  .liste-consultants .picto {
+    height: 12.3rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    width: 12.3rem;
+  }
+  .liste-consultants .titre {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    margin-bottom: 2rem;
+  }
+  .liste-consultants .texte {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin: 0 auto;
+    max-width: 22rem;
+  }
+  .liste-consultants .texte br {
+    display: block;
+  }
+  .liste-consultants .wp-block-buttons {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  .liste-consultants a.wp-block-button__link {
+    width: 22rem;
+  }
+}
+@media (min-width: 1440px) {
+  .liste-consultants .services {
+    column-gap: 5.7rem;
+  }
+  .liste-consultants .service::after {
+    right: -4rem;
+  }
+}

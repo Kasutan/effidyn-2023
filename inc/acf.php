@@ -243,6 +243,16 @@ class BE_ACF_Customizations {
 			false, 
 			array('savoir-faire', 'col','colonne')
 		);
+
+		/*********Bloc consultants ***************/
+		$this->helper_register_block_type( 
+			'consultants',
+			'Bloc consultants pour page Nous rejoindre',
+			'Section avec liste de portraits de consultants. Pour chaque personne : photo, nom, titre et témoignage.',
+			'calculator', 
+			false, 
+			array('consultant', 'recrutement','rejoindre')
+		);
 		
 
 	}
