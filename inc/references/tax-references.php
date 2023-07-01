@@ -20,7 +20,7 @@ function kasutan_savoir_faire_tag() {
 		'show_ui' => true, 
 		'show_admin_column' => true,
 		'query_var' => true,
-		'public' => true, 
+		'public' => false, //pas de pages archives pour cette custom tax (on place juste un bandeau au pas de la page enfant de "Savoir-faire" concernée)
 		'show_in_rest' => true
 	));
 }

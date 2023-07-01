@@ -262,7 +262,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 			$surtitre=strip_tags(get_the_title($parent));
 		}
 
-		//Note : l'archive des références est une page enfant ordinaire
+		//Note : l'archive des références est une page enfant ordinaire, les archives de custom tax aussi
 	} else if(is_category()) {
 		$surtitre=$surtitres['blog'];
 		$titre=strip_tags(single_cat_title( '', false ));
