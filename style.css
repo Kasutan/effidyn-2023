@@ -2124,78 +2124,25 @@ form.search-form input.search-submit {
   }
 }
 
-.wp-block-group.alignfull {
-  --wp--style--block-gap:0;
+.entry-content p.intro {
+  color: var(--bleu-9f);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
-.wp-block-group.alignfull .wp-block-image, .wp-block-group.alignfull .wp-block-columns > .wp-block-column {
-  margin: 0;
+.entry-content p.intro br {
+  display: none;
 }
-.wp-block-group.alignfull .wp-block-column > .wp-block-image {
-  height: 100%;
-}
-.wp-block-group.alignfull .wp-block-column > .wp-block-image img {
-  height: 100%;
-  width: 100%;
-}
-.wp-block-group.alignfull .wp-block-columns {
-  margin-bottom: 0;
-}
-.wp-block-group.bloc-bleu {
-  background-color: var(--bleu);
-  padding: 3rem;
-}
-.wp-block-group.bloc-bleu p, .wp-block-group.bloc-bleu h3, .wp-block-group.bloc-bleu h4 {
-  color: var(--blanc);
-}
-@media screen and (max-width: 781px) {
-  .wp-block-group.bloc-bleu {
-    width: 100vw;
-    margin-left: calc(-1 * var(--padding-x) - 2rem);
-    margin-bottom: -1.8em;
+@media (min-width: 1024px) {
+  .entry-content p.intro {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
   }
-}
-@media screen and (max-width: 781px) and (min-width: 1920px) {
-  .wp-block-group.bloc-bleu {
-    width: var(--largeur-max);
+  .entry-content p.intro br {
+    display: block;
   }
-}
-
-.wp-block-columns.alignfull {
-  margin-bottom: 0;
-  padding: var(--margin-y-2) var(--padding-x);
-}
-.wp-block-columns a.wp-block-button__link {
-  min-width: 10rem;
-}
-
-.wp-block-column.gap-fallback {
-  padding-left: 2em;
-}
-@supports (font-size: clamp(1em, 10vw, 10em)) {
-  .wp-block-column.gap-fallback {
-    padding-left: 0;
-  }
-}
-
-.wp-block-image.alignwide {
-  width: 100vw;
-  margin-left: calc(-1 * var(--padding-x) - 2rem);
-  padding: 0 var(--padding-x);
-}
-@media (min-width: 1920px) {
-  .wp-block-image.alignwide {
-    width: var(--largeur-max);
-  }
-}
-.wp-block-image.alignwide figcaption {
-  text-align: right;
-}
-
-.wp-block-code {
-  background-color: lightgrey;
-  margin-bottom: var(--margin-y-2);
-  padding: 2rem;
-  font-style: italic;
 }
 
 .decor-top {
