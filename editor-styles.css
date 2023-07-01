@@ -47,4 +47,15 @@ textarea {
     display: block;
   }
 }
+@media (min-width: 1024px) {
+  .entry-content p.intro {
+    margin-bottom: 4rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 114rem;
+  }
+  .entry-content p.intro:first-child {
+    margin-top: 4rem;
+  }
+}
 /*# sourceMappingURL=editor-styles.css.map */

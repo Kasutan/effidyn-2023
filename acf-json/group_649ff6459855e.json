@@ -1,0 +1,129 @@
+{
+    "key": "group_649ff6459855e",
+    "title": "Bloc colonnes pour pages enfant de Savoir-Faire",
+    "fields": [
+        {
+            "key": "field_649ff645b24a1",
+            "label": "Bloc colonnes pour pages enfant de Savoir-Faire",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section avec titre et deux colonnes encadrées (mobile) séparées par un trait bleu (desktop). Les retours à la ligne des titres seront visibles uniquement sur grand écran (pas en mobile)",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_649ff645b5ee8",
+            "label": "Titre de la section",
+            "name": "titre_section",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 1,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_649ff645b9985",
+            "label": "Colonnes",
+            "name": "cols",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 2,
+            "max": 2,
+            "collapsed": "field_649f0e996830b",
+            "button_label": "Ajouter une colonne",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_649ff645cc750",
+                    "label": "Titre",
+                    "name": "titre",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_649ff645b9985"
+                },
+                {
+                    "key": "field_649ff645d0273",
+                    "label": "Texte",
+                    "name": "texte",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 10,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_649ff645b9985"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/savoir-faire-cols"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1688207315
+}

@@ -78,3 +78,30 @@
 	height:var(--h);
 	top:unset;
 }
+
+//classe appliquée à un titre pour placer un petit trait bleu foncé dessous
+.decor-trait-simple {
+	margin-bottom: 1.4rem;
+	position: relative;
+
+	&::after {
+		background-color: var(--bleu-texte);
+		content:'';
+		display:block;
+		height:4px;
+		left:calc(50% - 2.5rem);
+		margin-top: 1.2rem;
+		position:relative;
+		width:5rem;
+	}
+
+	@include bp(lg) {
+		margin-bottom: 2.95rem;
+		min-height: 10rem;
+		&::after {
+			left:calc(50% - 4rem);
+			margin-top: 2.2rem;
+			width:8rem;
+		}
+	}
+}

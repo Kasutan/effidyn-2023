@@ -2,5 +2,14 @@
 	p.intro {
 		@include intro;
 		margin-bottom: 2.5rem;
+		@include bp(lg) {
+			margin-bottom: 4rem;
+			margin-right: auto;
+			margin-left:auto;
+			max-width:114rem;
+			&:first-child {
+				margin-top: 4rem;
+			}
+		}
 	}
 }

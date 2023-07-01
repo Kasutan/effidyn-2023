@@ -233,6 +233,16 @@ class BE_ACF_Customizations {
 			false, 
 			array('savoir-faire', 'service')
 		);
+
+		/*********Bloc savoir-faire-cols ***************/
+		$this->helper_register_block_type( 
+			'savoir-faire-cols',
+			'Bloc colonnes pour pages enfant de Savoir-Faire',
+			'Section avec titre et deux colonnes encadrées (mobile) séparées par un trait bleu (desktop).',
+			'calculator', 
+			false, 
+			array('savoir-faire', 'col','colonne')
+		);
 		
 
 	}

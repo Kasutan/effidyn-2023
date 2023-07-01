@@ -267,8 +267,10 @@ p, h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--margin-y-1);
 }
 
-.max-width-60 {
-  max-width: 60rem;
+.max-width-930 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 93rem;
 }
 
 /*--------------------------------------------------------------
@@ -420,6 +422,7 @@ body {
   --bleu-1fc: #EBF1FC;
   --bleu-f4: #CAD6F4;
   --bleu-8fc: #C7D8FC;
+  --bleu-bordure:#C7D8FC;
   --bleu-9f: #0B289F;
   --bleu-texte: #0B289F;
   --bleu-9a: #04329A;
@@ -2144,6 +2147,17 @@ form.search-form input.search-submit {
     display: block;
   }
 }
+@media (min-width: 1024px) {
+  .entry-content p.intro {
+    margin-bottom: 4rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 114rem;
+  }
+  .entry-content p.intro:first-child {
+    margin-top: 4rem;
+  }
+}
 
 .decor-top {
   position: relative;
@@ -2224,6 +2238,32 @@ form.search-form input.search-submit {
   bottom: 0;
   height: var(--h);
   top: unset;
+}
+
+.decor-trait-simple {
+  margin-bottom: 1.4rem;
+  position: relative;
+}
+.decor-trait-simple::after {
+  background-color: var(--bleu-texte);
+  content: "";
+  display: block;
+  height: 4px;
+  left: calc(50% - 2.5rem);
+  margin-top: 1.2rem;
+  position: relative;
+  width: 5rem;
+}
+@media (min-width: 1024px) {
+  .decor-trait-simple {
+    margin-bottom: 2.95rem;
+    min-height: 10rem;
+  }
+  .decor-trait-simple::after {
+    left: calc(50% - 4rem);
+    margin-top: 2.2rem;
+    width: 8rem;
+  }
 }
 
 .filtre-archive {

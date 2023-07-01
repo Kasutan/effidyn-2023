@@ -1,0 +1,79 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.savoir-faire-cols {
+	padding-bottom: 1rem;
+	padding-top: 0.5rem;
+	.titre-section {
+		margin-bottom: 2.7rem;
+		text-align: center;
+	}
+	.titre-section, .titre {
+		br {
+			display: none;
+		}
+	}
+	.col {
+		background-color: #fff;
+		border:solid 1px var(--bleu-bordure);
+		border-radius:10px;
+		margin-bottom: 2.5rem;
+		padding: 1.8rem;
+		&:first-of-type {
+			position: relative;
+			&::after {
+				background-color: var(--bleu-bordure);
+				bottom:-2.5rem;
+				content:'';
+				display:block;
+				height:2.6rem;
+				left:50%;
+				position:absolute;
+				width:1px;
+			}
+		}
+	}
+
+	.titre {
+		text-align: center;
+	}
+	
+	@include bp(lg) {
+		--gap:5rem;
+		padding-top: 1.5rem;
+
+		.titre-section {
+			font-size: 3.2rem;
+			line-height: 3.6rem;
+			margin-bottom: 6rem;
+		}
+		.titre-section, .titre {
+			br {
+				display: block;
+			}
+		}
+		.cols {
+			column-gap: var(--gap);
+			display:grid;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.col {
+			border: none;
+			
+			&:first-of-type {
+				&::after {
+					bottom: 0;
+					height:calc(100% + 1rem);
+					left:unset;
+					right:calc(-0.5 * var(--gap));
+					width:1px;
+				}
+			}
+		}
+	}
+
+	@include bp(xl) {
+		--gap:9rem;
+		
+	}
+} 
