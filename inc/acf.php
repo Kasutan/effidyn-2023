@@ -264,6 +264,16 @@ class BE_ACF_Customizations {
 			array('valeurs', 'col','colonne','qui sommes-nous')
 		);
 
+		/*********Bloc équipe ***************/
+		$this->helper_register_block_type( 
+			'equipe',
+			'Bloc équipe pour page Nous rejoindre',
+			'Section avec liste de portraits de dirigeants. Pour chaque personne : photo, nom, diplômes, bio et lien LinkedIn.',
+			'calculator', 
+			false, 
+			array('equipe', 'qui sommes-nous','dirigeant')
+		);
+
 	}
 }
 new BE_ACF_Customizations();

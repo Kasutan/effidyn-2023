@@ -1,0 +1,144 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.liste-dirigeants {
+	--taille-img: 15rem;
+	--taille-picto: 4rem;
+	margin-bottom: 5.5rem;
+
+	.titre-section.decor-trait-simple {
+		margin-bottom: 2rem;
+	}
+
+	.intro-section {
+		margin-bottom: 3.8rem;
+		text-align: center;
+	}
+
+	.dirigeant {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 4rem;
+	}
+
+	.portrait {
+		margin-bottom: 1rem;
+		position: relative;
+
+		.image {
+			background-color: var(--bleu-1fc);
+			border: solid 1px var(--bleu-bordure);
+			border-radius: 100%;
+			height: var(--taille-img);
+			overflow: hidden;
+			width: var(--taille-img);
+		}
+
+		img {
+			height: 100%;
+			object-fit: contain;
+			width: 100%
+		}
+
+		.picto {
+			background-color: #04329A;
+			background-image: url('linkedin.svg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 45% auto;
+			border-radius: 50%;
+			bottom: 1.5rem;
+			display: block;
+			height: var(--taille-picto);
+			padding: 1rem;
+			position: absolute;
+			right: 3px;
+			width: var(--taille-picto);
+		}
+	}
+
+	.nom {
+		color: var(--bleu-texte);
+		font-size: 2.2rem;
+		font-weight: 700;
+		line-height: 2.6rem;
+		margin-bottom: 3px;
+	}
+
+	.diplomes {
+		color: var(--bleu-texte);
+		font-style: italic;
+		margin-bottom: 0.7rem;
+		text-align: center;
+	}
+
+	.texte {
+		max-width: 39rem;
+	}
+
+
+	@include bp(lg) {
+		--gap: 5.7rem;
+		--taille-img: 28rem;
+		--taille-picto: 6rem;
+		margin-bottom: 12.4rem;
+
+		.titre-section.decor-trait-simple {
+			margin-bottom: 5.8rem;
+		}
+
+		.intro-section {
+			margin-bottom: 8rem;
+			margin-right: auto;
+			margin-left: auto;
+			max-width: 114rem;
+		}
+
+		.dirigeants {
+			margin: 0 auto;
+			max-width: 103rem;
+		}
+
+		.dirigeant {
+			column-gap: var(--gap);
+			display: grid;
+			grid-template-columns: 28rem 1fr;
+			grid-template-rows: repeat(3, auto);
+			margin-bottom: 11rem;
+		}
+
+		.portrait {
+			align-self: self-start;
+			margin: 0;
+			grid-column: 1;
+			grid-row: 1 / span 3;
+		}
+
+		.nom {
+			font-size: 2.6rem;
+			grid-column: 2;
+			grid-row: 1;
+			line-height: 3rem;
+			margin-bottom: 1rem;
+			text-align: left;
+		}
+
+		.diplomes {
+			font-size: 2.6rem;
+			grid-column: 2;
+			grid-row: 2;
+			line-height: 3rem;
+			margin-bottom: 0.9rem;
+			text-align: left;
+		}
+
+		.texte {
+			grid-column: 2;
+			grid-row: 3;
+			max-width: unset;
+		}
+
+	}
+
+
+}

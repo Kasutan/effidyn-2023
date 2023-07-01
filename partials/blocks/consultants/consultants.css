@@ -18,9 +18,9 @@
   position: relative;
 }
 .liste-consultants .portrait .image {
-  background-color: var(--bleu-bordure);
+  background-color: var(--bleu-1fc);
   border: solid 1px var(--bleu-bordure);
-  border-radius: 100px;
+  border-radius: 100%;
   height: var(--taille-img);
   margin-bottom: 1rem;
   overflow: hidden;
