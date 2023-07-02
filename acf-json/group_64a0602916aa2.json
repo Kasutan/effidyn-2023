@@ -1,10 +1,10 @@
 {
     "key": "group_64a0602916aa2",
-    "title": "Bloc colonnes pour section Nos valeurs dans page Qui sommes nous",
+    "title": "Bloc colonnes pour pages Qui sommes nous et Notre approche",
     "fields": [
         {
             "key": "field_64a0602921ed5",
-            "label": "Bloc colonnes pour section Nos valeurs dans page Qui sommes nous",
+            "label": "Bloc colonnes pour pages Qui sommes nous et Notre approche",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Section avec titre et trois blocs (mobile) \/ colonnes séparées par un trait bleu (desktop).",
+            "message": "Section avec titre et deux ou trois blocs (mobile) \/ colonnes séparées par un trait bleu (desktop). Variante avec des pictos",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -41,12 +41,122 @@
             "new_lines": "br"
         },
         {
+            "key": "field_64a153930fd91",
+            "label": "Introduction de la section",
+            "name": "intro_section",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Le texte placé entre balises span sera affiché en rose",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 1,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_64a14c06cfee1",
+            "label": "Nombre de colonnes",
+            "name": "nb_cols",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2": "2",
+                "3": "3"
+            },
+            "default_value": 3,
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_64a153ce0fd92",
+            "label": "Style de la section",
+            "name": "style",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "blanc": "fond blanc sans décor",
+                "decor": "fond dégradé bleu clair avec décor"
+            },
+            "default_value": "blanc",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_64a16028afc7a",
+            "label": "Alignement du texte",
+            "name": "centrer_texte",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Centrer le texte ?",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_64a1646693e53",
+            "label": "Masquer les traits de séparation entre les colonnes ?",
+            "name": "masquer_traits",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Masquer les traits",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_64a0602929746",
             "label": "Colonnes",
             "name": "cols",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Les retours à la ligne des sous-titres seront uniquement visibles en grand écran (pas en mobile).",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -56,7 +166,7 @@
             },
             "layout": "row",
             "pagination": 0,
-            "min": 3,
+            "min": 2,
             "max": 3,
             "collapsed": "field_649f0e996830b",
             "button_label": "Ajouter une colonne",
@@ -84,9 +194,82 @@
                     "parent_repeater": "field_64a0602929746"
                 },
                 {
+                    "key": "field_64a14c5ecfee4",
+                    "label": "Picto pour sous-titre 1",
+                    "name": "picto_1",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_64a0602929746"
+                },
+                {
                     "key": "field_64a0605afcafb",
-                    "label": "Sous-titre",
-                    "name": "sous_titre",
+                    "label": "Sous-titre 1",
+                    "name": "sous_titre_1",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_64a0602929746"
+                },
+                {
+                    "key": "field_64a14c7ccfee5",
+                    "label": "Picto pour sous-titre 2",
+                    "name": "picto_2",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_64a0602929746"
+                },
+                {
+                    "key": "field_64a14c4fcfee3",
+                    "label": "Sous-titre 2",
+                    "name": "sous_titre_2",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
@@ -146,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688232328
+    "modified": 1688298781
 }

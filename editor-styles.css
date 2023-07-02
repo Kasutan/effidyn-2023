@@ -27,6 +27,11 @@ textarea {
   font-family: "Kantumruy Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.wp-block-image.aligncenter {
+  display: flex;
+  justify-content: center;
+}
+
 .entry-content p.intro {
   color: var(--bleu-9f);
   font-size: 2rem;

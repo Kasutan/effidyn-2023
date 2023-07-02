@@ -3,19 +3,37 @@
 .valeurs-cols {
 	margin-bottom: 8rem;
 	padding-top: 0.5rem;
+
+	&.decor-top {
+		@include bleed;
+
+		background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+
+		margin-bottom: 7rem;
+		margin-top: 6rem;
+		padding: 3.5rem var(--padding-x) 0;
+		.texte {
+			
+		}
+	}
+
 	.titre-section.decor-trait-simple {
-		margin-bottom: 2.7rem;
+		margin-bottom: 2.2rem;
+	}
+
+	.intro-section {
+		font-weight: 700;
+		margin-bottom: 2rem;
+		text-align: center;
+		span {
+			color:var(--rose-ec);
+		}
 	}
 
 	.col {
 		margin-bottom: 2.5rem;
 	}
 
-	.sous-titre, .titre {
-		br {
-			display: none;
-		}
-	}
 	.titre {
 		color:var(--rose-ec);
 		font-size: 2.2rem;
@@ -31,9 +49,40 @@
 		line-height: 2.2rem;
 		margin-bottom: 5px;
 		text-align: center;
+		&.avec-picto {
+			align-items: center;
+			display: flex;
+			font-size: 1.5rem;
+			font-weight: 700;
+			justify-content: flex-start;
+			line-height: 1.8rem;
+			margin: 0 auto 1.1rem;
+			width : 13rem; // pour aligner les pictos
+			.picto {
+				display:inline-block;
+				flex: 0 0 2.6rem;
+				margin-right: 1.2rem;
+				width:2.6rem;
+			}
+		}
+	}
+	.picto-seul {
+		margin: 0 auto 1rem;
+		width:3.6rem;
 	}
 	.texte {
-		text-align: center;
+		p {
+			margin-bottom: 0.5rem;
+			margin-left:auto;
+			margin-right:auto;
+			max-width:53rem;
+		}
+	}
+
+	&.centrer-texte {
+		.texte {
+			text-align: center;
+		}
 	}
 
 
@@ -42,18 +91,31 @@
 		margin-bottom: 11.6rem;
 		margin-top: 6rem;
 
+		&.decor-top {
+			margin-bottom: 13rem;
+			padding-top: 7.5rem;
+
+			.titre-section.decor-trait-simple {
+				margin-bottom: 4.6rem;
+			}
+
+			.intro-section {
+				margin-bottom: 9.8rem;
+			}
+		}
+
 		.titre-section.decor-trait-simple {
 			margin-bottom: 8rem;
 		}
-		.sous-titre, .titre {
-			br {
-				display: block;
-			}
-		}
+		
 		.cols {
 			column-gap: var(--gap);
 			display:grid;
 			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		&.nb-cols-2 .cols {
+			grid-template-columns: 1fr 1fr;
 		}
 
 		.col {
@@ -80,6 +142,10 @@
 			}
 		}
 
+		&.masquer-traits .col::after {
+			display: none;
+		}
+
 		.titre {
 			font-size: 3.2rem;
 			line-height: 3.6rem;
@@ -90,9 +156,32 @@
 			font-size: 2.6rem;
 			line-height: 3rem;
 			margin-bottom: 11px;
+			&.avec-picto {
+				font-size: 2.2rem;
+				line-height: 3rem;
+				width:16rem;
+				&:first-of-type {
+					margin-top: auto;
+				}
+				&:last-of-type {
+					margin-bottom: 2.6rem;
+				}
+			}
+		}
+
+		.picto-seul {
+			margin: 0 auto 3.8rem;
+			width:5rem;
 		}
 		.texte {
 			margin-top: auto;
+			p {
+				margin-bottom: 1.1rem;
+			}
+		}
+
+		.sous-titre.avec-picto + .texte {
+			margin-top: unset;
 		}
 	}
 

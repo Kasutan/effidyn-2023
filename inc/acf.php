@@ -257,11 +257,11 @@ class BE_ACF_Customizations {
 		/*********Bloc valeurs-cols ***************/
 		$this->helper_register_block_type( 
 			'valeurs-cols',
-			'Bloc colonnes pour section Nos valeurs dans page Qui sommes nous',
-			'Section avec titre et trois blocs (mobile) / colonnes séparées par un trait bleu (desktop).',
+			'Bloc colonnes pour pages Qui sommes nous et Notre approche',
+			'Section avec titre et deux ou trois blocs (mobile) / colonnes séparées par un trait bleu (desktop). Variante avec des pictos',
 			'calculator', 
 			false, 
-			array('valeurs', 'col','colonne','qui sommes-nous')
+			array('valeurs', 'col','colonne','qui sommes-nous','approche')
 		);
 
 		/*********Bloc équipe ***************/

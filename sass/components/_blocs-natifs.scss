@@ -1,3 +1,9 @@
+.wp-block-image.aligncenter {
+	display: flex;
+	justify-content: center;
+}
+
+
 .entry-content {
 	p.intro {
 		@include intro;

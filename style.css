@@ -273,6 +273,21 @@ p, h1, h2, h3, h4, h5, h6 {
   max-width: 93rem;
 }
 
+@media (min-width: 1024px) {
+  br.mobile {
+    display: none;
+  }
+}
+
+br.desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  br.desktop {
+    display: block;
+  }
+}
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -2126,6 +2141,11 @@ form.search-form input.search-submit {
   .single-post .entry-content {
     grid-template-columns: 60% 40%;
   }
+}
+
+.wp-block-image.aligncenter {
+  display: flex;
+  justify-content: center;
 }
 
 .entry-content p.intro {

@@ -113,4 +113,18 @@
 	max-width:93rem;
 }
 
+br.mobile {
+	@include bp(lg) {
+		display: none;
+	}
+}
+
+br.desktop {
+	display: none;
+
+	@include bp(lg) {
+		display: block;
+	}
+}
+
 
