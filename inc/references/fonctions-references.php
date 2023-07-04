@@ -36,3 +36,54 @@ function kasutan_affiche_etude($post_id,$contexte) {
 		echo '</div>';
 	echo '</a></li>';
 }
+
+function kasutan_affiche_etudes_pour_tax($term, $titre_section='', $exclude=array(),$className='') {
+
+	$args=array(
+		'post_type' => 'reference',
+		'posts_per_page' => '-1',
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'savoir-faire',
+				'terms' => $term->term_id,
+			),
+		),
+	);
+	if(!empty($exclude)) {
+		$args['post__not_in']=$exclude;
+	}
+
+	$articles=new WP_Query($args);
+
+	if(!$articles->have_posts(  )) {
+		return;
+	}
+
+	$count=$articles->post_count;
+
+	if(!$titre_section) {
+		if($count> 1) {
+			$titre_section=__('Autres études de cas :','effidyn');
+		} else {
+			$titre_section=__('Autre étude de cas :','effidyn');
+		}
+		
+	}
+
+	printf('<section class="etudes-related decor-top decor-bleu %s">', $className);
+
+		printf('<h2 class="titre-section">%s <span class="term">%s</span></h2>',$titre_section,$term->name);
+			echo '<ul class="references">';
+
+			while ( $articles->have_posts() ) {
+				$articles->the_post();
+				kasutan_affiche_etude(get_the_ID(),'savoir-faire');
+			}
+			echo '</ul>';
+		wp_reset_postdata();
+
+
+	echo '</section>';
+}

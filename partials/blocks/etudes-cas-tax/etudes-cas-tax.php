@@ -9,7 +9,7 @@
 */
 
 
-if(!function_exists('kasutan_affiche_etude')) {
+if(!function_exists('kasutan_affiche_etudes_pour_tax')) {
 	return;
 }
 
@@ -20,35 +20,4 @@ if(array_key_exists('className',$block)) {
 $term=get_field('term');
 $titre_section=wp_kses_post(get_field('titre_section'));
 
-$articles=new WP_Query(array(
-	'post_type' => 'reference',
-	'posts_per_page' => '-1',
-	'orderby' => 'date',
-	'order' => 'DESC',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'savoir-faire',
-			'terms' => $term->term_id,
-		),
-	),
-));
-
-if(!$articles->have_posts(  )) {
-	return;
-}
-
-printf('<section class="acf etudes-cas-tax decor-top decor-bleu %s">', $className);
-
-	printf('<h2 class="titre-section">%s <span class="term">%s</span></h2>',$titre_section,$term->name);
-	echo '<ul class="references">';
-
-	while ( $articles->have_posts() ) {
-		$articles->the_post();
-		kasutan_affiche_etude(get_the_ID(),'savoir-faire');
-	}
-	echo '</ul>';
-	wp_reset_postdata();
-
-
-echo '</section>';
-	
+kasutan_affiche_etudes_pour_tax($term,$titre_section,array(),$className);

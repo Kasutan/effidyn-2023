@@ -2333,6 +2333,59 @@ form.search-form input.search-submit {
   }
 }
 
+.etudes-related {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  padding: 5.5rem var(--padding-x) 3rem;
+}
+@media (min-width: 1920px) {
+  .etudes-related {
+    width: var(--largeur-max);
+  }
+}
+.etudes-related .titre-section {
+  margin-bottom: 3.5rem;
+  text-align: center;
+}
+.etudes-related .titre-section .term {
+  color: var(--rose-ec);
+}
+.etudes-related .vignette .titre-item {
+  color: var(--rose-ec);
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+@media (min-width: 768px) {
+  .etudes-related .references {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .etudes-related .vignette {
+    flex: 0 0 45.6rem;
+    height: auto;
+    max-width: 45.6rem;
+    margin: 0 1rem 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .etudes-related {
+    padding: 9.6rem var(--padding-x) 10.4rem;
+  }
+  .etudes-related .titre-section {
+    margin-bottom: 6rem;
+  }
+  .etudes-related .vignette .image {
+    aspect-ratio: 1.96;
+  }
+  .etudes-related .vignette .titre-item {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
 .filtre-archive {
   align-items: center;
   display: flex;
