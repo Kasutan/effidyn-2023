@@ -1,0 +1,279 @@
+{
+    "key": "group_64a433c177789",
+    "title": "Bloc temoignages pour page Nos clients",
+    "fields": [
+        {
+            "key": "field_64a433c184809",
+            "label": "Bloc temoignages pour page Nos clients",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section avec titre et témoignages clients présentés sur 2 colonnes en desktop.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64a4343fe967c",
+            "label": "Titre de la section",
+            "name": "titre_section",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64a433c1882de",
+            "label": "Témoignages (colonne 1 en desktop)",
+            "name": "temoignages_1",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "field_64a0073b07d0c",
+            "button_label": "Ajouter un témoignage client",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64a433c1974b7",
+                    "label": "Nom",
+                    "name": "nom",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a433c1882de"
+                },
+                {
+                    "key": "field_64a433c19af3f",
+                    "label": "Entreprise",
+                    "name": "entreprise",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a433c1882de"
+                },
+                {
+                    "key": "field_64a43409e967b",
+                    "label": "Rôle",
+                    "name": "role",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a433c1882de"
+                },
+                {
+                    "key": "field_64a433c19e9d3",
+                    "label": "Témoignage",
+                    "name": "texte",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 20,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_64a433c1882de"
+                }
+            ]
+        },
+        {
+            "key": "field_64a43612140d5",
+            "label": "Témoignages (colonne 2 en desktop)",
+            "name": "temoignages_2",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "field_64a0073b07d0c",
+            "button_label": "Ajouter un témoignage client",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64a43613140d6",
+                    "label": "Nom",
+                    "name": "nom",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a43612140d5"
+                },
+                {
+                    "key": "field_64a43614140d7",
+                    "label": "Entreprise",
+                    "name": "entreprise",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a43612140d5"
+                },
+                {
+                    "key": "field_64a43614140d8",
+                    "label": "Rôle",
+                    "name": "role",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a43612140d5"
+                },
+                {
+                    "key": "field_64a43614140d9",
+                    "label": "Témoignage",
+                    "name": "texte",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 20,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_64a43612140d5"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/temoignages"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1688483357
+}

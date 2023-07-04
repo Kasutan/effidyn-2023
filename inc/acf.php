@@ -284,6 +284,16 @@ class BE_ACF_Customizations {
 			array('logo', 'client','ref','grille')
 		);
 
+		/*********Bloc temoignages ***************/
+		$this->helper_register_block_type( 
+			'temoignages',
+			'Bloc temoignages pour page Nos clients',
+			'Section avec titre et témoignages clients présentés sur 2 colonnes en desktop.',
+			'calculator', 
+			false, 
+			array('client', 'temoignage')
+		);
+
 	}
 }
 new BE_ACF_Customizations();

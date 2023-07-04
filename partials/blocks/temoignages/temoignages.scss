@@ -1,0 +1,83 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.temoignages {
+	@include bleed;
+	background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+	padding: 3.5rem var(--padding-x);
+
+	.col-1 {
+		margin-top: 4rem;
+	}
+	.temoignage {
+		margin: 0 auto 3rem;
+		max-width:60ch;
+	}
+	.nom, .entreprise {
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 2.2rem;
+		margin-bottom: 4px;
+	}
+	.nom {
+		color:var(--rose-ec);
+	}
+	.entreprise {
+		color:var(--bleu-texte);
+	}
+	.role {
+		font-weight: 600;
+		margin-bottom: 4px;
+	}
+	.texte {
+		font-style: italic;
+	}
+	@include bp(lg) {
+		--gap:10rem;
+		padding-top: 7.5rem;
+		padding-bottom: 17rem;
+		.titre-section.decor-trait-simple {
+			margin-bottom: 0;
+		}
+		.cols-temoignages {
+			column-gap:var(--gap);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		.col {
+			margin-top: 4.2rem;
+			padding-top: 4rem;
+		}
+		.col-1 {
+			position: relative;
+			&::after {
+				background-color: var(--bleu-bordure);
+				content:' ';
+				height:100%;
+				position:absolute;
+				right:calc(-0.5 * var(--gap));
+				top:0;
+				width:1px;
+			}
+		}
+		.temoignage {
+			margin:0 0 8rem;
+			max-width: unset;
+		}
+		.nom, .entreprise {
+			font-size: 2.6rem;
+			line-height: 3rem;
+			margin-bottom: 8px;
+		}
+		.role {
+			margin-bottom: 1rem;
+		}
+	}
+	@include bp(xl) {
+		--gap:26rem;
+		.cols-temoignages {
+			margin-left:auto;
+			margin-right: auto;
+			max-width: calc(100% * 10 /12);
+		}
+	}
+} 
