@@ -294,6 +294,16 @@ class BE_ACF_Customizations {
 			array('client', 'temoignage')
 		);
 
+		/*********Bloc etudes-cas ***************/
+		$this->helper_register_block_type( 
+			'etudes-cas',
+			'Bloc pour afficher toutes les études de cas',
+			'Section avec grille de vignettes et pagination.',
+			'calculator', 
+			true, //JS pour la pagination 
+			array('etude', 'cas','archive')
+		);
+
 	}
 }
 new BE_ACF_Customizations();
