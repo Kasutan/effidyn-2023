@@ -1,34 +1,38 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-function kasutan_collaborateur_affiche_carte($post_id) {
-	$nom=get_the_title($post_id);
-	$fonction=$tel=$mobile=$email=false;
-
-	if(function_exists('get_field')) {
-		$fonction=wp_kses_post(get_field('fonction',$post_id));
-		$tel=wp_kses_post(get_field('tel',$post_id));
-		$mobile=wp_kses_post(get_field('mobile',$post_id));
-		$email=wp_kses_post(get_field('email',$post_id));
-
-		//Prépare liens téls
-		if(function_exists('kasutan_formate_tel')) {
-			$tel_link=kasutan_formate_tel($tel);
-			$mobile_link=kasutan_formate_tel($mobile);
-		} else {
-			$tel_link=$tel;
-			$mobile_link=$mobile;
-		}
+function kasutan_reference_get_term($post_id) {
+	$term=false;
+	if(function_exists('ea_first_term')) {
+		$term=ea_first_term(array('taxonomy'=>'savoir-faire','field'=>null,'post_id'=>$post_id));
 	}
-	echo '<li class="personne">';
-		printf('<div class="image">%s</div>',get_the_post_thumbnail( $post_id, 'thumbnail'));
+	return $term;
+}
+
+function kasutan_affiche_etude($post_id,$contexte) {
+	$titre=get_the_title($post_id);
+	$link=get_the_permalink($post_id);
+	$term=kasutan_reference_get_term($post_id);
+
+	
+
+	printf('<li class="vignette reference">');
+		printf('<a href="%s" class="image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
 		echo '<div class="texte">';
-			printf('<h3 class="nom has-vert-color">%s</h3>',$nom);
-			if($fonction) printf('<p class="fonction">%s</p>',$fonction);
-			if($tel) printf('<a class="tel" href="tel:%s">Tél.&nbsp;: %s</a>',$tel_link,$tel);
-			if($mobile) printf('<a class="mobile" href="tel:%s">Mobile.&nbsp;: %s</a>',$mobile_link,$mobile);
-			if($email) printf('<a class="email" href="mailto:%s">Mail&nbsp;: %s</a>',antispambot($email),antispambot($email));
-			
+			if($contexte==='archive') {
+				printf('<a href="%s"><h2 class="titre-item">',$link);
+				if($term) printf('<span class="term">%s</span>',$term->name);
+				printf('<span class="nom">%s</span></h2></a>',$titre);
+			} else {
+				printf('<a href="%s"><h3 class="titre-item">%s</h3></a>',$link,$titre);
+			}
+		
+			printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
+
+			if(function_exists('kasutan_affiche_bouton')) {
+				kasutan_affiche_bouton($link);
+
+			}
 		echo '</div>';
-	echo '</li>';
+	echo '</a></li>';
 }

@@ -1,0 +1,86 @@
+.vignette {
+	margin:0 auto 2.8rem;
+	max-width:42rem;
+	a {
+		display:block;
+		text-decoration: none;
+	}
+	.image {
+		aspect-ratio : 3.45;
+		display: flex;
+		img {
+			height:100%;
+			object-fit: cover;
+			width:100%;
+		}
+	}
+	.texte {
+		background-color: var(--blanc);
+		border:solid 1px var(--bleu-bordure);
+		border-top-width: 0;
+		display: block;
+		padding:1.8rem 2rem 2rem;
+	}
+	.titre-item {
+		margin-bottom: 8px;
+	}
+	.term, .nom {
+		display: block;
+	}
+	.term {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+	}
+	.nom {
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+
+	.extrait {
+		color:var(--noir);
+		margin-bottom: 1.6rem;
+	}
+
+	&:hover, &:focus-within {
+		.texte {
+			background-color: var(--bleu-1fc);
+		}
+		.nom, .term {
+			color:var(--rose-ec);
+		}
+	} 
+
+	@include bp(lg) {
+		display: flex;
+		flex-direction: column;
+		height:100%;
+		margin:0 0 4rem;
+		max-width: unset;
+
+		.image {
+			aspect-ratio: 42 / 23;
+		}
+		.texte {
+			display: flex;
+			flex-direction: column;
+			flex-grow:1;
+			height:auto;
+		}
+		.term {
+			font-size: 2.6rem;
+			line-height: 3rem;
+			margin-bottom: 1rem;
+		}
+		.nom {
+			font-size: 1.8rem;
+			line-height: 3rem;
+			margin-bottom: 1.5rem;
+		}
+		.extrait {
+			margin-bottom: 3rem;
+		}
+		.wp-block-buttons {
+			margin-top: auto;
+		}
+	}
+}

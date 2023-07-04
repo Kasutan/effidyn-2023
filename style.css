@@ -2045,13 +2045,18 @@ button.ouvrir-sous-menu:focus {
   .loop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--margin-y-1);
+    gap: 4rem;
     margin-bottom: var(--margin-y-1);
   }
   .loop .post-summary {
     margin-bottom: 0;
     max-width: unset;
     width: 100%;
+  }
+}
+@media (min-width: 1440px) {
+  .loop {
+    column-gap: 6rem;
   }
 }
 
@@ -2600,6 +2605,88 @@ form.search-form input.search-submit {
   }
   .post-summary__content {
     flex-grow: 1;
+  }
+}
+.vignette {
+  margin: 0 auto 2.8rem;
+  max-width: 42rem;
+}
+.vignette a {
+  display: block;
+  text-decoration: none;
+}
+.vignette .image {
+  aspect-ratio: 3.45;
+  display: flex;
+}
+.vignette .image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.vignette .texte {
+  background-color: var(--blanc);
+  border: solid 1px var(--bleu-bordure);
+  border-top-width: 0;
+  display: block;
+  padding: 1.8rem 2rem 2rem;
+}
+.vignette .titre-item {
+  margin-bottom: 8px;
+}
+.vignette .term, .vignette .nom {
+  display: block;
+}
+.vignette .term {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+}
+.vignette .nom {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+.vignette .extrait {
+  color: var(--noir);
+  margin-bottom: 1.6rem;
+}
+.vignette:hover .texte, .vignette:focus-within .texte {
+  background-color: var(--bleu-1fc);
+}
+.vignette:hover .nom, .vignette:hover .term, .vignette:focus-within .nom, .vignette:focus-within .term {
+  color: var(--rose-ec);
+}
+@media (min-width: 1024px) {
+  .vignette {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 0 4rem;
+    max-width: unset;
+  }
+  .vignette .image {
+    aspect-ratio: 42/23;
+  }
+  .vignette .texte {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: auto;
+  }
+  .vignette .term {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+  }
+  .vignette .nom {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .vignette .extrait {
+    margin-bottom: 3rem;
+  }
+  .vignette .wp-block-buttons {
+    margin-top: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */

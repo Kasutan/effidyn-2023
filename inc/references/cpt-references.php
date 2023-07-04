@@ -9,7 +9,7 @@ function kasutan_references_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Références', 'Post Type General Name', 'effidyn' ),
 		'singular_name'         => _x( 'Référence', 'Post Type Singular Name', 'effidyn' ),
-		'menu_name'             => __( 'Références', 'effidyn' ),
+		'menu_name'             => __( 'Références / Études de cas', 'effidyn' ),
 		'name_admin_bar'        => __( 'Références', 'effidyn' ),
 		'archives'              => __( 'Archives des références', 'effidyn' ),
 		'attributes'            => __( 'Item Attributes', 'effidyn' ),
