@@ -1,0 +1,86 @@
+{
+    "key": "group_64a45bd1611f6",
+    "title": "Bloc pour afficher toutes les études de cas liées à un savoir-faire",
+    "fields": [
+        {
+            "key": "field_64a45bd17050f",
+            "label": "Bloc pour afficher toutes les études de cas liées à un savoir-faire",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section pleine largeur avec fond bleu, titre et grille de vignettes. Contenu généré automatiquement à partir des Etudes de cas saisies et publiées dans le menu Références \/ Etudes de cas ET associées au savoir-faire choisi ici.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64a45c1c8197f",
+            "label": "Titre de la section",
+            "name": "titre_section",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Saisir ici uniquement le début du titre (en bleu). Le nom du savoir-faire est ajouté automatiquement en rose.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Études de cas :",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64a45c762bd67",
+            "label": "Savoir-faire",
+            "name": "term",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "savoir-faire",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "radio",
+            "allow_null": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/etudes-cas-tax"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1688493311
+}

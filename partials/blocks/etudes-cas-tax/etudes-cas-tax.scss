@@ -1,0 +1,54 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.etudes-cas-tax {
+	@include bleed;
+	background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+	padding:5.5rem var(--padding-x) 3rem;
+
+	.titre-section {
+		margin-bottom: 3.5rem;
+		text-align: center;
+		.term {
+			color:var(--rose-ec);
+		}
+	}
+	.vignette {
+		.titre-item {
+			color:var(--rose-ec);
+			font-size: 1.8rem;
+			line-height: 2.2rem;
+		}
+	}
+
+	@include bp(md) {
+		.references {
+			display:flex;
+			flex-wrap:wrap;
+			justify-content: center;
+		}
+		.vignette {
+			flex:0 0 45.6rem;
+			height:auto;
+			max-width:45.6rem;
+			margin:0 1rem 3rem;
+		}
+	}
+
+	@include bp(lg) {
+		padding:9.6rem var(--padding-x) 10.4rem;
+		.titre-section {
+			margin-bottom: 6rem;
+		}
+		.vignette {
+			.image {
+				aspect-ratio: 1.96;
+			}
+			.titre-item {
+				font-size: 2.6rem;
+				line-height: 3rem;
+				margin-bottom: 1.2rem;
+			}
+		}
+
+	}
+} 

@@ -297,11 +297,21 @@ class BE_ACF_Customizations {
 		/*********Bloc etudes-cas ***************/
 		$this->helper_register_block_type( 
 			'etudes-cas',
-			'Bloc pour afficher toutes les études de cas',
+			'Bloc toutes les études de cas',
 			'Section avec grille de vignettes et pagination.',
 			'calculator', 
 			true, //JS pour la pagination 
 			array('etude', 'cas','archive')
+		);
+
+		/*********Bloc etudes-cas-tax ***************/
+		$this->helper_register_block_type( 
+			'etudes-cas-tax',
+			'Bloc études de cas d\'un savoir-faire',
+			'Section pleine largeur avec fond bleu, titre et grille de vignettes.',
+			'calculator', 
+			false,
+			array('etude', 'cas','savoir','faire')
 		);
 
 	}
