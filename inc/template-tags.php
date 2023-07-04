@@ -225,9 +225,11 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 		return;
 	}
 
-
+	$surtitres=array();
+	$hero=false;
 	if(function_exists('get_field')) {
 		$surtitres=get_field('effidyn_surtitres','options');
+		$hero=esc_attr(get_field('effidyn_deco_hero_top','options'));
 	}
 
 	if(!isset($surtitres['blog']) || empty($surtitres['blog'])) {
@@ -292,7 +294,9 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	echo '<div class="fond-banniere">';
 	//div qui overflow (avec décors ou dégradé)
 		if(!$publication) {
-			echo '<div class="decor-hero-top"></div>';
+			if($hero) {
+				printf('<div class="decor-hero-top" aria-hidden="true">%s</div>',wp_get_attachment_image($hero, 'banniere')); //TODO ajuster taille
+			}
 			echo '<div class="decor-hero-bottom"></div>';	
 		}
 	echo '</div>';

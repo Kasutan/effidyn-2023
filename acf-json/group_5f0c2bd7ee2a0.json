@@ -26,6 +26,31 @@
             "ui": 1
         },
         {
+            "key": "field_64a3efc4bfb45",
+            "label": "En-tête de page : image décor",
+            "name": "effidyn_deco_hero_top",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, svg",
+            "preview_size": "banniere"
+        },
+        {
             "key": "field_60a0e771c0bde",
             "label": "Pied de page : logo",
             "name": "effidyn_footer_logo",
@@ -207,5 +232,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688145103
+    "modified": 1688465489
 }
