@@ -1,60 +1,40 @@
 
+.single .entry-content {
+	padding-top: 2.5rem;
+}
 .single-title {
-	align-items: flex-start;
+	text-align: center;
+}
+.single-image {
 	display: flex;
-	margin: 0;
-	&::before {
-		flex-basis:3.6rem;
-		flex-grow:0;
-		flex-shrink: 0;
-		top:0;
-	}
-}
-.single-date {
-	color:var(--vert);
-	margin-bottom: 3rem;
-	padding-left: 4.2rem;
+	justify-content: center;
+	margin-bottom: 2.5rem;
 }
 
+.single-reference {
+	.etudes-related {
+		margin-top: 5rem;
+	}
+}
 .single-post {
-	div.entry-content {
-		padding-bottom: var(--margin-y-1);
-		padding-top: var(--margin-y-1);
-	}
-	.thumbnail {
-		margin-bottom: var(--margin-y-1);
-		img {
-			margin:0 auto;
-		}
-	}
-	.retour {
-		@include fs(20);
-		text-align: center;
-	}
-	@include bp(md) {
-		.entry-content {
-			display: grid;
-			column-gap: 40px;
-			grid-template-columns: 1fr 1fr;
 
-		}
-		
-		.retour {
-			grid-column: 1 / span 2;
-			margin-top: var(--margin-y-1);
-		}
-		
-		&.no-thumbnail {
-			.entry-content {
-				display: block;
-			}
-		}
-	}
-
-	@include bp(lg) {
-		.entry-content {
-			grid-template-columns: 60% 40%;
-		}
-	}
 	
 }
+@include bp(lg) {
+	.single .entry-content {
+		padding-top: 7.5rem;
+	}
+
+	.single-image {
+		margin-bottom: 6.1rem;
+	}
+
+	
+.single-reference {
+	.etudes-related {
+		margin-top: 11rem;
+	}
+}
+}
+
+

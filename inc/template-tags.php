@@ -251,6 +251,12 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 				$publication=true;
 		} else if($post_type==='reference') {
 				$surtitre=$surtitres['cas'];
+				if(function_exists('kasutan_reference_get_term')) {
+					$term=kasutan_reference_get_term(get_the_ID());
+					if($term) {
+						$titre=sprintf('%s <span class="screen-reader-text"> : %s</span>', $term->name,$titre);
+					}
+				}
 		} 
 	} if (is_search()) {
 		$titre=__('Recherche :','effidyn').' '.get_search_query();
