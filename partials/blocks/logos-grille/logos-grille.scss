@@ -1,0 +1,65 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.logos-grille {
+	--nb-col:2;
+	--taille-col:1fr;
+	--gap:1rem;
+	margin-bottom: 4.3rem;
+	position: relative;
+	.logos {
+		column-gap:var(--gap);
+		display: grid;
+		grid-template-columns: repeat(var(--nb-col),var(--taille-col));
+		justify-content: center;
+	}
+
+	.ligne {
+		background-color: var(--bleu-bordure);
+		height:100%;
+		left:50%;
+		position:absolute;
+		top:0;
+		width:1px;
+		
+	}
+	.ligne-2, .ligne-3 {
+		display: none;
+	}
+
+	@include bp(sm) {
+		--taille-col:20rem;
+		--gap:2rem;
+	}
+	@include bp(md) {
+		--nb-col:3;
+		--taille-col:1fr;
+		--gap:4rem;
+		.ligne-1 {
+			left:33%;
+		}
+		.ligne-2 {
+			display: block;
+			left:66%;
+		}
+	}
+
+	@include bp(lg) {
+		--nb-col:4;
+		.ligne-1 {
+			left:25%;
+		}
+		.ligne-2 {
+			left:50%;
+		}
+		.ligne-3 {
+			display: block;
+			left:75%;
+		}
+	}
+
+	@include bp(xl) {
+		--gap:8rem;
+	}
+	
+
+} 

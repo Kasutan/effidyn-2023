@@ -274,6 +274,16 @@ class BE_ACF_Customizations {
 			array('equipe', 'qui sommes-nous','dirigeant')
 		);
 
+		/*********Bloc logos-grille ***************/
+		$this->helper_register_block_type( 
+			'logos-grille',
+			'Bloc grille de logos pour page Nos clients',
+			'Section avec grille de logos.',
+			'calculator', 
+			false, 
+			array('logo', 'client','ref','grille')
+		);
+
 	}
 }
 new BE_ACF_Customizations();
