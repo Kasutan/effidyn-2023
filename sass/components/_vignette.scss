@@ -1,3 +1,5 @@
+/************************* vignette de base : réalisation *******************/
+
 .vignette {
 	margin:0 auto 2.8rem;
 	max-width:42rem;
@@ -85,43 +87,151 @@
 	}
 }
 
-.blog, .archive {
-	.vignette {
-		margin-bottom: 4.8rem;
-		.image {
-			aspect-ratio:2.35;
-			margin-bottom: 1.8rem;
-		}
-		.titre-item {
-			font-weight: 600;
-		}
+/************************* styles spéciaux pour les vignettes post *******************/
 
-		&.sticky:not(:first-of-type) {
-			.ruban {
-				display: none;
-			}
+.vignette.post {
+	margin-bottom: 4.8rem;
+	.image {
+		aspect-ratio:2.35;
+		margin-bottom: 1.8rem;
+	}
+	.titre-item {
+		font-weight: 600;
+	}
+
+	&.sticky:not(:first-of-type) {
+		.ruban {
+			display: none;
 		}
+	}
+
+	@include bp(lg) {
+		.titre-item {
+			order:1;
+		}
+		.meta {
+			order:2;
+		}
+		.image {
+			order:3;
+		}
+		.extrait {
+			order:4;
+		}
+		.image-wrap {
+			aspect-ratio: 1.4;
+		}
+	}
+	@include bp(xl) {
+		margin-bottom: 6.8rem;
 	}
 }
 
-.vignette, .top-post {
-	.meta {
-		color:var(--violet-d2);
-		display: flex;
-		font-size: 1.8rem;
-		line-height: 2.5rem;
-		.date {
-			flex-shrink: 0;
-			margin-right: 0.5ch;
+/************************* styles spéciaux pour l'article top post *******************/
+/************************* visible uniquement en desktop cf. blog.scss *******************/
+
+.top-post {
+	column-gap: 3rem;
+	grid-template-columns: 1fr 1fr;
+	margin-bottom: 4.4rem;
+	a {
+		text-decoration: none;
+	}
+	.image {
+		aspect-ratio: auto;
+		img {
+			height:100%;
+			object-fit: cover;
 		}
-		.cats {
-			display: flex;
-			flex-wrap: wrap;
-			.vir, a:not(:first-of-type) {
-				display:none;
+	}
+
+	.col-texte {
+		padding-top: 4.4rem;
+		padding-bottom: 15rem;
+	}
+
+	h2 {
+		margin-bottom: 2.1rem;
+	}
+
+	@include bp(xl) {
+		column-gap: 6rem;
+		margin-bottom: 8.8rem;
+	}
+
+}
+
+
+/******************** styles communs pour les vignettes post et l'article top-post***************/
+
+.vignette.post, .top-post {
+	/************************* effets au survol *******************/
+	.image-wrap {
+		height:100%;
+		overflow: hidden;
+		width: 100%;
+		img {
+			transition: transform var(--transition);
+		}
+	}
+	.image {
+		&:hover, &:focus {
+			img {
+				transform: scale(1.1);
 			}
 		}
 	}
+	.titre-item a {
+		color:var(--bleu-9f);
+		&:hover, &:focus {
+			color:var(--violet-d2);
+		}
+	}
+	a.extrait {
+		color:var(--noir); 
+		&:hover, &:focus {
+			color:var(--bleu-9a);
+		}
+	}
+
+	/************************* metas*******************/
+
+	.meta {
+		a {
+			color:var(--violet-d2);
+			&:hover, &:focus {
+				color:var(--bleu-9a);
+			}
+		}
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		.date {
+			color:var(--violet-d2);
+			display:inline-block;
+			margin-right: 0.5ch;
+		}
+		.cats {
+			a {
+				display: inline-block;
+			}
+			.vir, a:not(:first-of-type) {
+				display:none; //une seule catégorie visible en mobile
+
+			
+			}
+			@include bp(lg) {
+				.vir, a:not(:first-of-type) {
+					display: inline-block;
+				}
+				.vir {
+					margin-right: 0.5ch;
+				}
+			}
+		}
+
+	}
+
+	/************************* ruban *******************/
 
 	.image {
 		position: relative;
@@ -140,11 +250,12 @@
 		text-transform: uppercase;
 		top:13px;
 		&::after {
+			background-color: var(--violet-ba);
 			border-top:solid 4px var(--violet-ba);
 			border-right:solid 4px var(--violet-ba);
 			border-left:solid 4px var(--blanc);
 			border-bottom:solid 4px var(--blanc);
-			content:'';
+			content:' ';
 			display: block;
 			height:10px;
 			left:0;

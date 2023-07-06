@@ -2061,6 +2061,17 @@ button.ouvrir-sous-menu:focus {
 .blog .top-post, .blog .nav-cat, .blog .extrait {
   display: none;
 }
+@media (min-width: 1024px) {
+  .blog .loop li:first-of-type {
+    display: none;
+  }
+  .blog .nav-cat, .blog .extrait {
+    display: block;
+  }
+  .blog .top-post {
+    display: grid;
+  }
+}
 
 form.search-form {
   align-items: stretch;
@@ -2632,6 +2643,7 @@ form.search-form input.search-submit {
     flex-grow: 1;
   }
 }
+/************************* vignette de base : réalisation *******************/
 .vignette {
   margin: 0 auto 2.8rem;
   max-width: 42rem;
@@ -2715,41 +2727,136 @@ form.search-form input.search-submit {
   }
 }
 
-.blog .vignette, .archive .vignette {
+/************************* styles spéciaux pour les vignettes post *******************/
+.vignette.post {
   margin-bottom: 4.8rem;
 }
-.blog .vignette .image, .archive .vignette .image {
+.vignette.post .image {
   aspect-ratio: 2.35;
   margin-bottom: 1.8rem;
 }
-.blog .vignette .titre-item, .archive .vignette .titre-item {
+.vignette.post .titre-item {
   font-weight: 600;
 }
-.blog .vignette.sticky:not(:first-of-type) .ruban, .archive .vignette.sticky:not(:first-of-type) .ruban {
+.vignette.post.sticky:not(:first-of-type) .ruban {
   display: none;
 }
+@media (min-width: 1024px) {
+  .vignette.post .titre-item {
+    order: 1;
+  }
+  .vignette.post .meta {
+    order: 2;
+  }
+  .vignette.post .image {
+    order: 3;
+  }
+  .vignette.post .extrait {
+    order: 4;
+  }
+  .vignette.post .image-wrap {
+    aspect-ratio: 1.4;
+  }
+}
+@media (min-width: 1440px) {
+  .vignette.post {
+    margin-bottom: 6.8rem;
+  }
+}
 
-.vignette .meta, .top-post .meta {
+/************************* styles spéciaux pour l'article top post *******************/
+/************************* visible uniquement en desktop cf. blog.scss *******************/
+.top-post {
+  column-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 4.4rem;
+}
+.top-post a {
+  text-decoration: none;
+}
+.top-post .image {
+  aspect-ratio: auto;
+}
+.top-post .image img {
+  height: 100%;
+  object-fit: cover;
+}
+.top-post .col-texte {
+  padding-top: 4.4rem;
+  padding-bottom: 15rem;
+}
+.top-post h2 {
+  margin-bottom: 2.1rem;
+}
+@media (min-width: 1440px) {
+  .top-post {
+    column-gap: 6rem;
+    margin-bottom: 8.8rem;
+  }
+}
+
+/******************** styles communs pour les vignettes post et l'article top-post***************/
+.vignette.post, .top-post {
+  /************************* effets au survol *******************/
+  /************************* metas*******************/
+  /************************* ruban *******************/
+}
+.vignette.post .image-wrap, .top-post .image-wrap {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.vignette.post .image-wrap img, .top-post .image-wrap img {
+  transition: transform var(--transition);
+}
+.vignette.post .image:hover img, .vignette.post .image:focus img, .top-post .image:hover img, .top-post .image:focus img {
+  transform: scale(1.1);
+}
+.vignette.post .titre-item a, .top-post .titre-item a {
+  color: var(--bleu-9f);
+}
+.vignette.post .titre-item a:hover, .vignette.post .titre-item a:focus, .top-post .titre-item a:hover, .top-post .titre-item a:focus {
   color: var(--violet-d2);
-  display: flex;
+}
+.vignette.post a.extrait, .top-post a.extrait {
+  color: var(--noir);
+}
+.vignette.post a.extrait:hover, .vignette.post a.extrait:focus, .top-post a.extrait:hover, .top-post a.extrait:focus {
+  color: var(--bleu-9a);
+}
+.vignette.post .meta, .top-post .meta {
   font-size: 1.8rem;
   line-height: 2.5rem;
 }
-.vignette .meta .date, .top-post .meta .date {
-  flex-shrink: 0;
+.vignette.post .meta a, .top-post .meta a {
+  color: var(--violet-d2);
+}
+.vignette.post .meta a:hover, .vignette.post .meta a:focus, .top-post .meta a:hover, .top-post .meta a:focus {
+  color: var(--bleu-9a);
+}
+.vignette.post .meta .date, .top-post .meta .date {
+  color: var(--violet-d2);
+  display: inline-block;
   margin-right: 0.5ch;
 }
-.vignette .meta .cats, .top-post .meta .cats {
-  display: flex;
-  flex-wrap: wrap;
+.vignette.post .meta .cats a, .top-post .meta .cats a {
+  display: inline-block;
 }
-.vignette .meta .cats .vir, .vignette .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
+.vignette.post .meta .cats .vir, .vignette.post .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
   display: none;
 }
-.vignette .image, .top-post .image {
+@media (min-width: 1024px) {
+  .vignette.post .meta .cats .vir, .vignette.post .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
+    display: inline-block;
+  }
+  .vignette.post .meta .cats .vir, .top-post .meta .cats .vir {
+    margin-right: 0.5ch;
+  }
+}
+.vignette.post .image, .top-post .image {
   position: relative;
 }
-.vignette .ruban, .top-post .ruban {
+.vignette.post .ruban, .top-post .ruban {
   background-color: var(--violet-d2);
   color: var(--blanc);
   display: inline-block;
@@ -2762,12 +2869,13 @@ form.search-form input.search-submit {
   text-transform: uppercase;
   top: 13px;
 }
-.vignette .ruban::after, .top-post .ruban::after {
+.vignette.post .ruban::after, .top-post .ruban::after {
+  background-color: var(--violet-ba);
   border-top: solid 4px var(--violet-ba);
   border-right: solid 4px var(--violet-ba);
   border-left: solid 4px var(--blanc);
   border-bottom: solid 4px var(--blanc);
-  content: "";
+  content: " ";
   display: block;
   height: 10px;
   left: 0;

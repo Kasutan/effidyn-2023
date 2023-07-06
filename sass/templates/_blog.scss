@@ -4,4 +4,22 @@
 	.top-post, .nav-cat, .extrait {
 		display:none; 
 	}
+
+	@include bp(lg) {
+		//cacher le 1er article de loop (c'est le même que top-article)
+		.loop li:first-of-type {
+			display: none;
+		}
+		.nav-cat, .extrait {
+			display:block; 
+		}
+
+		.top-post {
+			display: grid;
+		}
+
+		//TODO : masonry et pagination
+	}
+
+
 }

@@ -25,9 +25,9 @@ if(is_sticky($post_id)) {
 
 printf('<%s class="vignette %s">',$tag,$class);
 	if(has_post_thumbnail()) {
-		printf('<a href="%s" class="image">%s %s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'),$ruban);
+		printf('<a href="%s" class="image"><div class="image-wrap">%s</div> %s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'),$ruban);
 	}
-	printf('<a href="%s"><h2 class="titre-item h4">%s</h2></a>',$link,$titre);
+	printf('<h2 class="titre-item h4"><a href="%s">%s</a></h2>',$link,$titre);
 	kasutan_affiche_metas_article($post_id);	
 	printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
 printf('</%s>',$tag);

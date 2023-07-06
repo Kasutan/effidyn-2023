@@ -409,16 +409,17 @@ function kasutan_affiche_top_article() {
 		$post_id=get_the_ID();
 		$link=get_the_permalink();
 		echo '<div class="top-post" style="position:relative">';
-			printf('<a class="image" href="%s">',$link);
+			printf('<a class="image" href="%s"><div class="image-wrap">',$link);
 				echo get_the_post_thumbnail($post_id,'large');
+				echo '</div>';
 				if(is_sticky($post_id)) {
 					printf('<div class="ruban">%s</div>',__('à la une','effidyn'));
 				}
 			echo '</a>';
 			echo '<div class="col-texte">';
-				printf('<h2><a href="%s">%s</a></h2>',$link,get_the_title());
+				printf('<h2 class="h3 titre-item"><a href="%s">%s</a></h2>',$link,get_the_title());
 				kasutan_affiche_metas_article($post_id);
-				printf('<div class="extrait">%s</div>',get_the_excerpt());
+				printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt());
 			echo '</div>';
 		echo '</div>';
 		$n++;
