@@ -22,7 +22,7 @@ $pagination_mobile=esc_attr(get_field('pagination_mobile'));
 
 $articles=new WP_Query(array(
 	'post_type' => 'reference',
-	'posts_per_page' => '-1',
+	'posts_per_page' => -1,
 	'orderby' => 'date',
 	'order' => 'DESC'
 ));

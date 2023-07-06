@@ -26,20 +26,7 @@ add_filter( 'body_class', 'ea_archive_body_class' );
 add_action( 'tha_content_while_before', 'ea_archive_header' );
 function ea_archive_header() {
 
-	$title = false;
 
-	if( is_home() ) {
-		$title = get_the_title( get_option( 'page_for_posts' ) );
-
-	} elseif( is_search() ) {
-		$title = 'Résultats de recherche';
-
-	} elseif( is_archive() ) {
-		$title = get_the_archive_title();
-	}
-
-	if( empty( $title ) )
-		return;
 
 
 	echo '<header class="entry-header">';
@@ -49,9 +36,14 @@ function ea_archive_header() {
 
 	echo '<div class="container">';
 
-		if(is_home() && function_exists('kasutan_affiche_filtre_articles')) {
-			echo '<div id="archive-filtrable">';
-				kasutan_affiche_filtre_articles();
+		if(is_home()) {
+			if(function_exists('kasutan_affiche_top_article')) {
+				kasutan_affiche_top_article();
+			}
+			if(function_exists('kasutan_affiche_liste_cats')) {
+				kasutan_affiche_liste_cats();
+			}
+			echo '<div id="archive-avec-pagination">';
 				echo '<ul class="loop list">';
 		} else { 
 			echo '<ul class="loop">';

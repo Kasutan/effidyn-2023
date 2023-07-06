@@ -360,48 +360,84 @@ function kasutan_affiche_thumbnail_dans_contenu() {
 }
 
 /**
-* Filtre par catégories pour les archives de blog
+* Liste des catégories pour les archives de blog
 *
 */
-function kasutan_affiche_filtre_articles() {
-	$avec_pictos=function_exists('kasutan_picto_categorie');
-	echo '<p class="screen-reader-text">Filtrer les actualités</p>';
-	echo '<form class="filtre-archive" id="filtre-liste">';
-		$terms=get_terms( array(
-			'taxonomy' => 'category'
-			) 
-		);
-		?>
-		<input type="radio" id="toutes" name="filtre-categorie" value="toutes" checked>
-		<label for="toutes" class="toutes">Toutes</label>
-		<?php
-		foreach($terms as $term) : 
-			$pictos=$classe='';
-			if($avec_pictos) {
-				$picto_blanc=kasutan_picto_categorie($term->term_id,'blanc');
-				$picto_bleu=kasutan_picto_categorie($term->term_id,'bleu');
-				if($picto_blanc && $picto_bleu) {
-					$pictos=sprintf('<span class="picto blanc">%s</span><span class="picto bleu">%s</span>',wp_get_attachment_image( $picto_blanc,'thumbnail'),wp_get_attachment_image( $picto_bleu,'thumbnail'));
-					$classe="avec-pictos";
-				}
-			}
-			
+function kasutan_affiche_liste_cats() {
+	$terms=get_terms( array(
+		'taxonomy' => 'category'
+		) 
+	);
 
-			printf('<input type="radio" id="%s" name="filtre-categorie" value="%s">',
-				$term->slug,
-				$term->slug
-			);
-			printf('<label for="%s" class="%s">%s %s</label>',
-				$term->slug,
-				$classe,
-				$pictos,
-				$term->name
-			);
-		endforeach;
-		?>
-		
-	</form>
-<?php
+	echo '<nav class="nav-cat">';
+		printf('<p class="titre-nav">%s</p>',__('Accès thématiques','effidyn'));
+		echo '<ul class="cats-links">';
+	
+			foreach($terms as $term) : 
+
+				printf('<li class="wp-block-button">
+						<a class="wp-block-button__link wp-element-button" href="%s">%s (%s)</a>
+						</li>', 
+						get_term_link($term, 'category'),
+						$term->name,
+						$term->count
+				);
+				
+			endforeach;
+		echo '</ul>';
+	echo '</nav>';
+	
+}
+
+/**
+* Afficher le premier article de la page blog
+*
+*/
+function kasutan_affiche_top_article() {
+	$articles=new WP_Query(array(
+		'post_type' => 'post',
+		'posts_per_page' => 1,
+		'orderby' => 'date',
+		'order' => 'DESC'
+	));
+	if(!$articles->have_posts(  )) {
+		return;
+	}
+	$n=1;
+	while ( $articles->have_posts() && $n<=1) {
+		$articles->the_post();
+		$post_id=get_the_ID();
+		$link=get_the_permalink();
+		echo '<div class="top-post" style="position:relative">';
+			printf('<a class="image" href="%s">',$link);
+				echo get_the_post_thumbnail($post_id,'large');
+				if(is_sticky($post_id)) {
+					printf('<div class="ruban">%s</div>',__('à la une','effidyn'));
+				}
+			echo '</a>';
+			echo '<div class="col-texte">';
+				printf('<h2><a href="%s">%s</a></h2>',$link,get_the_title());
+				kasutan_affiche_metas_article($post_id);
+				printf('<div class="extrait">%s</div>',get_the_excerpt());
+			echo '</div>';
+		echo '</div>';
+		$n++;
+	}
+	wp_reset_postdata();
+
+}
+/**
+* Afficher les métas dans les vignettes article
+*
+*/
+function kasutan_affiche_metas_article($post_id) {
+	$date=get_the_date('d/m/Y',$post_id);
+	$list=get_the_category_list(', ', '', $post_id);
+	echo '<p class="meta">';
+		printf('<span class="date">%s |</span>',$date);
+		printf('<span class="cats">%s</span>',$list);
+	echo '</p>';
+
 }
 
 /**
