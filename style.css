@@ -2120,6 +2120,56 @@ form.search-form input.search-submit {
   margin-top: 5rem;
 }
 
+.single-post .page-banniere {
+  grid-template-rows: 6rem auto 4rem;
+  height: auto;
+}
+.single-post .page-banniere .fond-banniere {
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  .single-post .page-banniere {
+    grid-template-rows: 12rem auto 8rem;
+  }
+}
+.single-post .meta-single {
+  border-left: solid 1px var(--bleu-9a);
+  color: var(--bleu-9a);
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+}
+.single-post .meta-single p {
+  margin-bottom: 6px;
+}
+.single-post .meta-single a {
+  color: var(--bleu-9a);
+  text-decoration: none;
+}
+.single-post .meta-single a:focus, .single-post .meta-single a:hover {
+  color: var(--violet-d2);
+}
+@media (min-width: 1024px) {
+  .single-post .meta-single {
+    margin-bottom: 4rem;
+    padding: 1rem;
+  }
+}
+.single-post .single-extrait {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .single-post .single-extrait {
+    font-weight: 600;
+    margin-bottom: 4rem;
+  }
+}
+.single-post .single-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4.4rem;
+}
+
 @media (min-width: 1024px) {
   .single .entry-content {
     padding-top: 7.5rem;

@@ -26,33 +26,38 @@ add_action( 'tha_entry_top', 'kasutan_page_banniere', 7 );
 add_action('tha_entry_content_before', 'kasutan_single_entry_content_before');
 //TODO utiliser ces hooks pour insérer extrait, métas et thumbnail
 function kasutan_single_entry_content_before() {
-	if(get_post_type() !== 'post') {
-		return;
+	$post_id=get_the_ID();
+
+	$auteurs=false;
+	if(function_exists('get_field')) {
+		$auteurs=wp_kses_post(get_field('auteurs'));
 	}
-	
-	echo '<div class="col">'; //wrapper pour la 1ère colonne
+	if(!$auteurs) {
+		$auteurs=get_the_author();
+	}
+	$list=get_the_category_list('<span class="vir">, </span>');
+	//Métas single
+	echo '<div class="meta-single">';
+		printf('<p class="date">%s <strong>%s</strong>',__('Publié le :','effidyn'),get_the_date('d/m/Y'));
+		printf('<p class="author">%s <strong>%s</strong>',__('Par :','effidyn'),$auteurs);
+		printf('<p class="cats">%s %s',__('Catégorie thématique :','effidyn'),$list);
+	echo '</div>';
 
-	//titre 
-	printf('<h1 class="single-title">%s</h1>',get_the_title());
+	//Extrait
+	printf('<p class="single-extrait">%s</p>', get_the_excerpt());
 
-	//date 
-	printf('<p class="single-date">%s</p>', get_the_date('d F Y'));
+	//Image
+
+	printf('<div class="single-image">%s</div>',get_the_post_thumbnail($post_id,'large'));
 
 }
 
 add_action('tha_entry_content_after','kasutan_single_entry_content_after');
 function kasutan_single_entry_content_after(){
-	//fermer wrapper de la la 1ère colonne
-	echo '</div> <!--end .col-->';
-
-	//Ajouter l'image 
-	if(function_exists('kasutan_affiche_thumbnail_dans_contenu')) {
-		kasutan_affiche_thumbnail_dans_contenu();
-	}
-
-	//Et glisser un lien vers toutes les actualités
-	$actus=get_option( 'page_for_posts' ) ;
-	printf('<div class="retour"><a href="%s">Retour aux actualités</a></div>',get_the_permalink($actus));
+	?>
+	<p>Boutons de partage</p>
+	<p>Autres articles dans la même catégorie</p>
+	<?php
 }
 
 

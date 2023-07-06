@@ -17,7 +17,51 @@
 	}
 }
 .single-post {
+	.page-banniere {
+		grid-template-rows: 6rem auto 4rem; 
+		height:auto;
+		.fond-banniere {
+			height:100%;
+		}
+		@include bp(lg) {
+			grid-template-rows: 12rem auto 8rem; 
+		}
+	}
+	.meta-single {
+		border-left: solid 1px var(--bleu-9a);
+		color:var(--bleu-9a);
+		margin-bottom: 2rem;
+		padding:1rem 1.5rem;
+		p {
+			margin-bottom: 6px;
+		}
+		a {
+			color:var(--bleu-9a);
+			text-decoration: none;
+			&:focus, &:hover {
+				color:var(--violet-d2);
+			}
+		}
+		@include bp(lg) {
+			margin-bottom: 4rem;
+			padding:1rem;
+		}
+	}
 
+	.single-extrait {
+		font-weight: 700;
+		margin-bottom: 3rem;
+		@include bp(lg) {
+			font-weight: 600;
+			margin-bottom: 4rem;
+		}
+	}
+
+	.single-image {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 4.4rem;
+	}
 	
 }
 @include bp(lg) {
