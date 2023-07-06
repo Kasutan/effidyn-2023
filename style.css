@@ -2532,6 +2532,29 @@ form.search-form input.search-submit {
   transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+.nav-cat {
+  border-top: solid 1px var(--bleu-bordure);
+  border-bottom: solid 1px var(--bleu-bordure);
+  margin-bottom: 5.5rem;
+  padding: 2rem 0 3.4rem;
+}
+.nav-cat .titre-nav {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.nav-cat .cats-links {
+  column-gap: 1.8rem;
+  row-gap: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+}
+.nav-cat a.wp-block-button__link {
+  font-weight: 600;
+  min-height: unset;
+  min-width: unset;
+  width: 100%;
+}
+
 .pagination {
   align-items: center;
   display: flex;

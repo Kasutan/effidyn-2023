@@ -1,0 +1,24 @@
+.nav-cat {
+	border-top:solid 1px var(--bleu-bordure);
+	border-bottom:solid 1px var(--bleu-bordure);
+	margin-bottom: 5.5rem;
+	padding:2rem 0 3.4rem;
+	.titre-nav {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.cats-links {
+		column-gap:1.8rem;
+		row-gap:1.8rem;
+		display: grid;
+		grid-template-columns: repeat(5,auto);
+	}
+
+	a.wp-block-button__link {
+		font-weight: 600;
+		min-height:unset;
+		min-width:unset;
+		width: 100%;
+	}
+}

@@ -370,7 +370,7 @@ function kasutan_affiche_liste_cats() {
 	);
 
 	echo '<nav class="nav-cat">';
-		printf('<p class="titre-nav">%s</p>',__('Accès thématiques','effidyn'));
+		printf('<p class="titre-nav h3">%s</p>',__('Accès thématiques','effidyn'));
 		echo '<ul class="cats-links">';
 	
 			foreach($terms as $term) : 
