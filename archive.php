@@ -59,9 +59,9 @@ add_action( 'ea_archive_header_before', 'kasutan_page_banniere', 7 );
 add_action( 'tha_content_while_after', 'ea_archive_while_after',10 );
 function ea_archive_while_after() {
 	echo '</ul> <!--end .loop-->';
-	if(is_home() && function_exists('kasutan_affiche_filtre_articles')) {
+	if(is_home()) {
 		echo '<ul class="pagination"></ul>';
-		echo '</div>'; // end #archive-filtrable
+		echo '</div>'; // end #archive-avec-pagination
 	}
 	echo '</div>'; //end .container
 }
