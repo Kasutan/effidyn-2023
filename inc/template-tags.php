@@ -432,7 +432,7 @@ function kasutan_affiche_top_article() {
 */
 function kasutan_affiche_metas_article($post_id) {
 	$date=get_the_date('d/m/Y',$post_id);
-	$list=get_the_category_list(', ', '', $post_id);
+	$list=get_the_category_list('<span class="vir">, </span>', '', $post_id);
 	echo '<p class="meta">';
 		printf('<span class="date">%s |</span>',$date);
 		printf('<span class="cats">%s</span>',$list);

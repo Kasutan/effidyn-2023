@@ -362,6 +362,7 @@ body .entry-content {
 
 .container {
   padding: 0 var(--padding-x);
+  position: relative;
 }
 
 .site {
@@ -2036,10 +2037,7 @@ button.ouvrir-sous-menu:focus {
 .loop {
   list-style: none;
   margin: 0;
-  padding-top: var(--margin-y-1);
-}
-.loop .post-summary {
-  margin-bottom: var(--margin-y-1);
+  padding-top: 0;
 }
 @media (min-width: 1024px) {
   .loop {
@@ -2048,7 +2046,7 @@ button.ouvrir-sous-menu:focus {
     gap: 4rem;
     margin-bottom: var(--margin-y-1);
   }
-  .loop .post-summary {
+  .loop .post-summary, .loop .vignette {
     margin-bottom: 0;
     max-width: unset;
     width: 100%;
@@ -2060,11 +2058,8 @@ button.ouvrir-sous-menu:focus {
   }
 }
 
-.blog h1.entry-title {
-  color: var(--rouge);
-}
-.blog h1.entry-title::before {
-  background-image: url("icons/picto-fruit-rouge.png");
+.blog .top-post, .blog .nav-cat, .blog .extrait {
+  display: none;
 }
 
 form.search-form {
@@ -2718,5 +2713,66 @@ form.search-form input.search-submit {
   .vignette .wp-block-buttons {
     margin-top: auto;
   }
+}
+
+.blog .vignette, .archive .vignette {
+  margin-bottom: 4.8rem;
+}
+.blog .vignette .image, .archive .vignette .image {
+  aspect-ratio: 2.35;
+  margin-bottom: 1.8rem;
+}
+.blog .vignette .titre-item, .archive .vignette .titre-item {
+  font-weight: 600;
+}
+.blog .vignette.sticky:not(:first-of-type) .ruban, .archive .vignette.sticky:not(:first-of-type) .ruban {
+  display: none;
+}
+
+.vignette .meta, .top-post .meta {
+  color: var(--violet-d2);
+  display: flex;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+.vignette .meta .date, .top-post .meta .date {
+  flex-shrink: 0;
+  margin-right: 0.5ch;
+}
+.vignette .meta .cats, .top-post .meta .cats {
+  display: flex;
+  flex-wrap: wrap;
+}
+.vignette .meta .cats .vir, .vignette .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
+  display: none;
+}
+.vignette .image, .top-post .image {
+  position: relative;
+}
+.vignette .ruban, .top-post .ruban {
+  background-color: var(--violet-d2);
+  color: var(--blanc);
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  left: -11px;
+  line-height: 1.5rem;
+  padding: 5px 12px 3px 9px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 13px;
+}
+.vignette .ruban::after, .top-post .ruban::after {
+  border-top: solid 4px var(--violet-ba);
+  border-right: solid 4px var(--violet-ba);
+  border-left: solid 4px var(--blanc);
+  border-bottom: solid 4px var(--blanc);
+  content: "";
+  display: block;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 10px;
 }
 /*# sourceMappingURL=style.css.map */

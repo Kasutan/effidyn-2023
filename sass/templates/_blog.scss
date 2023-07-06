@@ -1,8 +1,7 @@
 .blog {
-	h1.entry-title {
-		color:var(--rouge);
-		&::before {
-			background-image: url('icons/picto-fruit-rouge.png');
-		}
+
+	//Affichage simplifié en mobile
+	.top-post, .nav-cat, .extrait {
+		display:none; 
 	}
 }
