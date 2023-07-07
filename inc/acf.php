@@ -181,6 +181,16 @@ class BE_ACF_Customizations {
 			return;
 
 
+		/*********Bloc accueil-services ***************/
+		$this->helper_register_block_type( 
+			'accueil-services',
+			'Bloc services pour page Accueil',
+			'Section avec intro, titre et grille de services avec pictos.',
+			'calculator', 
+			false, 
+			array('accueil', 'service')
+		);
+
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
 			'blog',

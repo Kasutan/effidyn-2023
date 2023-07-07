@@ -1,10 +1,10 @@
 {
-    "key": "group_649f1cc482849",
-    "title": "Bloc services pour page Savoir-Faire",
+    "key": "group_64a8791d77739",
+    "title": "Bloc services pour page Accueil",
     "fields": [
         {
-            "key": "field_649f1cc48cf2d",
-            "label": "Bloc services pour page Savoir-Faire",
+            "key": "field_64a8791d7f0e2",
+            "label": "Bloc services pour page Accueil",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -16,14 +16,34 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Section avec titre et grille de services avec pictos.",
+            "message": "Section avec intro, titre et grille de services avec pictos.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
         {
-            "key": "field_649f1cc4908be",
+            "key": "field_64a8791d82b78",
             "label": "Titre de la section",
             "name": "titre_section",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les mots entre balises span seront affichés en rose",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 1,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_64a8794aaa8d4",
+            "label": "Introduction de la section",
+            "name": "intro_section",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -36,12 +56,12 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": "",
+            "rows": 4,
             "placeholder": "",
             "new_lines": "br"
         },
         {
-            "key": "field_649f1cc49453d",
+            "key": "field_64a8791d8682d",
             "label": "Services",
             "name": "services",
             "aria-label": "",
@@ -63,7 +83,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_649f1cc49fc7f",
+                    "key": "field_64a8791d91e15",
                     "label": "Titre",
                     "name": "titre",
                     "aria-label": "",
@@ -81,10 +101,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_649f1cc49453d"
+                    "parent_repeater": "field_64a8791d8682d"
                 },
                 {
-                    "key": "field_649f1cc4a37a1",
+                    "key": "field_64a8791d95a27",
                     "label": "Texte",
                     "name": "texte",
                     "aria-label": "",
@@ -102,10 +122,10 @@
                     "rows": 2,
                     "placeholder": "",
                     "new_lines": "br",
-                    "parent_repeater": "field_649f1cc49453d"
+                    "parent_repeater": "field_64a8791d8682d"
                 },
                 {
-                    "key": "field_649f1d16c404e",
+                    "key": "field_64a8791d99596",
                     "label": "Picto",
                     "name": "picto",
                     "aria-label": "",
@@ -128,10 +148,10 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
-                    "parent_repeater": "field_649f1cc49453d"
+                    "parent_repeater": "field_64a8791d8682d"
                 },
                 {
-                    "key": "field_649fe3a69062a",
+                    "key": "field_64a8791d9d027",
                     "label": "Lien pour le bouton \"En savoir plus\"",
                     "name": "lien",
                     "aria-label": "",
@@ -152,7 +172,7 @@
                     "allow_archives": 0,
                     "multiple": 0,
                     "allow_null": 0,
-                    "parent_repeater": "field_649f1cc49453d"
+                    "parent_repeater": "field_64a8791d8682d"
                 }
             ]
         }
@@ -162,7 +182,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/savoir-faire-services"
+                "value": "acf\/accueil-services"
             }
         ]
     ],
@@ -175,5 +195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688763565
+    "modified": 1688763522
 }

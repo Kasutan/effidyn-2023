@@ -73,6 +73,10 @@ body .entry-content {
 	position:relative;
 }
 
+body.home .entry-content {
+	padding-top: 0;
+}
+
 
 .alignfull , .bleed-container {
 	@include bleed;

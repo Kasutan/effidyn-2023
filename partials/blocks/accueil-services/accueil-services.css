@@ -1,0 +1,112 @@
+.accueil-services {
+  background-color: var(--blanc);
+  padding-top: 5.5rem;
+  padding-bottom: 4.6rem;
+}
+.accueil-services.decor-top::after {
+  display: none;
+}
+.accueil-services .titre-section {
+  margin-bottom: 3.9rem;
+  text-align: center;
+}
+.accueil-services .titre-section span {
+  color: var(--rose-e4);
+}
+.accueil-services .service {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.accueil-services .picto {
+  align-items: center;
+  background: transparent linear-gradient(0deg, #8E00D2 0%, #04329A 100%) 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  height: 5.9rem;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  padding: 1rem;
+  width: 5.9rem;
+}
+.accueil-services .titre {
+  color: var(--bleu-texte);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  margin-bottom: 0;
+}
+.accueil-services .texte {
+  color: var(--rose-e4);
+  font-size: 1.6rem;
+  font-style: italic;
+  line-height: 1.9rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+.accueil-services .texte br {
+  display: none;
+}
+.accueil-services .wp-block-buttons {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .accueil-services {
+    padding-top: 9.5rem;
+    padding-bottom: 6rem;
+  }
+  .accueil-services.decor-top::after {
+    display: block;
+  }
+  .accueil-services .titre-section {
+    margin-bottom: 10rem;
+  }
+  .accueil-services .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 135rem;
+  }
+  .accueil-services .service {
+    flex: 0 0 33rem;
+    margin-bottom: 9rem;
+    position: relative;
+  }
+  .accueil-services .picto {
+    height: 12.3rem;
+    margin-bottom: 2rem;
+    padding: 3rem;
+    width: 12.3rem;
+  }
+  .accueil-services .titre {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    margin-bottom: 2rem;
+  }
+  .accueil-services .texte {
+    font-size: 2rem;
+    line-height: 2.3rem;
+    margin: 0 auto;
+    max-width: 22rem;
+  }
+  .accueil-services .texte br {
+    display: block;
+  }
+  .accueil-services .wp-block-buttons {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  .accueil-services a.wp-block-button__link {
+    width: 22rem;
+  }
+}
+@media (min-width: 1440px) {
+  .accueil-services .services {
+    column-gap: 5.7rem;
+  }
+  .accueil-services .service::after {
+    right: -4rem;
+  }
+}

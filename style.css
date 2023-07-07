@@ -350,6 +350,10 @@ body .entry-content {
   position: relative;
 }
 
+body.home .entry-content {
+  padding-top: 0;
+}
+
 .alignfull, .bleed-container {
   width: 100vw;
   margin-left: calc(-1 * var(--padding-x) - 2rem);
