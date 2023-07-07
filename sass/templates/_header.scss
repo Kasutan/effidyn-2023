@@ -144,7 +144,7 @@
 
 		background-color: var(--bleu-9a);
 		height:var(--hauteur-decor);
-		overflow-x: hidden;
+		overflow: hidden;
 	}
 
 	.decor-hero-bottom {
@@ -206,6 +206,50 @@
 		}
 		.fond-banniere {
 			background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+		}
+	}
+
+	&.pour-accueil {
+		--hauteur-banniere:47rem;
+		--hauteur-decor:52rem;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		.titre {
+			padding:0 var(--padding-x-header);
+			span {
+				text-decoration: underline;
+			}
+		}
+		.fond-banniere {
+			background-color: var(--bleu-9a);
+		}
+		.image-accueil {
+			height:100%;
+			left:0;
+			opacity: 0.4;
+			position: absolute;
+			top:0;
+			width:100%;
+			img {
+				height: 100%;
+				object-fit: cover;
+				width:100%;
+			}
+			
+		}
+	
+		.image-desktop {
+			display: none;
+		}
+	
+		@include bp(lg) {
+			.image-mobile {
+				display: none;
+			}
+			.image-desktop {
+				display: block;
+			}
 		}
 	}
 }
