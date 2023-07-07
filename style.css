@@ -2466,7 +2466,7 @@ form.search-form input.search-submit {
 }
 @media (min-width: 1440px) {
   .posts-related.pour-single .meta .sep, .posts-related.pour-single .meta .cats {
-    display: inline-block;
+    display: inline;
   }
 }
 @media (min-width: 1024px) {
@@ -2476,6 +2476,9 @@ form.search-form input.search-submit {
   }
   .posts-related .titre-section {
     margin-bottom: 6rem;
+  }
+  .posts-related .titre-section .term {
+    display: inline;
   }
   .posts-related .posts {
     column-gap: var(--gap);

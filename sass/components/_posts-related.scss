@@ -41,7 +41,7 @@
 			.sep, .cats {
 				display: none;
 				@include bp(xl) {
-					display: inline-block;
+					display: inline;
 				}
 			}
 		}
@@ -54,6 +54,9 @@
 		padding:5.3rem var(--padding-x) 10.4rem;
 		.titre-section {
 			margin-bottom: 6rem;
+			.term  {
+				display: inline;
+			}
 		}
 		.posts {
 			column-gap: var(--gap);
