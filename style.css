@@ -2645,6 +2645,57 @@ form.search-form input.search-submit {
   color: var(--bleu);
 }
 
+.partage {
+  background-color: rose;
+  margin-bottom: 5rem;
+  margin-top: 3.6rem;
+}
+.partage .titre-partage {
+  color: var(--bleu-texte);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+  text-align: center;
+}
+.partage .liens-partage {
+  display: flex;
+  justify-content: center;
+}
+.partage .liens-partage li {
+  margin-right: 3.5rem;
+}
+.partage .liens-partage li:last-of-type {
+  margin-right: 0;
+}
+.partage .liens-partage li a {
+  background-color: var(--bleu-texte);
+  background-image: url("icons/envelope.svg");
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center center;
+  border-radius: 3px;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+}
+.partage .liens-partage li a.facebook {
+  background-image: url("icons/facebook.svg");
+  background-size: 40%;
+}
+.partage .liens-partage li a.twitter {
+  background-image: url("icons/twitter.svg");
+  background-size: 55%;
+}
+.partage .liens-partage li a.linkedin {
+  background-image: url("icons/linkedin.svg");
+  background-size: 55%;
+}
+.partage .liens-partage li a:hover, .partage .liens-partage li a:focus {
+  background-color: var(--violet-d2);
+  border-radius: 5px;
+  transform: scale(1.5);
+}
+
 .post-summary {
   display: flex;
   flex-direction: column;

@@ -469,3 +469,45 @@ function kasutan_decor_traits() {
 	<div class="rect rect-3"></div>
 </div>';
 }
+
+/**
+* Boutons de partage pour un single
+* simplesharingbuttons.com
+*/
+function kasutan_boutons_partage() {
+	$lien=urlencode(get_the_permalink());
+	$titre=urlencode(get_the_title());
+
+	$canaux=['mail','facebook','twitter','linkedin']; //dans l'ordre où les liens seront affichés
+	$urls=array();
+
+	$urls['facebook']='https://www.facebook.com/sharer/sharer.php?u='.$lien.'&quote='.$titre;
+
+	$urls['twitter']='https://twitter.com/intent/tweet?source='.$lien.'&text='.$titre;
+
+	$urls['linkedin']="http://www.linkedin.com/shareArticle?mini=true&url=".$lien.'&title='.$titre;
+
+	$urls['mail']='mailto:?subject='.$titre.'&body='.$lien;
+
+	$labels=array();
+	$labels['facebook']=__('Partager sur Facebook','effidyn');
+	$labels['twitter']=__('Partager sur Twitter','effidyn');
+	$labels['linkedin']=__('Partager sur LinkedIn','effidyn');
+	$labels['mail']=__('Partager par email','effidyn');
+
+	$titre=false;
+	if(function_exists('get_field')) {
+		$titre=wp_kses_post(get_field('effidyn_titre_partage','option'));
+	}
+	if(!$titre) {
+		$titre=__('Partager cet article','effidyn');
+	}
+	echo '<div class="partage">';
+		printf('<p class="titre-partage"><span class="trait"></span><span class="texte">%s</span></p>',$titre);
+		echo '<ul class="liens-partage">';
+			foreach($canaux as $canal) {
+				printf('<li><a href="%s" class="canal %s" title="%s" target="_blank" rel="noopener noreferrer"></a></li>',$urls[$canal],$canal,$labels[$canal]);
+			}
+		echo '</ul>';
+	echo '</div>';
+}

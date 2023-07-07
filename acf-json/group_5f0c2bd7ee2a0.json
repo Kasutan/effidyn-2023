@@ -51,6 +51,64 @@
             "preview_size": "banniere"
         },
         {
+            "key": "field_649f0c0f42d8a",
+            "label": "Surtitres",
+            "name": "effidyn_surtitres",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_649f0c2d42d8b",
+                    "label": "Sur-titre pour les pages de type publication",
+                    "name": "blog",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Articles de blog ou pages archives de catégories de blog",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Publications",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_649f0c8242d8c",
+                    "label": "Sur-titre pour les pages de type Etudes de cas",
+                    "name": "cas",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Étude de cas individuelle ou pages archives de catégories d'études de cas",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Références > Etude de cas",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
             "key": "field_60a0e771c0bde",
             "label": "Pied de page : logo",
             "name": "effidyn_footer_logo",
@@ -156,11 +214,11 @@
             "append": ""
         },
         {
-            "key": "field_649f0c0f42d8a",
-            "label": "Surtitres",
-            "name": "effidyn_surtitres",
+            "key": "field_64a82c4914c04",
+            "label": "Bloc de partage des articles : titre du bloc",
+            "name": "effidyn_titre_partage",
             "aria-label": "",
-            "type": "group",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -169,49 +227,11 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
-            "sub_fields": [
-                {
-                    "key": "field_649f0c2d42d8b",
-                    "label": "Sur-titre pour les pages de type publication",
-                    "name": "blog",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Articles de blog ou pages archives de catégories de blog",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Publications",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_649f0c8242d8c",
-                    "label": "Sur-titre pour les pages de type Etudes de cas",
-                    "name": "cas",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Étude de cas individuelle ou pages archives de catégories d'études de cas",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Références > Etude de cas",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                }
-            ]
+            "default_value": "Partager cet article",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -232,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688465489
+    "modified": 1688743025
 }

@@ -54,8 +54,11 @@ function kasutan_single_entry_content_before() {
 
 add_action('tha_entry_content_after','kasutan_single_entry_content_after');
 function kasutan_single_entry_content_after(){
+	if(function_exists('kasutan_boutons_partage')) {
+		kasutan_boutons_partage();
+	}
 	?>
-	<p>Boutons de partage</p>
+
 	<p>Autres articles dans la même catégorie</p>
 	<?php
 }

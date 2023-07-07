@@ -1,0 +1,52 @@
+.partage {
+	background-color: rose;
+	margin-bottom: 5rem;
+	margin-top: 3.6rem;
+	.titre-partage {
+		color:var(--bleu-texte);
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 2.2rem;
+		text-align: center;
+		//TODO trait
+	}
+	.liens-partage {
+		display: flex;
+		justify-content: center;
+		li {
+			margin-right: 3.5rem;
+			&:last-of-type {
+				margin-right: 0;
+			}
+			a {
+				background-color: var(--bleu-texte);
+				background-image: url('icons/envelope.svg');
+				background-repeat: no-repeat;
+				background-size: 65%;
+				background-position: center center;
+				border-radius: 3px;
+				display: block;
+				height:4rem;
+				width:4rem;
+				&.facebook {
+					background-image: url('icons/facebook.svg');
+					background-size: 40%;
+				}
+				&.twitter {
+					background-image: url('icons/twitter.svg');
+					background-size: 55%;
+				}
+				&.linkedin {
+					background-image: url('icons/linkedin.svg');
+					background-size: 55%;
+				}
+
+				&:hover, &:focus {
+					background-color: var(--violet-d2); //dix couleur
+					border-radius :5px;
+					transform:scale(1.5); //TODO 40 en desktop 50 au survol
+				}
+			}
+		}
+	}
+}
