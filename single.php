@@ -57,10 +57,14 @@ function kasutan_single_entry_content_after(){
 	if(function_exists('kasutan_boutons_partage')) {
 		kasutan_boutons_partage();
 	}
-	?>
 
-	<p>Autres articles dans la même catégorie</p>
-	<?php
+	if(function_exists('kasutan_affiche_trois_articles') && function_exists('ea_first_term')) {
+		$term = ea_first_term();
+		$exclude=array();
+		$exclude[]=get_the_ID();
+		kasutan_affiche_trois_articles($term, '', $exclude,'pour-single',false) ;
+	}
+
 }
 
 

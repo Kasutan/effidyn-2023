@@ -2419,6 +2419,92 @@ form.search-form input.search-submit {
   }
 }
 
+.posts-related {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  padding: 3.6rem var(--padding-x) 3rem;
+}
+@media (min-width: 1920px) {
+  .posts-related {
+    width: var(--largeur-max);
+  }
+}
+.posts-related .titre-section {
+  margin-bottom: 2.6rem;
+  text-align: center;
+}
+.posts-related .titre-section .term {
+  color: var(--rose-ec);
+  display: block;
+}
+.posts-related .vignette {
+  display: flex;
+  flex-direction: column;
+}
+.posts-related .vignette .image {
+  aspect-ratio: 2.34;
+  order: 1;
+  margin-bottom: 5px;
+}
+.posts-related .vignette .titre-item {
+  margin-bottom: 0;
+  order: 3;
+}
+.posts-related .vignette .meta {
+  margin-bottom: 0;
+  order: 2;
+}
+.posts-related .vignette .meta .cats {
+  display: none;
+}
+.posts-related .vignette .extrait {
+  display: none;
+}
+.posts-related.pour-single .meta .sep, .posts-related.pour-single .meta .cats {
+  display: none;
+}
+@media (min-width: 1440px) {
+  .posts-related.pour-single .meta .sep, .posts-related.pour-single .meta .cats {
+    display: inline-block;
+  }
+}
+@media (min-width: 1024px) {
+  .posts-related {
+    --gap:3rem;
+    padding: 5.3rem var(--padding-x) 10.4rem;
+  }
+  .posts-related .titre-section {
+    margin-bottom: 6rem;
+  }
+  .posts-related .posts {
+    column-gap: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .posts-related .vignette .image {
+    aspect-ratio: 1.4;
+  }
+  .posts-related .vignette .titre-item {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin-bottom: 1.2rem;
+  }
+  .posts-related .vignette .meta {
+    margin-bottom: 1.8rem;
+  }
+  .posts-related .vignette .extrait {
+    display: block;
+    order: 4;
+  }
+}
+@media (min-width: 1440px) {
+  .posts-related {
+    --gap:5.4rem;
+    padding-bottom: 20rem;
+  }
+}
+
 .filtre-archive {
   align-items: center;
   display: flex;

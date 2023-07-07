@@ -435,7 +435,7 @@ function kasutan_affiche_metas_article($post_id) {
 	$date=get_the_date('d/m/Y',$post_id);
 	$list=get_the_category_list('<span class="vir">, </span>', '', $post_id);
 	echo '<p class="meta">';
-		printf('<span class="date">%s |</span>',$date);
+		printf('<span class="date">%s <span class="sep">|</span></span>',$date);
 		printf('<span class="cats">%s</span>',$list);
 	echo '</p>';
 
@@ -517,10 +517,9 @@ function kasutan_boutons_partage() {
  */
 
 
-function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array(),$className='',$label_bouton=' ') {
+function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array(),$className='',$label_bouton='') {
 
 	$args=array(
-		'post_type' => 'post',
 		'posts_per_page' => '3',
 		'orderby' => 'date',
 		'order' => 'DESC'
@@ -528,7 +527,7 @@ function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array
 	if($term) {
 		$args['tax_query']= array(
 			array(
-				'taxonomy' => 'savoir-faire',
+				'taxonomy' => 'category',
 				'terms' => $term->term_id,
 			),
 		);
@@ -552,10 +551,10 @@ function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array
 		);
 	}
 
-	printf('<section class="post-related decor-top decor-bleu %s">', $className);
+	printf('<section class="posts-related %s">', $className);
 
 		printf('<h2 class="titre-section">%s</h2>',$titre_section);
-			echo '<ul class="references">';
+			echo '<ul class="posts">';
 
 			while ( $articles->have_posts() ) {
 				$articles->the_post();

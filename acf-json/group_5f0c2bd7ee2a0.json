@@ -227,7 +227,27 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Partager cet article",
+            "default_value": "Partager cet article :",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64a8513e4cc98",
+            "label": "Section avec des articles dans la même catégorie : titre du bloc",
+            "name": "effidyn_titre_related",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Dans la même catégorie :",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -252,5 +272,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688743025
+    "modified": 1688752504
 }
