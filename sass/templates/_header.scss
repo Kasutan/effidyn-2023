@@ -210,7 +210,7 @@
 	}
 
 	&.pour-accueil {
-		--hauteur-banniere:47rem;
+		--hauteur-banniere:48rem;
 		--hauteur-decor:52rem;
 		align-items: center;
 		display: flex;
@@ -234,6 +234,7 @@
 			img {
 				height: 100%;
 				object-fit: cover;
+				object-position: top center;
 				width:100%;
 			}
 			
@@ -244,12 +245,21 @@
 		}
 	
 		@include bp(lg) {
-			.image-mobile {
+			--hauteur-banniere:53rem;
+			--hauteur-decor:80rem;
+				.image-mobile {
 				display: none;
 			}
 			.image-desktop {
 				display: block;
 			}
+		}
+		@include bp(xl) {
+			--hauteur-banniere:56rem;
+			--hauteur-decor:90rem;
+		}
+		@include bp(xxl) {
+			--hauteur-banniere:59rem;
 		}
 	}
 }

@@ -1835,7 +1835,7 @@ button.ouvrir-sous-menu:focus {
   background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
 }
 .page-banniere.pour-accueil {
-  --hauteur-banniere:47rem;
+  --hauteur-banniere:48rem;
   --hauteur-decor:52rem;
   align-items: center;
   display: flex;
@@ -1861,17 +1861,33 @@ button.ouvrir-sous-menu:focus {
 .page-banniere.pour-accueil .image-accueil img {
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   width: 100%;
 }
 .page-banniere.pour-accueil .image-desktop {
   display: none;
 }
 @media (min-width: 1024px) {
+  .page-banniere.pour-accueil {
+    --hauteur-banniere:53rem;
+    --hauteur-decor:80rem;
+  }
   .page-banniere.pour-accueil .image-mobile {
     display: none;
   }
   .page-banniere.pour-accueil .image-desktop {
     display: block;
+  }
+}
+@media (min-width: 1440px) {
+  .page-banniere.pour-accueil {
+    --hauteur-banniere:56rem;
+    --hauteur-decor:90rem;
+  }
+}
+@media (min-width: 1920px) {
+  .page-banniere.pour-accueil {
+    --hauteur-banniere:59rem;
   }
 }
 
