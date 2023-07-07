@@ -340,7 +340,6 @@ function kasutan_front_page_banniere() {
 				echo wp_get_attachment_image( $image_desktop, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
 			echo '</div>';
 
-			echo '<div class=overlay"></div>';
 
 			echo '<div class="decor-hero-bottom"></div>';	
 			
