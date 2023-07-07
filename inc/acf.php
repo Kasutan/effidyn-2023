@@ -181,17 +181,6 @@ class BE_ACF_Customizations {
 			return;
 
 
-		/*********Bloc banniere ***************/
-		$this->helper_register_block_type( 
-			'banniere',
-			'Bloc image bannière',
-			'Section avec une image de fond et un texte sur fond coloré semi-opaque la page d\'accueil.',
-			'calculator', 
-			false,
-			array( 'banniere', 'accueil')
-		);
-
-
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
 			'blog',

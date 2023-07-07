@@ -1768,7 +1768,7 @@ button.ouvrir-sous-menu:focus {
   width: 100%;
   background-color: var(--bleu-9a);
   height: var(--hauteur-decor);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .page-banniere .decor-hero-bottom {
   height: 100%;
@@ -1833,6 +1833,46 @@ button.ouvrir-sous-menu:focus {
 }
 .page-banniere.publication .fond-banniere {
   background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+}
+.page-banniere.pour-accueil {
+  --hauteur-banniere:47rem;
+  --hauteur-decor:52rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.page-banniere.pour-accueil .titre {
+  padding: 0 var(--padding-x-header);
+}
+.page-banniere.pour-accueil .titre span {
+  text-decoration: underline;
+}
+.page-banniere.pour-accueil .fond-banniere {
+  background-color: var(--bleu-9a);
+}
+.page-banniere.pour-accueil .image-accueil {
+  height: 100%;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.page-banniere.pour-accueil .image-accueil img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.page-banniere.pour-accueil .image-desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .page-banniere.pour-accueil .image-mobile {
+    display: none;
+  }
+  .page-banniere.pour-accueil .image-desktop {
+    display: block;
+  }
 }
 
 /*--------------------------------------------------------------

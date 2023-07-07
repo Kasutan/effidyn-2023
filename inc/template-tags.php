@@ -222,6 +222,7 @@ function kasutan_page_titre() {
 //TODO inclure le nom de la page parente s'il y en a une en sur-titre -> Voir fil ariane
 function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	if(is_front_page(  )) {
+		kasutan_front_page_banniere();
 		return;
 	}
 
@@ -312,6 +313,43 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	echo '</div>';
 	
 }
+
+/***
+ * Page bannière pour la page d'accueil (simplifiée mais avec des images et un overlay)
+ */
+function kasutan_front_page_banniere() {
+
+	//champs personnalisés liés à la page, affichés dans le BO seulement si c'est la page d'accueil	
+	$page_id=get_the_ID();
+	$texte=wp_kses_post( get_field('banniere_texte',$page_id) );
+	$image_desktop=esc_attr( get_field('banniere_image_desktop',$page_id) );
+	$image_mobile=esc_attr( get_field('banniere_image_mobile',$page_id) );
+
+
+	printf('<section class="page-banniere pour-accueil">');
+		
+		echo '<div class="fond-banniere">';
+		//div qui overflow (avec images et décor diagonale)
+
+			echo '<div class="image-accueil image-mobile">';
+				echo wp_get_attachment_image( $image_mobile, 'large',false,array('decoding'=>'async','loading'=>'eager'));
+			echo '</div>';
+
+			
+			echo '<div class="image-accueil image-desktop">';
+				echo wp_get_attachment_image( $image_desktop, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
+			echo '</div>';
+
+			echo '<div class=overlay"></div>';
+
+			echo '<div class="decor-hero-bottom"></div>';	
+			
+		echo '</div>';
+
+		printf('<h1 class="titre">%s</h1>',$texte);
+
+	echo '</section>';	
+} 
 
 /**
 * Image banniere pour les actus + utilisée aussi pour la recherche

@@ -1,14 +1,14 @@
 {
     "key": "group_609e9721dca66",
-    "title": "Bloc section bannière",
+    "title": "Réglages de la bannière",
     "fields": [
         {
             "key": "field_609e9721dfe86",
             "label": "Texte de la bannière",
-            "name": "texte",
+            "name": "banniere_texte",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Les mots entre balises span seront soulignés",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -24,8 +24,8 @@
         },
         {
             "key": "field_609e9721dfebe",
-            "label": "Image bannière",
-            "name": "image",
+            "label": "Image bannière (desktop)",
+            "name": "banniere_image_desktop",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -37,7 +37,6 @@
                 "id": ""
             },
             "return_format": "id",
-            "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -45,20 +44,46 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_64a86f510bf68",
+            "label": "Image bannière (mobile)",
+            "name": "banniere_image_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "page_type",
                 "operator": "==",
-                "value": "acf\/banniere"
+                "value": "front_page"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -66,6 +91,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687958980,
-    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609e9721dca66.json"
+    "modified": 1688760277
 }
