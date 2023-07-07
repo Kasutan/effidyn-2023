@@ -511,3 +511,66 @@ function kasutan_boutons_partage() {
 		echo '</ul>';
 	echo '</div>';
 }
+
+/****
+ * Section avec 3 posts (pour related en bas des single ou pour bloc accueil)
+ */
+
+
+function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array(),$className='',$label_bouton=' ') {
+
+	$args=array(
+		'post_type' => 'post',
+		'posts_per_page' => '3',
+		'orderby' => 'date',
+		'order' => 'DESC'
+	);
+	if($term) {
+		$args['tax_query']= array(
+			array(
+				'taxonomy' => 'savoir-faire',
+				'terms' => $term->term_id,
+			),
+		);
+	}
+	if(!empty($exclude)) {
+		$args['post__not_in']=$exclude;
+	}
+
+	$articles=new WP_Query($args);
+
+	if(!$articles->have_posts(  )) {
+		return;
+	}
+
+	$count=$articles->post_count;
+
+	if(!$titre_section && $term && function_exists('get_field')) {
+		$titre_section=sprintf('%s <span class="term">%s</span>',
+			wp_kses_post(get_field('effidyn_titre_related','option')),
+			$term->name
+		);
+	}
+
+	printf('<section class="post-related decor-top decor-bleu %s">', $className);
+
+		printf('<h2 class="titre-section">%s</h2>',$titre_section);
+			echo '<ul class="references">';
+
+			while ( $articles->have_posts() ) {
+				$articles->the_post();
+				get_template_part( 'partials/archive');
+				
+			}
+			echo '</ul>';
+		wp_reset_postdata();
+
+		if($label_bouton) {
+			$url=get_permalink( get_option( 'page_for_posts' ) );
+			//TODO filtre WPML ?
+			kasutan_affiche_bouton($url,$label_bouton);
+		}
+
+
+	echo '</section>';
+}
