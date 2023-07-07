@@ -522,7 +522,7 @@ function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array
 	$args=array(
 		'posts_per_page' => '3',
 		'orderby' => 'date',
-		'order' => 'DESC'
+		'order' => 'DESC',
 	);
 	if($term) {
 		$args['tax_query']= array(
@@ -555,11 +555,12 @@ function kasutan_affiche_trois_articles($term, $titre_section='', $exclude=array
 
 		printf('<h2 class="titre-section">%s</h2>',$titre_section);
 			echo '<ul class="posts">';
-
-			while ( $articles->have_posts() ) {
+			$n=1;
+			//forcer loop à s'arrêter à  (même s'il y a un sticky post)
+			while ( $articles->have_posts() && $n<=3) {
 				$articles->the_post();
 				get_template_part( 'partials/archive');
-				
+				$n++;
 			}
 			echo '</ul>';
 		wp_reset_postdata();

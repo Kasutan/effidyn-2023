@@ -2447,6 +2447,9 @@ form.search-form input.search-submit {
   order: 1;
   margin-bottom: 5px;
 }
+.posts-related .vignette.post .ruban {
+  display: none;
+}
 .posts-related .vignette .titre-item {
   margin-bottom: 0;
   order: 3;
@@ -2454,9 +2457,6 @@ form.search-form input.search-submit {
 .posts-related .vignette .meta {
   margin-bottom: 0;
   order: 2;
-}
-.posts-related .vignette .meta .cats {
-  display: none;
 }
 .posts-related .vignette .extrait {
   display: none;

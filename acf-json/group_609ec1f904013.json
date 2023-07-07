@@ -1,11 +1,29 @@
 {
     "key": "group_609ec1f904013",
-    "title": "Bloc blog",
+    "title": "Bloc publications pour page Accueil",
     "fields": [
+        {
+            "key": "field_64a8653942687",
+            "label": "Bloc publications pour page Accueil",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section avec titre principal et les trois derniers articles publiés sur le blog.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
         {
             "key": "field_609ec1f909440",
             "label": "Titre de la section",
-            "name": "titre",
+            "name": "titre_section",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -16,11 +34,31 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Blog",
+            "default_value": "Actualités & Publications",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
+        },
+        {
+            "key": "field_64a865cc42688",
+            "label": "Label du lien vers la page des publications",
+            "name": "label_bouton",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Toutes nos publications",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -41,6 +79,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687958980,
-    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_609ec1f904013.json"
+    "modified": 1688757754
 }

@@ -9,43 +9,17 @@
 */
 
 
+if(!function_exists('kasutan_affiche_trois_articles')) {
+	return;
+}
+
 if(array_key_exists('className',$block)) {
 	$className=esc_attr($block["className"]);
 } else $className='';
 
 
-$titre=wp_kses_post( get_field('titre') );
+$titre_section=wp_kses_post( get_field('titre_section') );
+$label_bouton=wp_kses_post( get_field('label_bouton') );
 
-$articles=new WP_Query(array(
-	'post_type' => 'post',
-	'posts_per_page' => '3',
-	'orderby' => 'date',
-	'order' => 'DESC'
-));
-
-
-
-printf('<section class="acf blog %s">', $className);
-	if(!$articles->have_posts(  )) {
-		echo '<p>Aucune actualité</p>';
-		return;
-	}
-
-	printf('<h2 class="titre-section h1 has-rouge-color">%s</h2>',$titre);
-
-	echo '<div class="loop">';
-	while ( $articles->have_posts() ) {
-		$articles->the_post();
-		get_template_part('partials/archive','ul',array('tag'=>'div'));
-
-	}
-	echo '</div>';
-	wp_reset_postdata();
-
-	$actus=get_option( 'page_for_posts' );
-	if($actus) {
-		printf('<div class="text-center"><a href="%s?filtre_cat=toutes">Voir toutes nos actualités</a></div>',get_the_permalink( $actus));
-	}
-
-echo '</section>';
-	
+//On réutilise la fonction définie pour la section related au bas des pages single post
+kasutan_affiche_trois_articles(false, $titre_section, array(),'pour-bloc',$label_bouton) ;

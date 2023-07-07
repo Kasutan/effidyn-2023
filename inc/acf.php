@@ -195,11 +195,11 @@ class BE_ACF_Customizations {
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
 			'blog',
-			'Bloc blog',
-			'Section avec titre principal et les trois derniers articles publiés sur le blog. Carrousel sur petits écrans.',
+			'Bloc publications pour page Accueil',
+			'Section avec titre principal et les trois derniers articles publiés sur le blog.',
 			'calculator', 
-			true, //JS pour carrousel mobile
-			array('blog', 'article', 'accueil')
+			false, 
+			array('blog', 'article', 'accueil','publication','actualité')
 		);
 
 

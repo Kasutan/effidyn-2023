@@ -18,7 +18,10 @@
 		.image {
 			aspect-ratio: 2.34;
 			order:1;
-			margin-bottom: 5px;
+			margin-bottom: 5px; 
+		}
+		&.post .ruban {
+			display: none;
 		}
 		.titre-item {
 			margin-bottom: 0;
@@ -27,9 +30,6 @@
 		.meta {
 			margin-bottom: 0;
 			order:2;
-			.cats {
-				display: none;
-			}
 		}
 		.extrait {
 			display: none;
