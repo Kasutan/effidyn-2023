@@ -2651,11 +2651,38 @@ form.search-form input.search-submit {
   margin-top: 3.6rem;
 }
 .partage .titre-partage {
+  align-items: center;
   color: var(--bleu-texte);
+  display: flex;
   font-size: 1.8rem;
   font-weight: 600;
+  justify-content: center;
   line-height: 2.2rem;
+  position: relative;
   text-align: center;
+}
+.partage .titre-partage::before {
+  background-color: var(--bleu-bordure);
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.partage .titre-partage .texte {
+  background-color: var(--blanc);
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .partage .titre-partage {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+  }
 }
 .partage .liens-partage {
   display: flex;
@@ -2690,10 +2717,16 @@ form.search-form input.search-submit {
   background-image: url("icons/linkedin.svg");
   background-size: 55%;
 }
+@media (min-width: 1024px) {
+  .partage .liens-partage li a {
+    border-radius: 5px;
+    height: 5rem;
+    width: 5rem;
+  }
+}
 .partage .liens-partage li a:hover, .partage .liens-partage li a:focus {
   background-color: var(--violet-d2);
-  border-radius: 5px;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 .post-summary {

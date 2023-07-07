@@ -503,7 +503,7 @@ function kasutan_boutons_partage() {
 		$titre=__('Partager cet article','effidyn');
 	}
 	echo '<div class="partage">';
-		printf('<p class="titre-partage"><span class="trait"></span><span class="texte">%s</span></p>',$titre);
+		printf('<p class="titre-partage"><span class="texte">%s</span></p>',$titre);
 		echo '<ul class="liens-partage">';
 			foreach($canaux as $canal) {
 				printf('<li><a href="%s" class="canal %s" title="%s" target="_blank" rel="noopener noreferrer"></a></li>',$urls[$canal],$canal,$labels[$canal]);
