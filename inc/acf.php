@@ -214,11 +214,11 @@ class BE_ACF_Customizations {
 		/*********Bloc carrousel de logos ***************/
 		$this->helper_register_block_type( 
 			'carrousel',
-			'Bloc carrousel de logos des marques',
-			'Section avec titre et carrousel de logos des marques',
+			'Bloc carrousel de logos de clients',
+			'Section avec titre, carrousel de logos des clients et un lien.',
 			'calculator', 
 			true, //besoin de JS pour le carrousel
-			array('logo', 'marque','carrousel')
+			array('logo', 'accueil','carrousel','client')
 		);
 
 
