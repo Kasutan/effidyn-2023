@@ -1,0 +1,97 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.accueil-valeurs {
+	@include bleed;
+	background-color: var(--bleu-9a);
+	color:var(--blanc);
+	overflow: hidden;
+	padding: 5.2rem var(--padding-x) 18rem;
+
+	.decor-hero-top {
+		@include decor;
+	}
+	.titre-section, .valeurs {
+		position: relative;
+	}
+	
+	.titre-section {
+		color:var(--blanc);
+		font-size: 2.2rem;
+		line-height: 2.7rem;
+		margin-bottom: 2.55rem;
+		text-align: center;
+		
+	}
+	.decor-trait-simple::after {
+		background-color: var(--rose-ec);
+	}
+
+	.valeurs {
+		margin:0 auto 3rem;
+		max-width:50rem;
+	}
+
+	.valeur {
+		margin-bottom: 1.9rem;
+	}
+	
+	.titre {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 2.2rem;
+		margin-bottom: 0.5rem;
+	}
+
+	@include bp(lg ) {
+		column-gap: 2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding-top: 23rem;
+		padding-bottom: 20rem;
+
+		.titre-section {
+			font-size: 4.6rem;
+			line-height: 5rem;
+			text-align: left;
+		}
+		.decor-trait-simple::after {
+			left:0;
+			margin-top:3rem;
+		}
+		.valeurs {
+			margin:0 0 9.7rem;
+			max-width: unset;
+		}
+		.valeur {
+			margin-bottom: 4rem;
+		}
+		
+		.titre {
+			font-size: 4.6rem;
+			line-height: 5rem;
+			margin-bottom: 1.2rem;
+
+		}
+		
+		.texte {
+			
+		}
+
+		.wp-block-buttons {
+			grid-column: 1 / span 2;
+		}
+
+	}
+
+	@include bp(xl) {
+		.valeurs {
+			column-gap: 5.7rem;
+		}
+		.valeur::after {
+			right:-4rem;
+		}
+	}
+
+	@include bp(xxl) {
+	}
+} 

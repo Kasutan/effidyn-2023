@@ -68,15 +68,41 @@
 }
 
 .decor-hero-bottom {
-	--h:5rem;
+	--decor-bottom:url('icons/deco-hero-bottom_380.svg');
+
 	@include decor;
 
-	background-image: url('icons/deco-hero-bottom_380.svg');
+	background-image: var(--decor-bottom);
+	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: contain;
-	bottom:0;
-	height:var(--h);
+	bottom: -2px;
+	left:-5px;
+	width:calc(100% + 10px);
 	top:unset;
+
+	@include bp(sm) {
+		--hauteur-decor:35rem;
+		--decor-bottom:url('icons/deco-hero-bottom_480.svg');
+	}
+	@include bp(md) {
+		--hauteur-decor:40rem;
+		--decor-bottom:url('icons/deco-hero-bottom_768.svg');
+	}
+	@include bp(lg) {
+		--hauteur-decor:48rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1024.svg');
+	}
+	@include bp(xl) {
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1600.svg');
+	}
+	@include bp(xxl) {
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1900.svg');
+	}
+
+
 }
 
 //classe appliquée à un titre pour placer un petit trait bleu foncé dessous

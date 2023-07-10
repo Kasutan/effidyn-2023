@@ -1,0 +1,87 @@
+.accueil-valeurs {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  background-color: var(--bleu-9a);
+  color: var(--blanc);
+  overflow: hidden;
+  padding: 5.2rem var(--padding-x) 18rem;
+}
+@media (min-width: 1920px) {
+  .accueil-valeurs {
+    width: var(--largeur-max);
+  }
+}
+.accueil-valeurs .decor-hero-top {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.accueil-valeurs .titre-section, .accueil-valeurs .valeurs {
+  position: relative;
+}
+.accueil-valeurs .titre-section {
+  color: var(--blanc);
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  margin-bottom: 2.55rem;
+  text-align: center;
+}
+.accueil-valeurs .decor-trait-simple::after {
+  background-color: var(--rose-ec);
+}
+.accueil-valeurs .valeurs {
+  margin: 0 auto 3rem;
+  max-width: 50rem;
+}
+.accueil-valeurs .valeur {
+  margin-bottom: 1.9rem;
+}
+.accueil-valeurs .titre {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .accueil-valeurs {
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 23rem;
+    padding-bottom: 20rem;
+  }
+  .accueil-valeurs .titre-section {
+    font-size: 4.6rem;
+    line-height: 5rem;
+    text-align: left;
+  }
+  .accueil-valeurs .decor-trait-simple::after {
+    left: 0;
+    margin-top: 3rem;
+  }
+  .accueil-valeurs .valeurs {
+    margin: 0 0 9.7rem;
+    max-width: unset;
+  }
+  .accueil-valeurs .valeur {
+    margin-bottom: 4rem;
+  }
+  .accueil-valeurs .titre {
+    font-size: 4.6rem;
+    line-height: 5rem;
+    margin-bottom: 1.2rem;
+  }
+  .accueil-valeurs .wp-block-buttons {
+    grid-column: 1/span 2;
+  }
+}
+@media (min-width: 1440px) {
+  .accueil-valeurs .valeurs {
+    column-gap: 5.7rem;
+  }
+  .accueil-valeurs .valeur::after {
+    right: -4rem;
+  }
+}

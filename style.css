@@ -2391,18 +2391,50 @@ form.search-form input.search-submit {
 }
 
 .decor-hero-bottom {
-  --h:5rem;
+  --decor-bottom:url("icons/deco-hero-bottom_380.svg");
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-  background-image: url("icons/deco-hero-bottom_380.svg");
+  background-image: var(--decor-bottom);
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
-  bottom: 0;
-  height: var(--h);
+  bottom: -2px;
+  left: -5px;
+  width: calc(100% + 10px);
   top: unset;
+}
+@media (min-width: 500px) {
+  .decor-hero-bottom {
+    --hauteur-decor:35rem;
+    --decor-bottom:url("icons/deco-hero-bottom_480.svg");
+  }
+}
+@media (min-width: 768px) {
+  .decor-hero-bottom {
+    --hauteur-decor:40rem;
+    --decor-bottom:url("icons/deco-hero-bottom_768.svg");
+  }
+}
+@media (min-width: 1024px) {
+  .decor-hero-bottom {
+    --hauteur-decor:48rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1024.svg");
+  }
+}
+@media (min-width: 1440px) {
+  .decor-hero-bottom {
+    --hauteur-decor:53rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1600.svg");
+  }
+}
+@media (min-width: 1920px) {
+  .decor-hero-bottom {
+    --hauteur-decor:53rem;
+    --decor-bottom:url("icons/deco-hero-bottom_1900.svg");
+  }
 }
 
 .decor-trait-simple {

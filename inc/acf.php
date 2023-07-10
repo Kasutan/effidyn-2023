@@ -190,6 +190,15 @@ class BE_ACF_Customizations {
 			false, 
 			array('accueil', 'service')
 		);
+		/*********Bloc accueil-services ***************/
+		$this->helper_register_block_type( 
+			'accueil-valeurs',
+			'Bloc valeurs pour page Accueil',
+			'Section pleine largeur sur fond bleu avec titre, décor, 3 valeurs et un lien.',
+			'calculator', 
+			false, 
+			array('accueil', 'valeur')
+		);
 
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
