@@ -72,17 +72,16 @@
     max-width: 135rem;
   }
   .savoir-faire-services .service {
-    flex: 0 0 33rem;
+    flex: 0 0 30rem;
     margin-bottom: 9rem;
     position: relative;
   }
   .savoir-faire-services .picto {
     height: 12.3rem;
     margin-bottom: 2rem;
-    padding: 3rem;
     width: 12.3rem;
   }
-  .savoir-faire-services .titre {
+  .savoir-faire-services a.titre {
     font-size: 3.2rem;
     line-height: 3.6rem;
     margin-bottom: 2rem;

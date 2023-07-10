@@ -33,12 +33,16 @@
 		padding:1rem;
 		width: 5.9rem;
 	}
-	.titre {
+	a.titre {
 		color:var(--bleu-texte);
 		font-size: 2.2rem;
 		font-weight: 700;
 		line-height: 2.6rem;
 		margin-bottom: 0;
+		text-decoration: none;
+		&:hover, &:focus {
+			color:var(--violet-d2);
+		}
 	}
 	.texte {
 		color:var(--rose-e4);
@@ -59,34 +63,29 @@
 		&.decor-top::after {
 			display: block;
 		}
-		padding-top: 9.5rem;
-		padding-bottom: 6rem;
-		//TODO corriger padding
+		padding-top: 7rem;
+		padding-bottom: 5.3rem;
 
 		.titre-section {
 			margin-bottom: 10rem;
 		}
-		//TODO services sur 4 colonnes
 		.services {
 			display: flex;
 			flex-wrap:wrap;
 			justify-content: center;
-			margin:0 auto;
-			max-width:135rem;
 		}
 		.service {
-			flex:0 0 33rem;
+			flex:0 0 30rem;
 			margin-bottom: 9rem;
 			position: relative;
 		}
 		.picto {
 			height:12.3rem;
 			margin-bottom: 2rem;
-			padding:3rem;
 			width:12.3rem;
 		}
 
-		.titre {
+		a.titre {
 			font-size: 3.2rem;
 			line-height: 3.6rem;
 			margin-bottom: 2rem;
