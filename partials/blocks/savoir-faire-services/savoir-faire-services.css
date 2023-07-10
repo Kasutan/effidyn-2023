@@ -30,12 +30,16 @@
   padding: 1rem;
   width: 5.9rem;
 }
-.savoir-faire-services .titre {
+.savoir-faire-services a.titre {
   color: var(--bleu-texte);
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 2.6rem;
   margin-bottom: 0;
+  text-decoration: none;
+}
+.savoir-faire-services a.titre:hover, .savoir-faire-services a.titre:focus {
+  color: var(--violet-d2);
 }
 .savoir-faire-services .texte {
   color: var(--rose-e4);

@@ -27,7 +27,7 @@ printf('<section class="acf savoir-faire-services decor-top decor-bleu %s">', $c
 			$texte=wp_kses_post( get_sub_field('texte') );
 			$lien=esc_url( get_sub_field('lien') );
 			echo '<li class="service">';
-				printf('<div class="picto">%s</div><p class="titre">%s</p><p class="texte">%s</p>',wp_get_attachment_image($image),$titre,$texte);
+				printf('<a class="picto" href="%s">%s</a><a class="titre" href="%s">%s</a><p class="texte">%s</p>',$lien,wp_get_attachment_image($image),$lien,$titre,$texte);
 
 				if($lien && function_exists('kasutan_affiche_bouton')) {
 					kasutan_affiche_bouton($lien); //label par défaut

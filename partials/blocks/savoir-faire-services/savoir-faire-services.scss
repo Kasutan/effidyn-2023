@@ -27,12 +27,16 @@
 		padding:1rem;
 		width: 5.9rem;
 	}
-	.titre {
+	a.titre {
 		color:var(--bleu-texte);
 		font-size: 2.2rem;
 		font-weight: 700;
 		line-height: 2.6rem;
 		margin-bottom: 0;
+		text-decoration: none;
+		&:hover, &:focus {
+			color:var(--violet-d2);
+		}
 	}
 	.texte {
 		color:var(--rose-e4);
