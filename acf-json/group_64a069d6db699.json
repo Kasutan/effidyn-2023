@@ -1,10 +1,10 @@
 {
     "key": "group_64a069d6db699",
-    "title": "Bloc équipe pour page Nous rejoindre",
+    "title": "Bloc équipe pour page Qui sommes-nous",
     "fields": [
         {
             "key": "field_64a069d6e4b8a",
-            "label": "Bloc équipe pour page Nous rejoindre",
+            "label": "Bloc équipe pour page Qui sommes-nous",
             "name": "",
             "aria-label": "",
             "type": "message",

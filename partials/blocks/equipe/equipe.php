@@ -33,7 +33,7 @@ printf('<section class="acf liste-dirigeants %s">', $className);
 
 			echo '<li class="dirigeant">';
 				printf('
-					<div class="portrait"><div class="image">%s</div><a class="picto" href="%s" title="%s %s"></a></div>
+					<div class="portrait"><div class="image">%s</div><a class="picto" href="%s" title="%s %s" target="_blank" rel="noopener noreferrer"></a></div>
 					<p class="nom">%s</p>
 					<p class="diplomes">%s</p>
 					<div class="texte">%s</div>',
