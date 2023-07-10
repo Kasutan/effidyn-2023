@@ -48,6 +48,9 @@
   right: 3px;
   width: var(--taille-picto);
 }
+.liste-dirigeants .portrait .picto:hover, .liste-dirigeants .portrait .picto:focus {
+  background-color: var(--violet-d2);
+}
 .liste-dirigeants .nom {
   color: var(--bleu-texte);
   font-size: 2.2rem;

@@ -54,6 +54,10 @@
 			position: absolute;
 			right: 3px;
 			width: var(--taille-picto);
+
+			&:hover, &:focus {
+				background-color: var(--violet-d2);
+			}
 		}
 	}
 

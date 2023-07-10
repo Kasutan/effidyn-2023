@@ -17,7 +17,7 @@ function kasutan_affiche_etude($post_id,$contexte) {
 	
 
 	printf('<li class="vignette reference">');
-		printf('<a href="%s" class="image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
+		printf('<a href="%s" class="image"><div class="image-wrap">%s</div></a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
 		echo '<div class="texte">';
 			if($contexte==='archive') {
 				printf('<a href="%s"><h2 class="titre-item">',$link);
@@ -27,7 +27,7 @@ function kasutan_affiche_etude($post_id,$contexte) {
 				printf('<a href="%s"><h3 class="titre-item">%s</h3></a>',$link,$titre);
 			}
 		
-			printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
+			printf('<p class="extrait">%s</p>',get_the_excerpt($post_id));
 
 			if(function_exists('kasutan_affiche_bouton')) {
 				kasutan_affiche_bouton($link);

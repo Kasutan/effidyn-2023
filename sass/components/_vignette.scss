@@ -3,16 +3,22 @@
 .vignette {
 	margin:0 auto 2.8rem;
 	max-width:42rem;
+	transition:transform var(--transition);
 	a {
-		display:block;
 		text-decoration: none;
 	}
-	.image {
+	.image-wrap {
 		aspect-ratio : 3.45;
+		display: block;
+		overflow: hidden;
+		width: 100%;
+	}
+	.image {
 		display: flex;
 		img {
 			height:100%;
 			object-fit: cover;
+			transition:transform var(--transition);
 			width:100%;
 		}
 	}
@@ -22,9 +28,11 @@
 		border-top-width: 0;
 		display: block;
 		padding:1.8rem 2rem 2rem;
+		transition:background-color var(--transition);
 	}
 	.titre-item {
 		margin-bottom: 8px;
+	
 	}
 	.term, .nom {
 		display: block;
@@ -43,7 +51,12 @@
 		margin-bottom: 1.6rem;
 	}
 
+	.wp-block-button {
+		background-color: #fff;
+	}
+
 	&:hover, &:focus-within {
+		transform:translateY(-15px);
 		.texte {
 			background-color: var(--bleu-1fc);
 		}
@@ -59,7 +72,7 @@
 		margin:0 0 4rem;
 		max-width: unset;
 
-		.image {
+		.image-wrap {
 			aspect-ratio: 42 / 23;
 		}
 		.texte {
@@ -164,8 +177,7 @@
 
 /******************** styles communs pour les vignettes post et l'article top-post***************/
 
-.vignette.post, .top-post {
-	/************************* effets au survol *******************/
+.vignette, .top-post {
 	.image-wrap {
 		height:100%;
 		overflow: hidden;
@@ -174,13 +186,19 @@
 			transition: transform var(--transition);
 		}
 	}
-	.image {
-		&:hover, &:focus {
+	&:hover, &:focus-within {
+		.image {
 			img {
 				transform: scale(1.1);
 			}
 		}
 	}
+}
+
+.vignette.post, .top-post {
+	/************************* effets au survol *******************/
+
+	
 	.titre-item a {
 		color:var(--bleu-9f);
 		&:hover, &:focus {

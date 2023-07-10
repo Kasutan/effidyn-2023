@@ -1169,7 +1169,7 @@ a:visited {
 a:hover,
 a:active,
 a:focus {
-  color: var(--bleu-texte);
+  color: var(--bleu-9a);
   text-decoration: underline;
 }
 
@@ -2953,18 +2953,24 @@ form.search-form input.search-submit {
 .vignette {
   margin: 0 auto 2.8rem;
   max-width: 42rem;
+  transition: transform var(--transition);
 }
 .vignette a {
-  display: block;
   text-decoration: none;
 }
-.vignette .image {
+.vignette .image-wrap {
   aspect-ratio: 3.45;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+.vignette .image {
   display: flex;
 }
 .vignette .image img {
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition);
   width: 100%;
 }
 .vignette .texte {
@@ -2973,6 +2979,7 @@ form.search-form input.search-submit {
   border-top-width: 0;
   display: block;
   padding: 1.8rem 2rem 2rem;
+  transition: background-color var(--transition);
 }
 .vignette .titre-item {
   margin-bottom: 8px;
@@ -2992,6 +2999,12 @@ form.search-form input.search-submit {
   color: var(--noir);
   margin-bottom: 1.6rem;
 }
+.vignette .wp-block-button {
+  background-color: #fff;
+}
+.vignette:hover, .vignette:focus-within {
+  transform: translateY(-15px);
+}
 .vignette:hover .texte, .vignette:focus-within .texte {
   background-color: var(--bleu-1fc);
 }
@@ -3006,7 +3019,7 @@ form.search-form input.search-submit {
     margin: 0 0 4rem;
     max-width: unset;
   }
-  .vignette .image {
+  .vignette .image-wrap {
     aspect-ratio: 42/23;
   }
   .vignette .texte {
@@ -3102,21 +3115,22 @@ form.search-form input.search-submit {
 }
 
 /******************** styles communs pour les vignettes post et l'article top-post***************/
-.vignette.post, .top-post {
-  /************************* effets au survol *******************/
-  /************************* metas*******************/
-  /************************* ruban *******************/
-}
-.vignette.post .image-wrap, .top-post .image-wrap {
+.vignette .image-wrap, .top-post .image-wrap {
   height: 100%;
   overflow: hidden;
   width: 100%;
 }
-.vignette.post .image-wrap img, .top-post .image-wrap img {
+.vignette .image-wrap img, .top-post .image-wrap img {
   transition: transform var(--transition);
 }
-.vignette.post .image:hover img, .vignette.post .image:focus img, .top-post .image:hover img, .top-post .image:focus img {
+.vignette:hover .image img, .vignette:focus-within .image img, .top-post:hover .image img, .top-post:focus-within .image img {
   transform: scale(1.1);
+}
+
+.vignette.post, .top-post {
+  /************************* effets au survol *******************/
+  /************************* metas*******************/
+  /************************* ruban *******************/
 }
 .vignette.post .titre-item a, .top-post .titre-item a {
   color: var(--bleu-9f);
