@@ -1,8 +1,50 @@
 .carrousel {
-  margin-bottom: var(--margin-y-2);
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  padding: 4rem 0 5rem;
+  /*
+  	.owl-dots {
+  		display: flex;
+  		justify-content: center;
+  		margin-bottom: 4rem;
+  		margin-top: 2rem;
+  		width: 100%;
+  		button {
+  			background-color: lightgrey;
+  			border-radius:100%;
+  			height:0.9rem;
+  			margin-bottom: 0;
+  			margin-right: 0.5rem;
+  			min-height: unset;
+  			min-width: unset;
+  			width:0.9rem;
+  			&:last-of-type {
+  				margin-right: 0;
+  			}
+  			&.active, &:hover, &:focus {
+  				background-color: var(--rouge);
+  				opacity: 1;
+  			}
+  		}
+  	}*/
+}
+@media (min-width: 1920px) {
+  .carrousel {
+    width: var(--largeur-max);
+  }
+}
+.carrousel .titre-section {
+  font-size: 2.6rem;
+  line-height: 2.7rem;
+  margin-bottom: 2.2rem;
+  padding: 0 var(--padding-x);
+  text-align: center;
+}
+.carrousel .titre-section span {
+  color: var(--violet-d2);
 }
 .carrousel .owl-item {
-  height: 10rem;
+  height: 15rem;
 }
 .carrousel .logo {
   align-items: center;
@@ -15,27 +57,16 @@
   object-fit: contain;
   width: unset;
 }
-.carrousel .owl-dots {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 4rem;
-  margin-top: 2rem;
-  width: 100%;
-}
-.carrousel .owl-dots button {
-  background-color: lightgrey;
-  border-radius: 100%;
-  height: 0.9rem;
-  margin-bottom: 0;
-  margin-right: 0.5rem;
-  min-height: unset;
-  min-width: unset;
-  width: 0.9rem;
-}
-.carrousel .owl-dots button:last-of-type {
-  margin-right: 0;
-}
-.carrousel .owl-dots button.active, .carrousel .owl-dots button:hover, .carrousel .owl-dots button:focus {
-  background-color: var(--rouge);
-  opacity: 1;
+@media (min-width: 1024px) {
+  .carrousel {
+    padding: 10rem 0;
+  }
+  .carrousel .titre-section {
+    font-size: 4.6rem;
+    line-height: 5rem;
+    margin-bottom: 9rem;
+  }
+  .carrousel .owl-carousel {
+    margin-bottom: 5rem;
+  }
 }

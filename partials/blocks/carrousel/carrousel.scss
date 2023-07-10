@@ -1,10 +1,23 @@
 @import "./././sass/abstracts/variables-et-mixins";
 
 .carrousel {
+
+	@include bleed;
+	padding:4rem 0 5rem;
+
+	.titre-section {
+		font-size: 2.6rem;
+		line-height: 2.7rem;
+		margin-bottom: 2.2rem;
+		padding:0 var(--padding-x);
+		text-align: center;
+		span {
+			color:var(--violet-d2);
+		}
+	}
 	
-	margin-bottom: var(--margin-y-2);
 	.owl-item {
-		height:10rem;
+		height:15rem;
 	}
 	.logo {
 		align-items: center;
@@ -17,7 +30,7 @@
 			width:unset;
 		}
 	}
-
+/*
 	.owl-dots {
 		display: flex;
 		justify-content: center;
@@ -40,6 +53,18 @@
 				background-color: var(--rouge);
 				opacity: 1;
 			}
+		}
+	}*/
+
+	@include bp(lg) {
+		padding:10rem 0;
+		.titre-section {
+			font-size: 4.6rem;
+			line-height: 5rem;
+			margin-bottom: 9rem;
+		}
+		.owl-carousel {
+			margin-bottom: 5rem;
 		}
 	}
 }

@@ -1,14 +1,32 @@
 {
     "key": "group_632c123539cd0",
-    "title": "Bloc logos de marques",
+    "title": "Bloc carrousel de logos de clients",
     "fields": [
+        {
+            "key": "field_64abad400b769",
+            "label": "Bloc carrousel de logos de clients",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section avec titre, carrousel de logos des clients et un lien.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
         {
             "key": "field_632c12351b229",
             "label": "Titre du carrousel",
             "name": "titre",
             "aria-label": "",
-            "type": "text",
-            "instructions": "",
+            "type": "textarea",
+            "instructions": "Les mots entre balises span seront affichés en violet",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -18,13 +36,13 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         },
         {
             "key": "field_63c96a74e1cd9",
-            "label": "Logos des marques",
+            "label": "Logos",
             "name": "galerie",
             "aria-label": "",
             "type": "gallery",
@@ -49,6 +67,29 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_64abad710b76a",
+            "label": "Cible du bouton \"en savoir plus\"",
+            "name": "lien",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "allow_archives": 0,
+            "multiple": 0,
+            "allow_null": 0
         }
     ],
     "location": [
@@ -69,6 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687958980,
-    "local_file": "C:UsersKasutanLocal Siteseffidynapppublic\/wp-content\/themes\/effidyn-2023\/acf-json\/group_632c123539cd0.json"
+    "modified": 1688973534
 }
