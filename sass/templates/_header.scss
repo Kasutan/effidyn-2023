@@ -216,6 +216,8 @@
 		display: flex;
 		justify-content: center;
 		.titre {
+			font-size: 3.6rem;
+			line-height: 4rem;
 			padding:0 var(--padding-x-header);
 			span {
 				text-decoration: underline;
@@ -247,11 +249,15 @@
 		@include bp(lg) {
 			--hauteur-banniere:53rem;
 			--hauteur-decor:80rem;
-				.image-mobile {
+			.image-mobile {
 				display: none;
 			}
 			.image-desktop {
 				display: block;
+			}
+			.titre {
+				font-size: 7rem;
+				line-height: 9rem;
 			}
 		}
 		@include bp(xl) {

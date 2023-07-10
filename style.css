@@ -1846,6 +1846,8 @@ button.ouvrir-sous-menu:focus {
   justify-content: center;
 }
 .page-banniere.pour-accueil .titre {
+  font-size: 3.6rem;
+  line-height: 4rem;
   padding: 0 var(--padding-x-header);
 }
 .page-banniere.pour-accueil .titre span {
@@ -1881,6 +1883,10 @@ button.ouvrir-sous-menu:focus {
   }
   .page-banniere.pour-accueil .image-desktop {
     display: block;
+  }
+  .page-banniere.pour-accueil .titre {
+    font-size: 7rem;
+    line-height: 9rem;
   }
 }
 @media (min-width: 1440px) {
