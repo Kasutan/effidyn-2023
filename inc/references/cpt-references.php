@@ -30,7 +30,7 @@ function kasutan_references_post_type() {
 		'label'                 => __( 'Références', 'effidyn' ),
 		'description'           => __( 'Références', 'effidyn' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'revisions', 'custom-fields','thumbnail','editor' ),
+		'supports'              => array( 'title', 'revisions', 'custom-fields','thumbnail','editor','excerpt' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
