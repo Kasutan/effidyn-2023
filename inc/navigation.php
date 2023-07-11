@@ -62,7 +62,7 @@ function ea_site_header() {
 				}
 
 			}
-			
+			do_action('wpml_add_language_selector');
 		echo '</nav>';
 	echo '</div>';
 }
@@ -92,6 +92,7 @@ function kasutan_mobile_nav() {
 				'menu_class'=>'menu-mobile',
 			) );
 		}
+		do_action('wpml_add_language_selector');
 	echo '</div>'; //Fin volet navigation
 }
 

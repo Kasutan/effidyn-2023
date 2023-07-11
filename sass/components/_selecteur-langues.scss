@@ -1,0 +1,64 @@
+.volet-navigation .wpml-ls-legacy-list-horizontal {
+	margin-top: 4rem;
+	& > ul {
+		display: flex;
+		justify-content: center;
+	}
+	a, span {
+		color:var(--blanc);
+	}
+	.wpml-ls-first-item {
+		align-items: center;
+		display: flex;
+		position: relative;
+		&::after {
+			color:var(--blanc);
+			content:'|';
+			display: inline-block;
+		}
+
+	}
+	a:hover, a:focus {
+		text-decoration: none;
+		span {
+			color:var(--blanc);
+		}
+	}
+}
+
+.nav-main .wpml-ls-legacy-list-horizontal {
+	margin-left: 1rem;
+	& > ul {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+	}
+	span {
+		color:var(--noir);
+		font-weight: 700;
+	}
+	.wpml-ls-current-language {
+		span {
+			color:var(--violet-d2)
+		}
+	}
+	
+	.wpml-ls-first-item {
+		align-items: center;
+		display: flex;
+		position: relative;
+		&::after {
+			color:var(--noir);
+			content:'|';
+			display: inline-block;
+		}
+
+	}
+	a:hover, a:focus {
+		text-decoration: none;
+		span {
+			color:var(--violet-d2);
+		}
+	}
+}

@@ -2992,6 +2992,66 @@ form.search-form input.search-submit {
     flex-grow: 1;
   }
 }
+.volet-navigation .wpml-ls-legacy-list-horizontal {
+  margin-top: 4rem;
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal > ul {
+  display: flex;
+  justify-content: center;
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal a, .volet-navigation .wpml-ls-legacy-list-horizontal span {
+  color: var(--blanc);
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal .wpml-ls-first-item {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal .wpml-ls-first-item::after {
+  color: var(--blanc);
+  content: "|";
+  display: inline-block;
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal a:hover, .volet-navigation .wpml-ls-legacy-list-horizontal a:focus {
+  text-decoration: none;
+}
+.volet-navigation .wpml-ls-legacy-list-horizontal a:hover span, .volet-navigation .wpml-ls-legacy-list-horizontal a:focus span {
+  color: var(--blanc);
+}
+
+.nav-main .wpml-ls-legacy-list-horizontal {
+  margin-left: 1rem;
+}
+.nav-main .wpml-ls-legacy-list-horizontal > ul {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+.nav-main .wpml-ls-legacy-list-horizontal span {
+  color: var(--noir);
+  font-weight: 700;
+}
+.nav-main .wpml-ls-legacy-list-horizontal .wpml-ls-current-language span {
+  color: var(--violet-d2);
+}
+.nav-main .wpml-ls-legacy-list-horizontal .wpml-ls-first-item {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.nav-main .wpml-ls-legacy-list-horizontal .wpml-ls-first-item::after {
+  color: var(--noir);
+  content: "|";
+  display: inline-block;
+}
+.nav-main .wpml-ls-legacy-list-horizontal a:hover, .nav-main .wpml-ls-legacy-list-horizontal a:focus {
+  text-decoration: none;
+}
+.nav-main .wpml-ls-legacy-list-horizontal a:hover span, .nav-main .wpml-ls-legacy-list-horizontal a:focus span {
+  color: var(--violet-d2);
+}
+
 /************************* vignette de base : réalisation *******************/
 .vignette {
   margin: 0 auto 2.8rem;
