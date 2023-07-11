@@ -2357,6 +2357,11 @@ form.search-form input.search-submit {
   }
 }
 
+.decor-hero-top img {
+  object-position: top center;
+  width: 100%;
+}
+
 .decor-footer .rect {
   height: 1rem;
 }
