@@ -282,7 +282,7 @@ button.ouvrir-sous-menu {
 			& > a {
 				align-items: center;
 				display: flex;
-				font-size: 2rem;
+				font-size: 1.6rem;
 				font-weight: 700;
 				height: 100%;
 				line-height: 2.4rem;
@@ -291,6 +291,9 @@ button.ouvrir-sous-menu {
 				text-align: center;
 				text-decoration: none;
 				text-transform: uppercase;
+				@include bp(xl) {
+					font-size: 2rem;
+				}
 			}
 			
 			&:hover > a, & > a:focus, &:focus-within > a {
@@ -318,6 +321,7 @@ button.ouvrir-sous-menu {
 		}
 
 		button.ouvrir-sous-menu {
+			flex-shrink: 0;
 			position: relative;
 			top:-0.8rem;
 			svg path {
@@ -370,12 +374,15 @@ button.ouvrir-sous-menu {
 				border-bottom:solid 1px var(--couleur-bordure);
 				color:var(--blanc);
 				display: flex;
-				font-size: 2rem;
+				font-size: 1.6rem;
 				font-weight: 400;
 				line-height:4rem;
 				padding : 0;
 				position:relative;
 				transition: all var(--transition);
+				@include bp(xl) {
+					font-size: 2rem;
+				}
 				&::before {
 					content:'>';
 					left:-1rem;

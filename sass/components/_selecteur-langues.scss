@@ -1,23 +1,28 @@
+.wpml-ls-legacy-list-horizontal > ul {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.wpml-ls-legacy-list-horizontal .wpml-ls-item {
+	align-items: center;
+	display: flex;
+	position: relative;
+	&::before {
+		color:var(--blanc);
+		content:'|';
+		display: inline-block;
+	}
+	&:first-of-type::before {
+		display: none;
+	}
+}
+
 .volet-navigation .wpml-ls-legacy-list-horizontal {
 	margin-top: 4rem;
-	& > ul {
-		display: flex;
-		justify-content: center;
-	}
 	a, span {
 		color:var(--blanc);
 	}
-	.wpml-ls-first-item {
-		align-items: center;
-		display: flex;
-		position: relative;
-		&::after {
-			color:var(--blanc);
-			content:'|';
-			display: inline-block;
-		}
-
-	}
+	
 	a:hover, a:focus {
 		text-decoration: none;
 		span {
@@ -25,18 +30,18 @@
 		}
 	}
 }
-
 .nav-main .wpml-ls-legacy-list-horizontal {
 	margin-left: 1rem;
 	& > ul {
-		align-items: center;
-		display: flex;
 		height: 100%;
-		justify-content: center;
 	}
 	span {
 		color:var(--noir);
 		font-weight: 700;
+		font-size: 1.6rem;
+		@include bp(xl) {
+			font-size: 2rem;
+		}
 	}
 	.wpml-ls-current-language {
 		span {
@@ -44,14 +49,9 @@
 		}
 	}
 	
-	.wpml-ls-first-item {
-		align-items: center;
-		display: flex;
-		position: relative;
-		&::after {
+	.wpml-ls-item {
+		&::before {
 			color:var(--noir);
-			content:'|';
-			display: inline-block;
 		}
 
 	}
