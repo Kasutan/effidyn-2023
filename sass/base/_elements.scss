@@ -128,11 +128,17 @@ textarea {
 	border: solid 1px var(--bleu-bordure);
 	outline-color:var(--bleu-texte);
 	min-height:5rem;
-	padding: 1.5rem;
+	padding: 1.5rem !important;
 	
 	&:focus {
 		color:var(--bleu-texte);
 		font-weight: 700;
+	}
+
+	@include bp(lg) {
+		font-size: 2rem !important;
+		line-height: 2.6rem !important;
+
 	}
 }
 
@@ -154,16 +160,18 @@ textarea {
 	.forminator-col {
 		padding:0 !important;
 	}
-	.forminator-response-message, .forminator-row.pleine-largeur {
-	
+	.forminator-response-message {
+		text-align: center;
 	}
 	
 
 	label {
-		color:var(--noir);
+		color:var(--noir) !important;
 		display: block;
+		font-size: 1.5rem !important;
+		line-height: 1.8rem !important;
 		font-weight: 700;
-		margin-bottom: 7px;
+		margin-bottom: 7px !important;
 		padding-left: 1.5rem;
 		.forminator-required {
 			display: none;
@@ -176,7 +184,7 @@ textarea {
 	}
 
 	.forminator-field, hr {
-		margin-bottom: 3rem;
+		margin-bottom: 3rem !important;
 	}
 
 	.forminator-field {
@@ -215,14 +223,17 @@ textarea {
 		margin-bottom: 3rem !important;
 		position: relative;
 		.forminator-field {
-			margin-bottom: 0;
-			padding:2.4rem 2.2rem;
+			margin-bottom: 0 !important;
+			padding:2.4rem 2.2rem !important;
 			text-align: center;
 
 		}
 		&::before {
 			background-color: var(--bleu-bordure);
-			//TODO bgimg picto
+			background-image: url('icons/picto-cv.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 52px 52px;
 			content:'';
 			display: block;
 			height:6.8rem;
@@ -230,239 +241,115 @@ textarea {
 		}
 
 		label {
-			font-weight: 400;
-			margin-bottom: 1rem;
-			padding:0;
+			font-weight: 400 !important;
+			margin-bottom: 1rem !important;
+			padding:0 !important;
 		}
 		
-	}
-	.file {
-		.forminator-label {
-			color:var(--rouge);
-			@include fs(20);
-			font-weight: 700;
+		.forminator-file-upload {
+			flex-direction: column;
+			span {
+				color:var(--noir) !important;
+				display: block;
+				font-size: 1.5rem !important;
+				line-height: 1.8rem !important;
+			}
 		}
-		.forminator-input-file  {
-			@include fs(16);
-		}
-	}
-	.forminator-uploaded-file--content {
-		margin: 20px 0;
-		background: var(--fond);
-		display: flex;
-		justify-content: space-between;
-		padding: 10px;
-		.forminator-uploaded-file--image {
-			display: none;
-		}
-		button {
-			min-width: unset;
-		}
-	}
 
+		.forminator-button-upload {
+			border:solid 1px var(--bleu-texte) !important;
+			border-radius: 1px;
+			box-shadow: none !important;
+			font-size: 1.8rem !important;
+			line-height: 2.2rem !important;
+			transition:all var(--transition) !important;
+		}
+	}
+	
 	.forminator-button-submit {
+		border:solid 1px var(--bleu-texte) !important;
+		border-radius: 1px;
+		box-shadow: none !important;
+		font-size: 1.8rem !important;
+		line-height: 2.2rem !important;
+		transition:all var(--transition) !important;
 		width: 100%;
 	}
 
 
 	@include bp(lg) {
-
-		.forminator-row-last
-	{
-		.forminator-field {
+		margin:0 auto !important;
+		max-width:117rem;
+		label {
+			font-size: 2rem !important;
+			line-height: 2.6rem !important;
+		}
+		.forminator-error-message {
+			font-size: 1.6rem !important;
+			line-height: 2.6rem !important;
+		}
+		.forminator-row {
+			flex-direction: row;
+			flex-wrap: nowrap !important;
+		}
+		.forminator-col {
+			&.nom {
+				flex-basis:calc(50% + 1rem);
+				margin-right: 2rem;
+			}
+			&.prenom {
+				flex-basis:calc(50% - 1rem);
+			}
+			&.tel {
+				flex-basis:calc(30% + 1rem) !important;
+				margin-right: 2rem;
+			}
+			&.email {
+				flex-basis:calc(70% - 1rem) !important;
+			}
+		}
+		.forminator-col.upload {
 			display: flex;
-			justify-content: center;
+			&::before {
+				display: inline-block;
+				height: 100%;
+				width: 12.1rem;
+			}
+			.forminator-field {
+				text-align: left;
+			}
+			label {
+				color:#666666 !important;
+				font-size: 2rem !important;
+				line-height: 2.6rem !important;
+			}
+			.forminator-file-upload {
+				flex-direction: row;
+				span {
+					color:var(--bleu-texte) !important;
+					display: inline-block;
+					font-size: 2rem !important;
+					line-height: 2.6rem !important;
+					margin-left: 4.4rem !important;
+				}
+			}
 		}
-	}
+
+		.forminator-row-last {
+			margin-top: 4rem !important;
+			.forminator-field {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.forminator-button-submit, .forminator-button-upload {
+			font-size: 2rem !important;
+			line-height: 2.4rem !important;
+		}
 	}
 	
 }
-/*--------------------------------------------------------------
-# Forminator transfert ohm town 
---------------------------------------------------------------*/
-//TODO trier
-/*
-body .forminator-ui.forminator-custom-form[data-design="default"] {
-	.forminator-input {
-		border-radius: 100px;
-		&:placeholder {
-			color: #000000;
-			opacity: 1;
-		}
-		&.forminator-datepicker {
-			background-image: url('icons/calendrier.svg');
-			background-repeat: no-repeat;
-			background-position-x:calc(100% - 20px);
-			background-position-y:center;
-		}
-	}
-	.forminator-input-with-icon .forminator-datepicker {
-		padding:9px;
-		padding-right:51px;
-	}
-}
-body .forminator-ui#forminator-module-305.forminator-design--default .forminator-input::placeholder,
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-input::placeholder,
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-textarea::placeholder {
-	color: #000000;
-	opacity: 1 !important;
-}
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-textarea {
-	border-radius: 16px;
-
-}
-
-.forminator-ui {
-	label {
-		@include screen-reader-text;
-	}
-	.select2-selection {
-		border-radius: 100px;
-	}
-	.iti__flag-container {
-		display: none;
-	}
-	textarea {
-		border-radius: 16px;
-	}
-}
-.forminator-select-dropdown {
-	border-radius: 16px;
-}
-
-
-.forminator-row-last
-{
-	.forminator-field {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	
-}
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-button-submit {
-	background-color:var(--wp--preset--color--citron-main);
-	border:none;
-	border-radius: 8px;
-	box-shadow: 4px 4px 2px rgba(253, 226, 56, 0.75);
-	color:var(--wp--preset--color--gray-800);
-	display: inline-flex;
-	margin-bottom: 1em;
-	width:unset;
-
-	background-image: url('icons/envoi.svg');
-	background-repeat: no-repeat;
-	background-position-x:1.6rem;
-	background-position-y:center;
-	background-size: 1.6rem;
-
-	padding:8px 8px 12px;
-	padding-left: 4.2rem;
-
-	@include bp(lg) {
-		
-	}
-
-	&:focus, &:hover, &:active {
-		background-color:var(--wp--preset--color--citron-200) !important;
-		box-shadow: 4px 4px 2px rgba(253, 226, 56, 0.75);
-		outline-color:transparent;
-	}
-
-	&:active {
-		box-shadow: 0px 2px 0px #FDE238;
-	}
-
-	&:disabled, &.disabled {
-		background-color: var(--wp--preset--color--citron-main);
-		box-shadow: none;
-		color:var(--wp--preset--color--gray-400);
-		cursor: default;
-	}
-
-	@include bp(lg) {
-		border-radius: 16px;
-		box-shadow:  10px 9px 4px rgba(253, 226, 56, 0.75);
-		font-size: 1.6rem;
-		padding: 12px 12px 16px;
-		padding-left: 4.2rem;
-		&:focus, &:hover, &:active {
-			box-shadow:  10px 9px 4px rgba(253, 226, 56, 0.75);
-		}
-		&:active {
-			box-shadow: 1px 4px 0px #FDE238;
-		}
-	}
-}
-
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-file-upload {
-	flex-direction: column;
-}
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-button-upload {
-	background-color: transparent;
-	--color:var(--wp--preset--color--sand-900);
-	border:solid 1px;
-	border-color:var(--color);
-	border-radius: 100px;
-	color:var(--color);
-	display: block;
-	margin:0 auto 1rem;
-	width:22rem;
-
-	&:focus, &:hover {
-		--color:var(--wp--preset--color--jaune-800);
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-	
-	&:active {
-		--color:var(--wp--preset--color--marron-main);
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-
-	&:disabled, &.disabled {
-		--color:var(--wp--preset--color--gray-400);
-		cursor: default;
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-}
-
-.forminator-ui#forminator-module-565.forminator-design--default .upload
-{
-	background-color: var(--wp--preset--color--sand-50);
-	border: 1px dashed #D18300;
-	border-radius: 16px;
-	margin: 0 15px;
-	padding:1.6rem 2.4rem;
-	text-align: center;
-	label.forminator-label {
-		border: 0;
-		clip: unset;
-		clip-path: unset;
-		color:#000;
-		font-size: 1.4rem;
-		height: unset;
-		margin: 0 0 1rem;
-		overflow: unset;
-		padding: 0;
-		position: relative !important;
-		width: unset;
-		word-wrap: unset !important;
-	}
-	.forminator-description {
-		color:#000;
-		display: block;
-	}
-	span[data-empty-text] {
-		color:#000;
-	}
-}
-*/
 
 
 /*--------------------------------------------------------------

@@ -964,7 +964,7 @@ textarea {
   border: solid 1px var(--bleu-bordure);
   outline-color: var(--bleu-texte);
   min-height: 5rem;
-  padding: 1.5rem;
+  padding: 1.5rem !important;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -985,6 +985,27 @@ textarea:focus {
   color: var(--bleu-texte);
   font-weight: 700;
 }
+@media (min-width: 1024px) {
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  input[type=search],
+  input[type=number],
+  input[type=tel],
+  input[type=range],
+  input[type=date],
+  input[type=month],
+  input[type=week],
+  input[type=time],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=color],
+  textarea {
+    font-size: 2rem !important;
+    line-height: 2.6rem !important;
+  }
+}
 
 textarea {
   display: block;
@@ -1004,11 +1025,16 @@ textarea {
 .forminator-custom-form .forminator-col {
   padding: 0 !important;
 }
+.forminator-custom-form .forminator-response-message {
+  text-align: center;
+}
 .forminator-custom-form label {
-  color: var(--noir);
+  color: var(--noir) !important;
   display: block;
+  font-size: 1.5rem !important;
+  line-height: 1.8rem !important;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 7px !important;
   padding-left: 1.5rem;
 }
 .forminator-custom-form label .forminator-required {
@@ -1020,7 +1046,7 @@ textarea {
   width: 100%;
 }
 .forminator-custom-form .forminator-field, .forminator-custom-form hr {
-  margin-bottom: 3rem;
+  margin-bottom: 3rem !important;
 }
 .forminator-custom-form .forminator-field.forminator-has_error input {
   border-color: var(--rose-erreur);
@@ -1042,238 +1068,122 @@ textarea {
   position: relative;
 }
 .forminator-custom-form .forminator-col.upload .forminator-field {
-  margin-bottom: 0;
-  padding: 2.4rem 2.2rem;
+  margin-bottom: 0 !important;
+  padding: 2.4rem 2.2rem !important;
   text-align: center;
 }
 .forminator-custom-form .forminator-col.upload::before {
   background-color: var(--bleu-bordure);
+  background-image: url("icons/picto-cv.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 52px 52px;
   content: "";
   display: block;
   height: 6.8rem;
   width: 100%;
 }
 .forminator-custom-form .forminator-col.upload label {
-  font-weight: 400;
-  margin-bottom: 1rem;
-  padding: 0;
+  font-weight: 400 !important;
+  margin-bottom: 1rem !important;
+  padding: 0 !important;
 }
-.forminator-custom-form .file .forminator-label {
-  color: var(--rouge);
-  font-size: calc(20 * var(--taille-texte) / 15);
-  font-weight: 700;
+.forminator-custom-form .forminator-col.upload .forminator-file-upload {
+  flex-direction: column;
 }
-.forminator-custom-form .file .forminator-input-file {
-  font-size: calc(16 * var(--taille-texte) / 15);
+.forminator-custom-form .forminator-col.upload .forminator-file-upload span {
+  color: var(--noir) !important;
+  display: block;
+  font-size: 1.5rem !important;
+  line-height: 1.8rem !important;
 }
-.forminator-custom-form .forminator-uploaded-file--content {
-  margin: 20px 0;
-  background: var(--fond);
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-.forminator-custom-form .forminator-uploaded-file--content .forminator-uploaded-file--image {
-  display: none;
-}
-.forminator-custom-form .forminator-uploaded-file--content button {
-  min-width: unset;
+.forminator-custom-form .forminator-col.upload .forminator-button-upload {
+  border: solid 1px var(--bleu-texte) !important;
+  border-radius: 1px;
+  box-shadow: none !important;
+  font-size: 1.8rem !important;
+  line-height: 2.2rem !important;
+  transition: all var(--transition) !important;
 }
 .forminator-custom-form .forminator-button-submit {
+  border: solid 1px var(--bleu-texte) !important;
+  border-radius: 1px;
+  box-shadow: none !important;
+  font-size: 1.8rem !important;
+  line-height: 2.2rem !important;
+  transition: all var(--transition) !important;
   width: 100%;
 }
 @media (min-width: 1024px) {
+  .forminator-custom-form {
+    margin: 0 auto !important;
+    max-width: 117rem;
+  }
+  .forminator-custom-form label {
+    font-size: 2rem !important;
+    line-height: 2.6rem !important;
+  }
+  .forminator-custom-form .forminator-error-message {
+    font-size: 1.6rem !important;
+    line-height: 2.6rem !important;
+  }
+  .forminator-custom-form .forminator-row {
+    flex-direction: row;
+    flex-wrap: nowrap !important;
+  }
+  .forminator-custom-form .forminator-col.nom {
+    flex-basis: calc(50% + 1rem);
+    margin-right: 2rem;
+  }
+  .forminator-custom-form .forminator-col.prenom {
+    flex-basis: calc(50% - 1rem);
+  }
+  .forminator-custom-form .forminator-col.tel {
+    flex-basis: calc(30% + 1rem) !important;
+    margin-right: 2rem;
+  }
+  .forminator-custom-form .forminator-col.email {
+    flex-basis: calc(70% - 1rem) !important;
+  }
+  .forminator-custom-form .forminator-col.upload {
+    display: flex;
+  }
+  .forminator-custom-form .forminator-col.upload::before {
+    display: inline-block;
+    height: 100%;
+    width: 12.1rem;
+  }
+  .forminator-custom-form .forminator-col.upload .forminator-field {
+    text-align: left;
+  }
+  .forminator-custom-form .forminator-col.upload label {
+    color: #666666 !important;
+    font-size: 2rem !important;
+    line-height: 2.6rem !important;
+  }
+  .forminator-custom-form .forminator-col.upload .forminator-file-upload {
+    flex-direction: row;
+  }
+  .forminator-custom-form .forminator-col.upload .forminator-file-upload span {
+    color: var(--bleu-texte) !important;
+    display: inline-block;
+    font-size: 2rem !important;
+    line-height: 2.6rem !important;
+    margin-left: 4.4rem !important;
+  }
+  .forminator-custom-form .forminator-row-last {
+    margin-top: 4rem !important;
+  }
   .forminator-custom-form .forminator-row-last .forminator-field {
     display: flex;
     justify-content: center;
   }
+  .forminator-custom-form .forminator-button-submit, .forminator-custom-form .forminator-button-upload {
+    font-size: 2rem !important;
+    line-height: 2.4rem !important;
+  }
 }
 
-/*--------------------------------------------------------------
-# Forminator transfert ohm town 
---------------------------------------------------------------*/
-/*
-body .forminator-ui.forminator-custom-form[data-design="default"] {
-	.forminator-input {
-		border-radius: 100px;
-		&:placeholder {
-			color: #000000;
-			opacity: 1;
-		}
-		&.forminator-datepicker {
-			background-image: url('icons/calendrier.svg');
-			background-repeat: no-repeat;
-			background-position-x:calc(100% - 20px);
-			background-position-y:center;
-		}
-	}
-	.forminator-input-with-icon .forminator-datepicker {
-		padding:9px;
-		padding-right:51px;
-	}
-}
-body .forminator-ui#forminator-module-305.forminator-design--default .forminator-input::placeholder,
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-input::placeholder,
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-textarea::placeholder {
-	color: #000000;
-	opacity: 1 !important;
-}
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-textarea {
-	border-radius: 16px;
-
-}
-
-.forminator-ui {
-	label {
-		@include screen-reader-text;
-	}
-	.select2-selection {
-		border-radius: 100px;
-	}
-	.iti__flag-container {
-		display: none;
-	}
-	textarea {
-		border-radius: 16px;
-	}
-}
-.forminator-select-dropdown {
-	border-radius: 16px;
-}
-
-
-.forminator-row-last
-{
-	.forminator-field {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-
-}
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-button-submit {
-	background-color:var(--wp--preset--color--citron-main);
-	border:none;
-	border-radius: 8px;
-	box-shadow: 4px 4px 2px rgba(253, 226, 56, 0.75);
-	color:var(--wp--preset--color--gray-800);
-	display: inline-flex;
-	margin-bottom: 1em;
-	width:unset;
-
-	background-image: url('icons/envoi.svg');
-	background-repeat: no-repeat;
-	background-position-x:1.6rem;
-	background-position-y:center;
-	background-size: 1.6rem;
-
-	padding:8px 8px 12px;
-	padding-left: 4.2rem;
-
-	@include bp(lg) {
-
-	}
-
-	&:focus, &:hover, &:active {
-		background-color:var(--wp--preset--color--citron-200) !important;
-		box-shadow: 4px 4px 2px rgba(253, 226, 56, 0.75);
-		outline-color:transparent;
-	}
-
-	&:active {
-		box-shadow: 0px 2px 0px #FDE238;
-	}
-
-	&:disabled, &.disabled {
-		background-color: var(--wp--preset--color--citron-main);
-		box-shadow: none;
-		color:var(--wp--preset--color--gray-400);
-		cursor: default;
-	}
-
-	@include bp(lg) {
-		border-radius: 16px;
-		box-shadow:  10px 9px 4px rgba(253, 226, 56, 0.75);
-		font-size: 1.6rem;
-		padding: 12px 12px 16px;
-		padding-left: 4.2rem;
-		&:focus, &:hover, &:active {
-			box-shadow:  10px 9px 4px rgba(253, 226, 56, 0.75);
-		}
-		&:active {
-			box-shadow: 1px 4px 0px #FDE238;
-		}
-	}
-}
-
-body .forminator-ui.forminator-custom-form[data-design="default"] .forminator-file-upload {
-	flex-direction: column;
-}
-body .forminator-ui#forminator-module-565.forminator-design--default .forminator-button-upload {
-	background-color: transparent;
-	--color:var(--wp--preset--color--sand-900);
-	border:solid 1px;
-	border-color:var(--color);
-	border-radius: 100px;
-	color:var(--color);
-	display: block;
-	margin:0 auto 1rem;
-	width:22rem;
-
-	&:focus, &:hover {
-		--color:var(--wp--preset--color--jaune-800);
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-
-	&:active {
-		--color:var(--wp--preset--color--marron-main);
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-
-	&:disabled, &.disabled {
-		--color:var(--wp--preset--color--gray-400);
-		cursor: default;
-		background-color: transparent;
-		box-shadow: none;
-		color:var(--color);
-	}
-}
-
-.forminator-ui#forminator-module-565.forminator-design--default .upload
-{
-	background-color: var(--wp--preset--color--sand-50);
-	border: 1px dashed #D18300;
-	border-radius: 16px;
-	margin: 0 15px;
-	padding:1.6rem 2.4rem;
-	text-align: center;
-	label.forminator-label {
-		border: 0;
-		clip: unset;
-		clip-path: unset;
-		color:#000;
-		font-size: 1.4rem;
-		height: unset;
-		margin: 0 0 1rem;
-		overflow: unset;
-		padding: 0;
-		position: relative !important;
-		width: unset;
-		word-wrap: unset !important;
-	}
-	.forminator-description {
-		color:#000;
-		display: block;
-	}
-	span[data-empty-text] {
-		color:#000;
-	}
-}
-*/
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
