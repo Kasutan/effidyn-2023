@@ -123,55 +123,51 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	background-color: rgba(58,124,50,0.1);
+	background-color: var(--blanc);
 	color: var(--noir);
-	border: none;
-	outline-color:var(--vert);
-	min-height:1.7rem;
-	padding: 3px;
-	padding-left: 10px;
+	border: solid 1px var(--bleu-bordure);
+	outline-color:var(--bleu-texte);
+	min-height:5rem;
+	padding: 1.5rem;
 	
 	&:focus {
-		outline:solid 1px;
-		outline-color:var(--vert);
+		color:var(--bleu-texte);
+		font-weight: 700;
 	}
 }
 
 
 textarea {
+	display: block;
 	width: 100%;
 }
 
 
 .forminator-custom-form {
 	/*Layout*/
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 22px;
 
 	.forminator-row {
 		box-sizing: border-box;
+		flex-direction: column;
 		margin: 0 !important;
 	}
 	.forminator-col {
 		padding:0 !important;
 	}
 	.forminator-response-message, .forminator-row.pleine-largeur {
-		grid-column-start: 1;
-		grid-column-end: -1;
+	
 	}
-	.forminator-error-message {
-		@include fs(12);
-		color:var(--rouge);
-	}
-
-	/*Styles communs à tous les champs*/
-	@include fs(14);
-
+	
 
 	label {
+		color:var(--noir);
 		display: block;
-		margin-bottom: 5px;
+		font-weight: 700;
+		margin-bottom: 7px;
+		padding-left: 1.5rem;
+		.forminator-required {
+			display: none;
+		}
 	}
 	input[type="text"],
 	input[type="email"],
@@ -179,9 +175,29 @@ textarea {
 		width:100%;
 	}
 
-	input[type="radio"] {
-		@include screen-reader-text;
+	.forminator-field, hr {
+		margin-bottom: 3rem;
 	}
+
+	.forminator-field {
+		&.forminator-has_error {
+			input {
+				border-color:var(--rose-erreur);
+			}
+
+			label, .forminator-error-message {
+				color:var(--rose-erreur);
+			}
+
+			.forminator-error-message {
+				margin-top: 4px;
+				padding-left: 1.5rem;
+			}
+		}
+	}
+
+
+
 
 	/*Styles des champs téléphone*/
 
@@ -189,63 +205,37 @@ textarea {
 		width:100%;
 	}
 
-	/*Styles des champs radio*/
 
-	.forminator-field[role="radiogroup"] {
-		--couleur:var(--vert);
-		--size:15px;
-		display: flex;
-		flex-wrap: wrap;
-		
-		label {
-			margin-bottom: 0;
-		}
-		
-		.forminator-label {
-			margin-right: 20px;
-		}
-		.forminator-radio-inline {
-			align-items: center;
-			display: flex;
-			flex-direction: row;
-			margin-right: 20px;
-		}
-		
-		.forminator-radio-bullet {
-			align-items:center;
-			display: contents;
-			&::after {
-				align-items: center;
-				background-color: rgba(196, 196, 196, 0.1);
-				border: 1px solid var(--vert);
-				color:var(--vert);
-				content:' ';
-				display: flex;
-				margin-right: 5px;
-				width:var(--size);
-				height:var(--size);
-			}
-		
-		}
-		input:checked + .forminator-radio-bullet::after {
-			content:'✔';
-		}
-		input:focus-visible + .forminator-radio-bullet::after {
-			outline: dotted 2px var(--vert);
-			outline-offset: 1px;
-		}
-	}
-
-	.forminator-row-last
-	{
-		grid-column: 1 / span 2;
-		.forminator-field {
-			display: flex;
-			justify-content: flex-end;
-		}
-	}
+	
 
 	/*Styles du champ file upload*/
+	.forminator-col.upload {
+		background-color: #fff;
+		border:solid 1px var(--bleu-bordure);
+		margin-bottom: 3rem !important;
+		position: relative;
+		.forminator-field {
+			margin-bottom: 0;
+			padding:2.4rem 2.2rem;
+			text-align: center;
+
+		}
+		&::before {
+			background-color: var(--bleu-bordure);
+			//TODO bgimg picto
+			content:'';
+			display: block;
+			height:6.8rem;
+			width: 100%;
+		}
+
+		label {
+			font-weight: 400;
+			margin-bottom: 1rem;
+			padding:0;
+		}
+		
+	}
 	.file {
 		.forminator-label {
 			color:var(--rouge);
@@ -270,13 +260,28 @@ textarea {
 		}
 	}
 
+	.forminator-button-submit {
+		width: 100%;
+	}
+
+
+	@include bp(lg) {
+
+		.forminator-row-last
+	{
+		.forminator-field {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	}
 	
 }
 /*--------------------------------------------------------------
 # Forminator transfert ohm town 
 --------------------------------------------------------------*/
 //TODO trier
-
+/*
 body .forminator-ui.forminator-custom-form[data-design="default"] {
 	.forminator-input {
 		border-radius: 100px;
@@ -457,7 +462,7 @@ body .forminator-ui#forminator-module-565.forminator-design--default .forminator
 		color:#000;
 	}
 }
-
+*/
 
 
 /*--------------------------------------------------------------
