@@ -6,10 +6,8 @@
 	}
 
 	@include bp(lg) {
-		//cacher le 1er article de loop (c'est le même que top-article)
-		.loop li:first-of-type {
-			display: none;
-		}
+		//cacher le 1er article de loop (c'est le même que top-article) -> non ! caché en JS, sinon en CSS on cache le premier de chaque page
+		
 		.nav-cat, .extrait {
 			display:block; 
 		}
@@ -18,7 +16,7 @@
 			display: grid;
 		}
 
-		//TODO : masonry et pagination
+		//TODO : masonry
 	}
 
 

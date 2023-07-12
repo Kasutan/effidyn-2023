@@ -27,7 +27,8 @@ $articles=new WP_Query(array(
 	'order' => 'DESC'
 ));
 
-
+wp_enqueue_script( 'effidyn-listjs', get_template_directory_uri() . '/lib/list/list.min.js', array(), '1.0', true );
+wp_enqueue_script( 'effidyn-pagination', get_template_directory_uri() . '/js/min/pagination.js', array('jquery','effidyn-listjs'), filemtime( get_template_directory() . '/js/min/pagination.js'), true );
 
 printf('<section class="acf etudes-cas %s" id="archive-avec-pagination" data-pag-mobile="%s" data-pag-desktop="%s">', $className,$pagination_mobile,$pagination_desktop);
 	if(!$articles->have_posts(  )) {

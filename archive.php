@@ -35,19 +35,20 @@ function ea_archive_header() {
 	echo '</header>';
 
 	echo '<div class="container">';
-
+		$pag_desktop=6;
 		if(is_home()) {
 			if(function_exists('kasutan_affiche_top_article')) {
 				kasutan_affiche_top_article();
+
 			}
 			if(function_exists('kasutan_affiche_liste_cats')) {
 				kasutan_affiche_liste_cats();
 			}
-			echo '<div id="archive-avec-pagination">';
-				echo '<ul class="loop list">';
-		} else { 
-			echo '<ul class="loop">';
 		}
+
+		printf('<div id="archive-avec-pagination" data-pag-mobile="10" data-pag-desktop="%s">',$pag_desktop);
+			echo '<ul class="loop list">';
+		
 
 }
 
@@ -58,11 +59,9 @@ add_action( 'ea_archive_header_before', 'kasutan_page_banniere', 7 );
 // Fermer balise loop
 add_action( 'tha_content_while_after', 'ea_archive_while_after',10 );
 function ea_archive_while_after() {
-	echo '</ul> <!--end .loop-->';
-	if(is_home()) {
+			echo '</ul> <!--end .loop-->';
 		echo '<ul class="pagination"></ul>';
 		echo '</div>'; // end #archive-avec-pagination
-	}
 	echo '</div>'; //end .container
 }
 // Build the page

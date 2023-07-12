@@ -174,10 +174,10 @@ function kasutan_scripts() {
 
 	wp_enqueue_script( 'effidyn-scripts', get_template_directory_uri() . '/js/min/main.js', array('jquery','effidyn-owl-carousel'), '', true );
 
-	//scripts pour le filtre des actus
-	if(is_home()) {
+	//scripts pour la pagination des actus
+	if(is_home() || is_category()) {
 		wp_enqueue_script( 'effidyn-listjs', get_template_directory_uri() . '/lib/list/list.min.js', array(), '1.0', true );
-		wp_enqueue_script( 'effidyn-filtre', get_template_directory_uri() . '/js/min/filtre.js', array('jquery','effidyn-listjs'), filemtime( get_template_directory() . '/js/min/filtre.js'), true );
+		wp_enqueue_script( 'effidyn-pagination', get_template_directory_uri() . '/js/min/pagination.js', array('jquery','effidyn-listjs'), filemtime( get_template_directory() . '/js/min/pagination.js'), true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'kasutan_scripts' );
@@ -201,10 +201,10 @@ update_option( 'medium_large_size_h', 500 );
 
 
 /**
- * Afficher tous les résultats sans pagination sur page résultats de recherche et sur l'archive principale du blog
+ * Afficher tous les résultats sans pagination sur page résultats de recherche et sur les archives du blog
  */
 function kasutan_remove_pagination( $query ) {
-	if ( $query->is_main_query() && (is_home() || get_query_var( 's', 0 ) ) ) {
+	if ( $query->is_main_query() && (is_home() || is_category() || get_query_var( 's', 0 ) ) ) {
 		$query->query_vars['nopaging'] = 1;
 		$query->query_vars['posts_per_page'] = -1;
 	}

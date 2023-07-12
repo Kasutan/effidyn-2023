@@ -308,7 +308,7 @@ class BE_ACF_Customizations {
 			'Bloc toutes les études de cas',
 			'Section avec grille de vignettes et pagination.',
 			'calculator', 
-			true, //JS pour la pagination 
+			false, //le JS pour la pagination est celui du blog
 			array('etude', 'cas','archive')
 		);
 
