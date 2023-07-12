@@ -1,0 +1,25 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.candidature {
+	@include bleed;
+	background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+	padding:3.9rem var(--padding-x) 4.2rem;
+
+	.titre-section {
+		margin-bottom: 4.7rem;
+		text-align: center;
+		span {
+			color:var(--rose-ec);
+		}
+	}
+
+	@include bp(lg) {
+		background-color: var(--bleu-1ec);
+		padding:8.5rem var(--padding-x) 11rem;
+
+		.titre-section {
+			margin-bottom: 4.7rem;
+		}
+
+	}
+} 

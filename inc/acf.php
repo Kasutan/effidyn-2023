@@ -275,11 +275,21 @@ class BE_ACF_Customizations {
 		/*********Bloc équipe ***************/
 		$this->helper_register_block_type( 
 			'equipe',
-			'Bloc équipe pour page Nous rejoindre',
+			'Bloc équipe pour page Qui sommes-nous',
 			'Section avec liste de portraits de dirigeants. Pour chaque personne : photo, nom, diplômes, bio et lien LinkedIn.',
 			'calculator', 
 			false, 
 			array('equipe', 'qui sommes-nous','dirigeant')
+		);
+
+		/*********Bloc candidature ***************/
+		$this->helper_register_block_type( 
+			'candidature',
+			'Bloc candidature pour page Nous rejoindre',
+			'Section pleine largeur avec fond bleu, titre et formulaire.',
+			'calculator', 
+			false,
+			array('candidature', 'formulaire','rejoindre')
 		);
 
 		/*********Bloc logos-grille ***************/
