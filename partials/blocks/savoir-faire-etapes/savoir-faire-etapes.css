@@ -14,7 +14,7 @@
 }
 @media (min-width: 1024px) {
   .savoir-faire-etapes .intro {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     line-height: 3.6rem;
   }
   .savoir-faire-etapes .intro br {
@@ -74,7 +74,8 @@
     margin-bottom: 4.4rem;
   }
   .savoir-faire-etapes .etapes {
-    column-gap: 4rem;
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -119,7 +120,8 @@
 }
 @media (min-width: 1440px) {
   .savoir-faire-etapes .etapes {
-    column-gap: 5.7rem;
+    -moz-column-gap: 5.7rem;
+         column-gap: 5.7rem;
   }
   .savoir-faire-etapes .etape::after {
     right: -4rem;

@@ -46,7 +46,8 @@
 }
 @media (min-width: 1024px) {
   .accueil-valeurs {
-    column-gap: 2rem;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 23rem;
@@ -69,7 +70,7 @@
     margin-bottom: 4rem;
   }
   .accueil-valeurs .titre {
-    font-size: 4.6rem;
+    font-size: 3.8rem;
     line-height: 5rem;
     margin-bottom: 1.2rem;
   }
@@ -79,7 +80,8 @@
 }
 @media (min-width: 1440px) {
   .accueil-valeurs .valeurs {
-    column-gap: 5.7rem;
+    -moz-column-gap: 5.7rem;
+         column-gap: 5.7rem;
   }
   .accueil-valeurs .valeur::after {
     right: -4rem;

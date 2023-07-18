@@ -81,12 +81,12 @@
     width: 12.3rem;
   }
   .accueil-services a.titre {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     line-height: 3.6rem;
     margin-bottom: 2rem;
   }
   .accueil-services .texte {
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 2.3rem;
     margin: 0 auto;
     max-width: 22rem;
@@ -105,7 +105,8 @@
 }
 @media (min-width: 1440px) {
   .accueil-services .services {
-    column-gap: 5.7rem;
+    -moz-column-gap: 5.7rem;
+         column-gap: 5.7rem;
   }
   .accueil-services .service::after {
     right: -4rem;

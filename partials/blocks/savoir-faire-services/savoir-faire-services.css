@@ -106,7 +106,8 @@
 }
 @media (min-width: 1440px) {
   .savoir-faire-services .services {
-    column-gap: 5.7rem;
+    -moz-column-gap: 5.7rem;
+         column-gap: 5.7rem;
   }
   .savoir-faire-services .service::after {
     right: -4rem;

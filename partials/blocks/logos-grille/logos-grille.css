@@ -6,7 +6,8 @@
   position: relative;
 }
 .logos-grille .logos {
-  column-gap: var(--gap);
+  -moz-column-gap: var(--gap);
+       column-gap: var(--gap);
   display: grid;
   grid-template-columns: repeat(var(--nb-col), var(--taille-col));
   justify-content: center;

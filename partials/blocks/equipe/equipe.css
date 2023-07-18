@@ -88,7 +88,8 @@
     max-width: 103rem;
   }
   .liste-dirigeants .dirigeant {
-    column-gap: var(--gap);
+    -moz-column-gap: var(--gap);
+         column-gap: var(--gap);
     display: grid;
     grid-template-columns: 28rem 1fr;
     grid-template-rows: repeat(3, auto);

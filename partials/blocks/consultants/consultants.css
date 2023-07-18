@@ -72,7 +72,8 @@
   }
   .liste-consultants .consultant {
     border: none;
-    column-gap: var(--gap);
+    -moz-column-gap: var(--gap);
+         column-gap: var(--gap);
     display: grid;
     grid-template-columns: 16.6rem 1fr;
     grid-template-rows: 3.2rem 3rem 3rem 1fr;
