@@ -19,6 +19,11 @@ add_action('tha_entry_content_before', 'kasutan_single_ref_entry_content_before'
 function kasutan_single_ref_entry_content_before() {
 	$post_id=get_the_ID();
 
+	$image=false;
+	if(function_exists('get_field')) {
+		$image=esc_attr(get_field('banniere'));
+	}
+
 	//titre 
 	printf('<h2 class="single-title decor-trait-simple">%s</h2>',get_the_title());
 
@@ -27,7 +32,11 @@ function kasutan_single_ref_entry_content_before() {
 
 	//Image
 
-	printf('<div class="single-image">%s</div>',get_the_post_thumbnail($post_id,'large'));
+	if($image) {
+		printf('<div class="single-image large">%s</div>',wp_get_attachment_image($image, 'large'));
+	} else if (has_post_thumbnail($post_id)) {
+		printf('<div class="single-image">%s</div>',get_the_post_thumbnail($post_id,'large'));
+	}
 
 }
 

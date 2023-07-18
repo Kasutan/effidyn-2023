@@ -2263,6 +2263,15 @@ form.search-form input.search-submit {
   justify-content: center;
   margin-bottom: 2.5rem;
 }
+.single-image.large {
+  aspect-ratio: 2;
+  width: 100%;
+}
+.single-image.large img {
+  height: 100%;
+  object-position: top center;
+  width: 100%;
+}
 
 .single-reference .etudes-related {
   margin-top: 5rem;
@@ -2321,15 +2330,6 @@ form.search-form input.search-submit {
   justify-content: center;
   margin-bottom: 4.4rem;
 }
-.single-post .single-image.large {
-  aspect-ratio: 2;
-  width: 100%;
-}
-.single-post .single-image.large img {
-  height: 100%;
-  object-position: top center;
-  width: 100%;
-}
 
 @media (min-width: 1024px) {
   .single .entry-content {
@@ -2337,6 +2337,18 @@ form.search-form input.search-submit {
   }
   .single-image {
     margin-bottom: 6.1rem;
+  }
+  .single-reference .entry-content > *:not(section) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80rem;
+  }
+  .single-reference .entry-content > .single-extrait {
+    max-width: 117rem;
+  }
+  .single-reference .entry-content > .single-image.large {
+    aspect-ratio: 2.77;
+    max-width: 95.2rem;
   }
   .single-reference .etudes-related {
     margin-top: 11rem;
@@ -2618,15 +2630,8 @@ form.search-form input.search-submit {
 }
 
 .posts-related {
-  width: 100vw;
-  margin-left: calc(-1 * var(--padding-x) - 2rem);
   background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
   padding: 3.6rem var(--padding-x) 3rem;
-}
-@media (min-width: 1920px) {
-  .posts-related {
-    width: var(--largeur-max);
-  }
 }
 .posts-related .titre-section {
   margin-bottom: 2.6rem;
