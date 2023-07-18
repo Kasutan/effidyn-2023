@@ -2268,6 +2268,10 @@ form.search-form input.search-submit {
   margin-top: 5rem;
 }
 
+.single-post .entry-content {
+  margin: 0 auto;
+  max-width: 93rem;
+}
 .single-post .page-banniere {
   grid-template-rows: 6rem auto 4rem;
   height: auto;
@@ -2316,6 +2320,15 @@ form.search-form input.search-submit {
   display: flex;
   justify-content: center;
   margin-bottom: 4.4rem;
+}
+.single-post .single-image.large {
+  aspect-ratio: 2;
+  width: 100%;
+}
+.single-post .single-image.large img {
+  height: 100%;
+  object-position: top center;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {

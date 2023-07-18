@@ -17,7 +17,10 @@
 	}
 }
 .single-post {
-	//TODO vérifier largeur content (largeur réduite ?)
+	.entry-content {
+		margin:0 auto;
+		max-width:93rem;
+	}
 	.page-banniere {
 		grid-template-rows: 6rem auto 4rem; 
 		height:auto;
@@ -62,6 +65,15 @@
 		display: flex;
 		justify-content: center;
 		margin-bottom: 4.4rem;
+		&.large {
+			aspect-ratio: 2;
+			width:100%;
+			img {
+				height:100%;
+				object-position: top center;
+				width: 100%;
+			}
+		}
 	}
 	
 }

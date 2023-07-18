@@ -28,9 +28,10 @@ add_action('tha_entry_content_before', 'kasutan_single_entry_content_before');
 function kasutan_single_entry_content_before() {
 	$post_id=get_the_ID();
 
-	$auteurs=false;
+	$auteurs=$image=false;
 	if(function_exists('get_field')) {
 		$auteurs=wp_kses_post(get_field('auteurs'));
+		$image=esc_attr(get_field('banniere'));
 	}
 	if(!$auteurs) {
 		$auteurs=get_the_author();
@@ -47,8 +48,12 @@ function kasutan_single_entry_content_before() {
 	printf('<p class="single-extrait">%s</p>', get_the_excerpt());
 
 	//Image
+	if($image) {
+		printf('<div class="single-image large">%s</div>',wp_get_attachment_image($image, 'large'));
+	} else if (has_post_thumbnail($post_id)) {
+		printf('<div class="single-image">%s</div>',get_the_post_thumbnail($post_id,'large'));
+	}
 
-	printf('<div class="single-image">%s</div>',get_the_post_thumbnail($post_id,'large'));
 
 }
 
