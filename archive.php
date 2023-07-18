@@ -62,6 +62,9 @@ function ea_archive_while_after() {
 			echo '</ul> <!--end .loop-->';
 		echo '<ul class="pagination"></ul>';
 		echo '</div>'; // end #archive-avec-pagination
+		if(!is_home() && function_exists('kasutan_affiche_liste_cats')) {
+			kasutan_affiche_liste_cats();
+		}
 	echo '</div>'; //end .container
 }
 // Build the page
