@@ -9,6 +9,16 @@
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2.5rem;
+
+	&.large {
+		aspect-ratio: 2;
+		width:100%;
+		img {
+			height:100%;
+			object-position: top center;
+			width: 100%;
+		}
+	}
 }
 
 .single-reference {
@@ -65,15 +75,6 @@
 		display: flex;
 		justify-content: center;
 		margin-bottom: 4.4rem;
-		&.large {
-			aspect-ratio: 2;
-			width:100%;
-			img {
-				height:100%;
-				object-position: top center;
-				width: 100%;
-			}
-		}
 	}
 	
 }
@@ -87,11 +88,24 @@
 	}
 
 	
-.single-reference {
-	.etudes-related {
-		margin-top: 11rem;
+	.single-reference {
+		.entry-content > *:not(section) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 80rem;
+		}
+		.entry-content > .single-extrait {
+			max-width: 117rem;
+		}
+		.entry-content > .single-image.large {
+			aspect-ratio: 2.77;
+			
+			max-width: 95.2rem;
+		}
+		.etudes-related {
+			margin-top: 11rem;
+		}
 	}
-}
 }
 
 

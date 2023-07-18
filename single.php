@@ -63,6 +63,10 @@ function kasutan_single_entry_content_after(){
 		kasutan_boutons_partage();
 	}
 
+}
+
+add_action('tha_content_bottom','kasutan_single_content_bottom');
+function kasutan_single_content_bottom(){
 	if(function_exists('kasutan_affiche_trois_articles') && function_exists('ea_first_term')) {
 		$term = ea_first_term();
 		$exclude=array();
@@ -71,7 +75,6 @@ function kasutan_single_entry_content_after(){
 	}
 
 }
-
 
 // Build the page
 require get_template_directory() . '/index.php';
