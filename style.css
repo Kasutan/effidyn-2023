@@ -2672,6 +2672,15 @@ form.search-form input.search-submit {
     display: inline;
   }
 }
+.posts-related.pour-bloc {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x) - 2rem);
+}
+@media (min-width: 1920px) {
+  .posts-related.pour-bloc {
+    width: var(--largeur-max);
+  }
+}
 @media (min-width: 1024px) {
   .posts-related {
     --gap:3rem;

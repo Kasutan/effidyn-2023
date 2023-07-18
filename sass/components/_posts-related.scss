@@ -46,6 +46,10 @@
 		}
 		
 	}
+
+	&.pour-bloc {
+		@include bleed;
+	}
 	
 
 	@include bp(lg) {
