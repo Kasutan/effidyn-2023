@@ -57,6 +57,9 @@
     display: block;
     left: 75%;
   }
+  .logos-grille .logo img {
+    transform: scale(0.8);
+  }
 }
 @media (min-width: 1440px) {
   .logos-grille {

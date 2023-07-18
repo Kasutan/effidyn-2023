@@ -69,4 +69,7 @@
   .carrousel .owl-carousel {
     margin-bottom: 5rem;
   }
+  .carrousel .logo img {
+    transform: scale(0.8);
+  }
 }
