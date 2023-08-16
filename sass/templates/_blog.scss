@@ -21,3 +21,14 @@
 
 
 }
+
+.archive {
+	.nav-cat {
+		display: none;
+	}
+	@include bp(lg) {
+		.nav-cat {
+			display: block;
+		}
+	}
+}

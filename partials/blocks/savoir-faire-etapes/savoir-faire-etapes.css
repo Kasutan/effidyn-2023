@@ -21,6 +21,10 @@
     display: block;
   }
 }
+.savoir-faire-etapes ol.etapes {
+  margin: 0;
+  padding: 0;
+}
 .savoir-faire-etapes .etape {
   align-items: center;
   display: flex;

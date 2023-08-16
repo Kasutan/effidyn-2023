@@ -32,7 +32,9 @@
 }
 .nav-main .wpml-ls-legacy-list-horizontal {
 	margin-left: 1rem;
+	padding-top:2.6rem; //pour aligner avec le menu principal
 	& > ul {
+		align-items: flex-start;
 		height: 100%;
 	}
 	span {
@@ -50,8 +52,15 @@
 	}
 	
 	.wpml-ls-item {
+		align-items: flex-start;
 		&::before {
 			color:var(--noir);
+			position: relative;
+			top: -2px;
+		}
+
+		a {
+			padding-top:0;
 		}
 
 	}

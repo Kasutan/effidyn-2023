@@ -7,6 +7,12 @@
 		margin-bottom: 3.9rem;
 	}
 
+	//Pour ios13
+	ol.etapes {
+		margin: 0;
+		padding:0;
+	}
+
 	.etape {
 		align-items: center;
 		display:flex;

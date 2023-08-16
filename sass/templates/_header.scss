@@ -201,6 +201,7 @@
 	&.publication {
 		.titre, .surtitre {
 			color:var(--bleu-9a);
+			padding: 0 var(--padding-x);
 		}
 		.fond-banniere {
 			background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
