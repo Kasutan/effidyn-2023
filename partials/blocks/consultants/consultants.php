@@ -26,7 +26,7 @@ printf('<section class="acf liste-consultants %s">', $className);
 			$texte=wp_kses_post( get_sub_field('texte') );
 			echo '<li class="consultant">';
 				printf('
-					<div class="portrait"><div class="image">%s</div><div class="picto">%s</div></div>
+					<div class="portrait"><div class="image">%s</div><div class="picto" aria-hidden="true">%s</div></div>
 					<p class="nom">%s</p>
 					<p class="titre">%s</p>
 					<div class="texte">%s</div>',
