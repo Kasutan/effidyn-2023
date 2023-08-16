@@ -318,7 +318,9 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
  * Page bannière pour la page d'accueil (simplifiée mais avec des images et un overlay)
  */
 function kasutan_front_page_banniere() {
-
+	if(!function_exists('get_field')) {
+		return;
+	}
 	//champs personnalisés liés à la page, affichés dans le BO seulement si c'est la page d'accueil	
 	$page_id=get_the_ID();
 	$texte=wp_kses_post( get_field('banniere_texte',$page_id) );
