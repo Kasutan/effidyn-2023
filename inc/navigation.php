@@ -20,7 +20,7 @@
 class etcode_sublevel_walker extends Walker_Nav_Menu
 {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .=sprintf('<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle">%s</span></button><ul class="sub-menu">',kasutan_picto(array('icon'=>'triangle')) );
+		$output .='<button class="ouvrir-sous-menu picto"><span class="screen-reader-text">Montrer ou masquer le sous-menu</span><span class="picto-angle"><svg class="svg-icon" width="12" height="12" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 7"><path d="M3.659,1.308a1,1,0,0,1,1.682,0L8.01,5.459A1,1,0,0,1,7.168,7H1.832A1,1,0,0,1,.99,5.459Z" transform="translate(9 7) rotate(180)"></path></svg></span></button><ul class="sub-menu">';
 	}
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= "</ul>";

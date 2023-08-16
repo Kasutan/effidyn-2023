@@ -16,7 +16,7 @@ if(array_key_exists('className',$block)) {
 
 if(have_rows('consultants')) :
 
-printf('<section class="acf liste-consultants %s">', $className);
+printf('<div class="acf liste-consultants %s">', $className);
 
 		echo '<ul class="consultants">';
 		while(have_rows('consultants')) : the_row();
@@ -26,12 +26,12 @@ printf('<section class="acf liste-consultants %s">', $className);
 			$texte=wp_kses_post( get_sub_field('texte') );
 			echo '<li class="consultant">';
 				printf('
-					<div class="portrait"><div class="image">%s</div><div class="picto" aria-hidden="true">%s</div></div>
+					<div class="portrait"><div class="image">%s</div><div class="picto" aria-hidden="true"><img src="%s/icons/picto-temoignage.svg" alt="" aria-hidden="true"/></div></div>
 					<p class="nom">%s</p>
 					<p class="titre">%s</p>
 					<div class="texte">%s</div>',
 					wp_get_attachment_image($image),
-					kasutan_picto(array('icon'=>'picto-temoignage','size'=>35)),
+					get_stylesheet_directory_uri(),
 					$nom,
 					$titre,
 					$texte
@@ -42,5 +42,5 @@ printf('<section class="acf liste-consultants %s">', $className);
 		echo '</ul>';
 
 
-echo '</section>';
+echo '</div>';
 endif;

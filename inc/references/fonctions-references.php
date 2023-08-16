@@ -34,7 +34,7 @@ function kasutan_affiche_etude($post_id,$contexte) {
 
 			}
 		echo '</div>';
-	echo '</a></li>';
+	echo '</li>';
 }
 
 function kasutan_affiche_etudes_pour_tax($term, $titre_section='', $exclude=array(),$className='') {

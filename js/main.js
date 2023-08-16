@@ -79,7 +79,7 @@
 		}
 
 		//Supprimer les attributs aria-describedby qui pointent vers des éléments inexistants
-		var inputsAvecAria=$('input[aria-describedby]');
+		var inputsAvecAria=$('input[aria-describedby], .forminator-file-upload');
 		if(inputsAvecAria.length > 0) {
 			$(inputsAvecAria).each(function() {
 				var cible=$(this).attr('aria-describedby');
