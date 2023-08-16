@@ -18,6 +18,10 @@
 		img {
 			max-width: 100%;
 		}
+		&:focus-visible {
+			outline:medium dashed;
+			outline-color:var(--blanc);
+		}
 	}
 
 

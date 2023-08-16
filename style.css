@@ -1452,6 +1452,10 @@ button.ouvrir-sous-menu svg path {
 button.ouvrir-sous-menu:focus {
   outline: none;
 }
+button.ouvrir-sous-menu:focus-visible {
+  outline: medium dashed;
+  outline-color: var(--violet-d2);
+}
 
 /*Style liens de menus MENU PRINCIPAL */
 .nav-main, .nav-main .nav-primary, .nav-main .menu {
@@ -2042,6 +2046,10 @@ button.ouvrir-sous-menu:focus {
 }
 .site-footer .logo-footer img {
   max-width: 100%;
+}
+.site-footer .logo-footer:focus-visible {
+  outline: medium dashed;
+  outline-color: var(--blanc);
 }
 .site-footer .coord {
   font-size: 1.8rem;
@@ -2932,6 +2940,10 @@ form.search-form input.search-submit {
 .pagination a.page:hover, .pagination a.page:focus {
   background-color: var(--violet-ba);
   color: var(--blanc);
+}
+.pagination a.page:focus-visible {
+  outline: medium dashed;
+  outline-color: var(--violet-ba);
 }
 .pagination li.active a {
   background-color: var(--violet-ba);

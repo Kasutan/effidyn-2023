@@ -22,6 +22,10 @@
 			background-color: var(--violet-ba);
 			color:var(--blanc);
 		}
+		&:focus-visible {
+			outline:medium dashed;
+			outline-color:var(--violet-ba);
+		}
 		
 	}
 

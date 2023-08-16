@@ -246,6 +246,10 @@ button.ouvrir-sous-menu {
 	&:focus {
 		outline: none;
 	}
+	&:focus-visible {
+		outline:medium dashed;
+		outline-color:var(--violet-d2);
+	}
 }
 
 /*Style liens de menus MENU PRINCIPAL */ 
