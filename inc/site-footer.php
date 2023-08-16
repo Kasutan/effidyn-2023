@@ -56,8 +56,8 @@ function kasutan_main_footer() {
 
 		if($i==4 && !empty($posts)) {
 			echo '<ul class="liste-posts">';
-			foreach($posts as $post) {
-				printf('<li><a href="%s">%s</a></li>',$post->post_permalink,$post->post_title);
+			foreach($posts as $article) {
+				printf('<li><a href="%s">%s</a></li>',get_the_permalink($article),$article->post_title);
 			}
 			echo '</ul>';
 		}
