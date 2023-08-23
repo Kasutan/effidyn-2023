@@ -20,7 +20,7 @@ $lien=esc_url( get_field('lien') );
 
 printf('<section class="acf accueil-valeurs decor-top %s">', $className);
 	if($hero) {
-		printf('<div class="decor-hero-top" aria-hidden="true">%s</div>',wp_get_attachment_image($hero, 'banniere')); //TODO ajuster taille
+		printf('<div class="decor-hero-top" aria-hidden="true">%s</div>',wp_get_attachment_image($hero, 'banniere')); 
 	}
 	echo '<div class="decor-hero-bottom"></div>';
 

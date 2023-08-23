@@ -190,38 +190,3 @@ function mc_adresse_email($atts) {
 		}
 		
 add_shortcode( 'adresse-email', 'mc_adresse_email' );
-
-/**
-* Récupérer l'ID d'une page - stockée dans une option ACF.
-*/
-
-function kasutan_get_page_ID($nom) {
-	if (!function_exists('get_field')) {
-		return;
-	}
-
-	$page=get_field($nom,'option');
-
-	return $page;
-}
-
-/**
-* Convertir une zone de texte en liste à puces.
-*/
-function kasutan_make_list($text) {
-	$array=explode('<br />',$text);
-	ob_start();
-		echo '<ul>';
-		foreach($array as $item) {
-			printf('<li>%s</li>',$item);
-		}
-		echo '</ul>';
-	return ob_get_clean();
-}
-
-/**
-* Formater un numéro de téléphone.
-*/
-function kasutan_formate_tel($tel) {
-	return str_replace(array(' ','(0)'),'',$tel);
-}

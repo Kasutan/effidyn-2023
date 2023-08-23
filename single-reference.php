@@ -15,7 +15,7 @@ add_action( 'tha_entry_top', 'kasutan_page_banniere', 7 );
 
 //Avant the content : titre, extrait et thumbnail
 add_action('tha_entry_content_before', 'kasutan_single_ref_entry_content_before');
-//TODO utiliser ces hooks pour insérer extrait, métas et thumbnail
+//Utiliser ces hooks pour insérer extrait, métas et thumbnail
 function kasutan_single_ref_entry_content_before() {
 	$post_id=get_the_ID();
 
