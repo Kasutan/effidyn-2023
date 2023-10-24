@@ -35,7 +35,7 @@ function ea_archive_header() {
 	echo '</header>';
 
 	echo '<div class="container">';
-		$pag_desktop=6;
+		$pag_desktop=esc_attr(get_option('posts_per_page',6));
 		if(is_home()) {
 			if(function_exists('kasutan_affiche_top_article')) {
 				kasutan_affiche_top_article();
