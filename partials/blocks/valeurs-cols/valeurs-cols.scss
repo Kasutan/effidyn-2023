@@ -183,6 +183,11 @@
 		.sous-titre.avec-picto + .texte {
 			margin-top: unset;
 		}
+
+		//variante avec texte aligné en haut
+		&.texte-top .texte {
+			margin-top: 0;
+		}
 	}
 
 	@include bp(xl) {

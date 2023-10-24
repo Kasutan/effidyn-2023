@@ -158,6 +158,9 @@
   .valeurs-cols .sous-titre.avec-picto + .texte {
     margin-top: unset;
   }
+  .valeurs-cols.texte-top .texte {
+    margin-top: 0;
+  }
 }
 @media (min-width: 1440px) {
   .valeurs-cols {
