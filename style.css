@@ -2240,6 +2240,17 @@ button.ouvrir-sous-menu:focus-visible {
   }
 }
 
+@media (min-width: 1024px) {
+  .page-template-template-simple .entry-content {
+    padding-top: 4rem;
+  }
+  .page-template-template-simple .entry-content > * {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 form.search-form {
   align-items: stretch;
   display: flex;

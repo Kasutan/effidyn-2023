@@ -1,4 +1,16 @@
-.site-inner {
+.page-template-template-simple {
 
+	.entry-content {
+		@include bp(lg) {
+			padding-top: 4rem;
+			& > * {
+				max-width: 1000px;
+				margin-left:auto;
+				margin-right: auto;
+			}
+		}
 
+	
+
+	}
 }
