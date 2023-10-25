@@ -77,6 +77,9 @@
     margin-bottom: 9rem;
     position: relative;
   }
+  .savoir-faire-services.max-3-par-ligne .service {
+    flex: 0 0 35rem;
+  }
   .savoir-faire-services .picto {
     height: 12.3rem;
     margin-bottom: 2rem;

@@ -79,6 +79,9 @@
 			margin-bottom: 9rem;
 			position: relative;
 		}
+		&.max-3-par-ligne .service {
+			flex:0 0 35rem;
+		}
 		.picto {
 			height:12.3rem;
 			margin-bottom: 2rem;
