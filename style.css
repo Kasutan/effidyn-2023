@@ -1938,6 +1938,7 @@ button.ouvrir-sous-menu:focus-visible {
 .page-banniere.pour-accueil .titre {
   font-size: 3.6rem;
   line-height: 4rem;
+  max-width: 100%;
   padding: 0 var(--padding-x-header);
 }
 .page-banniere.pour-accueil .titre span {
@@ -3150,17 +3151,17 @@ form.search-form input.search-submit {
   justify-content: center;
 }
 
-.wpml-ls-legacy-list-horizontal .wpml-ls-item {
+.wpml-ls-legacy-list-horizontal li.wpml-ls-item {
   align-items: center;
   display: flex;
   position: relative;
 }
-.wpml-ls-legacy-list-horizontal .wpml-ls-item::before {
+.wpml-ls-legacy-list-horizontal li.wpml-ls-item::before {
   color: var(--blanc);
   content: "|";
   display: inline-block;
 }
-.wpml-ls-legacy-list-horizontal .wpml-ls-item:first-of-type::before {
+.wpml-ls-legacy-list-horizontal li.wpml-ls-item:first-of-type::before {
   display: none;
 }
 
