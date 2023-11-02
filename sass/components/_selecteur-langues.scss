@@ -53,6 +53,7 @@
 	
 	.wpml-ls-item {
 		align-items: flex-start;
+		display: flex;
 		&::before {
 			color:var(--noir);
 			position: relative;

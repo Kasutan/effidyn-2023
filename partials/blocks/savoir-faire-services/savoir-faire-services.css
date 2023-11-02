@@ -77,6 +77,10 @@
     margin-bottom: 9rem;
     position: relative;
   }
+  .savoir-faire-services.max-3-par-ligne .services {
+    max-width: 117rem;
+    margin: 0 auto;
+  }
   .savoir-faire-services.max-3-par-ligne .service {
     flex: 0 0 35rem;
   }
