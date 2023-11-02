@@ -60,14 +60,7 @@
 		}*/
 
 
-		/****************** Sticky header *************************/
 		
-		var siteHeader=$('.site-header');
-		var siteContent=$('.site-main');
-		
-		
-		$(siteHeader).addClass('js-sticky');
-		siteContent.css('margin-top',siteHeader.outerHeight());
 
 		/****************** Helpers formulaire *************************/	
 		

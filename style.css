@@ -1764,29 +1764,47 @@ button.ouvrir-sous-menu:focus-visible {
   display: none;
 }
 
-.site-header.js-sticky {
+body {
+  --hauteur-header:75px;
+}
+@media (min-width: 1024px) {
+  body {
+    --hauteur-header:124px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    --hauteur-header:147px;
+  }
+}
+
+.site-header {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
 }
 @media (min-width: 1920px) {
-  .site-header.js-sticky {
+  .site-header {
     left: calc((100vw - var(--largeur-max)) / 2);
     width: var(--largeur-max);
   }
+}
+
+.site-main {
+  margin-top: var(--hauteur-header);
 }
 
 #wpadminbar {
   position: fixed;
 }
 
-.admin-bar .site-header.js-sticky {
+.admin-bar .site-header {
   top: 46px;
 }
 
 @media (min-width: 768px) {
-  .admin-bar .site-header.js-sticky {
+  .admin-bar .site-header {
     top: 32px;
   }
 }

@@ -48,7 +48,18 @@
 }
 
 //Header sticky toutes tailles d'écran
-.site-header.js-sticky {
+
+//Magic numbers
+body {
+	--hauteur-header:75px;
+	@include bp(lg) {
+		--hauteur-header:124px;
+	}
+	@include bp(xl) {
+		--hauteur-header:147px;
+	}
+}
+.site-header{
 	//box-shadow: 0 3px 3px rgba(18,75,90,0.2);
 	position:fixed;
 	left: 0;
@@ -61,17 +72,22 @@
 	}
 }
 
+.site-main {
+	margin-top: var(--hauteur-header);
+}
+
+
 #wpadminbar {
 	position: fixed;
 }
-.admin-bar .site-header.js-sticky {
+.admin-bar .site-header {
 	top:46px;
 }	
 
 
 @include bp(md) {
 	
-	.admin-bar .site-header.js-sticky {
+	.admin-bar .site-header {
 		top:32px;
 	}
 
