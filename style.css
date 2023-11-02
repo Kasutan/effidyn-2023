@@ -3246,15 +3246,21 @@ form.search-form input.search-submit {
   text-decoration: none;
 }
 .vignette .image-wrap {
-  aspect-ratio: 3.45;
   display: block;
   overflow: hidden;
+  padding-top: 29%;
+  position: relative;
   width: 100%;
 }
 .vignette .image {
   display: flex;
 }
 .vignette .image img {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition);

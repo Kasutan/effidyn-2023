@@ -8,14 +8,17 @@
 		text-decoration: none;
 	}
 	.image-wrap {
-		aspect-ratio : 3.45;
+		//aspect-ratio:3.45;
 		display: block;
 		overflow: hidden;
+		padding-top: 29%;
+		position: relative;
 		width: 100%;
 	}
 	.image {
 		display: flex;
 		img {
+			@include decor;
 			height:100%;
 			object-fit: cover;
 			transition:transform var(--transition);
